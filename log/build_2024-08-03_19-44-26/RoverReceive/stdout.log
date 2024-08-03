@@ -1,0 +1,36 @@
+running egg_info
+creating ../../build/RoverReceive/RoverReceive.egg-info
+writing ../../build/RoverReceive/RoverReceive.egg-info/PKG-INFO
+writing dependency_links to ../../build/RoverReceive/RoverReceive.egg-info/dependency_links.txt
+writing entry points to ../../build/RoverReceive/RoverReceive.egg-info/entry_points.txt
+writing requirements to ../../build/RoverReceive/RoverReceive.egg-info/requires.txt
+writing top-level names to ../../build/RoverReceive/RoverReceive.egg-info/top_level.txt
+writing manifest file '../../build/RoverReceive/RoverReceive.egg-info/SOURCES.txt'
+reading manifest file '../../build/RoverReceive/RoverReceive.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/RoverReceive/RoverReceive.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/arno/RoombaV2Onboard/build/RoverReceive/build
+creating /home/arno/RoombaV2Onboard/build/RoverReceive/build/lib
+creating /home/arno/RoombaV2Onboard/build/RoverReceive/build/lib/RoverReceive
+copying RoverReceive/__init__.py -> /home/arno/RoombaV2Onboard/build/RoverReceive/build/lib/RoverReceive
+copying RoverReceive/receive_node.py -> /home/arno/RoombaV2Onboard/build/RoverReceive/build/lib/RoverReceive
+running install
+running install_lib
+creating /home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive
+copying /home/arno/RoombaV2Onboard/build/RoverReceive/build/lib/RoverReceive/__init__.py -> /home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive
+copying /home/arno/RoombaV2Onboard/build/RoverReceive/build/lib/RoverReceive/receive_node.py -> /home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive
+byte-compiling /home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive/receive_node.py to receive_node.cpython-310.pyc
+running install_data
+creating /home/arno/RoombaV2Onboard/install/RoverReceive/share/ament_index
+creating /home/arno/RoombaV2Onboard/install/RoverReceive/share/ament_index/resource_index
+creating /home/arno/RoombaV2Onboard/install/RoverReceive/share/ament_index/resource_index/packages
+copying resource/RoverReceive -> /home/arno/RoombaV2Onboard/install/RoverReceive/share/ament_index/resource_index/packages
+copying package.xml -> /home/arno/RoombaV2Onboard/install/RoverReceive/share/RoverReceive
+running install_egg_info
+Copying ../../build/RoverReceive/RoverReceive.egg-info to /home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive-0.0.0-py3.10.egg-info
+running install_scripts
+Installing receive_node script to /home/arno/RoombaV2Onboard/install/RoverReceive/lib/RoverReceive
+writing list of installed files to '/home/arno/RoombaV2Onboard/build/RoverReceive/install.log'
