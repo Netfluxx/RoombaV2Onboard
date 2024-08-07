@@ -4,7 +4,7 @@ Version: 0.0.0
 Summary: Node that receives and processes inputs(keyboard or controller) given my the control station via a ros2 topic
 Home-page: UNKNOWN
 Maintainer: arno
-Maintainer-email: arno@todo.todo
+Maintainer-email: arno.blan334@gmail.com
 License: Apache-2.0
 Platform: UNKNOWN
 License-File: LICENSE

@@ -1,0 +1,177 @@
+[0.000000] (-) TimerEvent: {}
+[0.003117] (RoverReceive) JobQueued: {'identifier': 'RoverReceive', 'dependencies': OrderedDict()}
+[0.005062] (rover_stream) JobQueued: {'identifier': 'rover_stream', 'dependencies': OrderedDict()}
+[0.005462] (RoverReceive) JobStarted: {'identifier': 'RoverReceive'}
+[0.077387] (rover_stream) JobStarted: {'identifier': 'rover_stream'}
+[0.098137] (-) TimerEvent: {}
+[0.199394] (-) TimerEvent: {}
+[0.300557] (-) TimerEvent: {}
+[0.401698] (-) TimerEvent: {}
+[0.502952] (-) TimerEvent: {}
+[0.604146] (-) TimerEvent: {}
+[0.705314] (-) TimerEvent: {}
+[0.806589] (-) TimerEvent: {}
+[0.907818] (-) TimerEvent: {}
+[1.009129] (-) TimerEvent: {}
+[1.110297] (-) TimerEvent: {}
+[1.211423] (-) TimerEvent: {}
+[1.312519] (-) TimerEvent: {}
+[1.413671] (-) TimerEvent: {}
+[1.514757] (-) TimerEvent: {}
+[1.615873] (-) TimerEvent: {}
+[1.717058] (-) TimerEvent: {}
+[1.818217] (-) TimerEvent: {}
+[1.919385] (-) TimerEvent: {}
+[2.020581] (-) TimerEvent: {}
+[2.121804] (-) TimerEvent: {}
+[2.223070] (-) TimerEvent: {}
+[2.324213] (-) TimerEvent: {}
+[2.425475] (-) TimerEvent: {}
+[2.526936] (-) TimerEvent: {}
+[2.628673] (-) TimerEvent: {}
+[2.730015] (-) TimerEvent: {}
+[2.831131] (-) TimerEvent: {}
+[2.932346] (-) TimerEvent: {}
+[3.033469] (-) TimerEvent: {}
+[3.134715] (-) TimerEvent: {}
+[3.235865] (-) TimerEvent: {}
+[3.337132] (-) TimerEvent: {}
+[3.438394] (-) TimerEvent: {}
+[3.539565] (-) TimerEvent: {}
+[3.640732] (-) TimerEvent: {}
+[3.741911] (-) TimerEvent: {}
+[3.843077] (-) TimerEvent: {}
+[3.944178] (-) TimerEvent: {}
+[4.045278] (-) TimerEvent: {}
+[4.146427] (-) TimerEvent: {}
+[4.247585] (-) TimerEvent: {}
+[4.348846] (-) TimerEvent: {}
+[4.450134] (-) TimerEvent: {}
+[4.551308] (-) TimerEvent: {}
+[4.652441] (-) TimerEvent: {}
+[4.753707] (-) TimerEvent: {}
+[4.854714] (-) TimerEvent: {}
+[4.955990] (-) TimerEvent: {}
+[5.057457] (-) TimerEvent: {}
+[5.159001] (-) TimerEvent: {}
+[5.260428] (-) TimerEvent: {}
+[5.361766] (-) TimerEvent: {}
+[5.462956] (-) TimerEvent: {}
+[5.564302] (-) TimerEvent: {}
+[5.665806] (-) TimerEvent: {}
+[5.767150] (-) TimerEvent: {}
+[5.868720] (-) TimerEvent: {}
+[5.970106] (-) TimerEvent: {}
+[6.071383] (-) TimerEvent: {}
+[6.172629] (-) TimerEvent: {}
+[6.273955] (-) TimerEvent: {}
+[6.375163] (-) TimerEvent: {}
+[6.476410] (-) TimerEvent: {}
+[6.577881] (-) TimerEvent: {}
+[6.679224] (-) TimerEvent: {}
+[6.780633] (-) TimerEvent: {}
+[6.881983] (-) TimerEvent: {}
+[6.983266] (-) TimerEvent: {}
+[7.084548] (-) TimerEvent: {}
+[7.185865] (-) TimerEvent: {}
+[7.287228] (-) TimerEvent: {}
+[7.388580] (-) TimerEvent: {}
+[7.490038] (-) TimerEvent: {}
+[7.591262] (-) TimerEvent: {}
+[7.692663] (-) TimerEvent: {}
+[7.794184] (-) TimerEvent: {}
+[7.895531] (-) TimerEvent: {}
+[7.996976] (-) TimerEvent: {}
+[8.098516] (-) TimerEvent: {}
+[8.199918] (-) TimerEvent: {}
+[8.301202] (-) TimerEvent: {}
+[8.402515] (-) TimerEvent: {}
+[8.503889] (-) TimerEvent: {}
+[8.605262] (-) TimerEvent: {}
+[8.706809] (-) TimerEvent: {}
+[8.808555] (-) TimerEvent: {}
+[8.910299] (-) TimerEvent: {}
+[9.020825] (-) TimerEvent: {}
+[9.044082] (RoverReceive) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/RoverReceive', 'build', '--build-base', '/home/arno/RoombaV2Onboard/build/RoverReceive/build', 'install', '--record', '/home/arno/RoombaV2Onboard/build/RoverReceive/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/arno/RoombaV2Onboard/src/RoverReceive', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'arno', 'SSH_CLIENT': '192.168.31.158 48024 22', 'LC_TIME': 'de_CH.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/arno', 'OLDPWD': '/home/arno', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'de_CH.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install:/home/arno/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'arno', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/arno/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'de_CH.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'de_CH.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/arno/install/rover_stream:/home/arno/install/RoverReceive:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'de_CH.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'de_CH.UTF-8', 'LC_IDENTIFICATION': 'de_CH.UTF-8', 'PWD': '/home/arno/RoombaV2Onboard/build/RoverReceive', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.31.158 48024 192.168.31.115 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/arno/RoombaV2Onboard/build/RoverReceive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:/home/arno/install/rover_stream/lib/python3.10/site-packages:/home/arno/install/RoverReceive/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'de_CH.UTF-8', 'LC_PAPER': 'de_CH.UTF-8', 'COLCON': '1'}, 'shell': False}
+[9.073930] (rover_stream) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/rover_stream', 'build', '--build-base', '/home/arno/RoombaV2Onboard/build/rover_stream/build', 'install', '--record', '/home/arno/RoombaV2Onboard/build/rover_stream/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/arno/RoombaV2Onboard/src/rover_stream', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'arno', 'SSH_CLIENT': '192.168.31.158 48024 22', 'LC_TIME': 'de_CH.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/arno', 'OLDPWD': '/home/arno', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'de_CH.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install:/home/arno/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'arno', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/arno/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'de_CH.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'de_CH.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/arno/install/rover_stream:/home/arno/install/RoverReceive:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'de_CH.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'de_CH.UTF-8', 'LC_IDENTIFICATION': 'de_CH.UTF-8', 'PWD': '/home/arno/RoombaV2Onboard/build/rover_stream', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.31.158 48024 192.168.31.115 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/arno/RoombaV2Onboard/build/rover_stream/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages:/home/arno/install/rover_stream/lib/python3.10/site-packages:/home/arno/install/RoverReceive/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'de_CH.UTF-8', 'LC_PAPER': 'de_CH.UTF-8', 'COLCON': '1'}, 'shell': False}
+[9.214420] (-) TimerEvent: {}
+[9.318594] (-) TimerEvent: {}
+[9.419976] (-) TimerEvent: {}
+[9.521594] (-) TimerEvent: {}
+[9.622955] (-) TimerEvent: {}
+[9.724243] (-) TimerEvent: {}
+[9.825595] (-) TimerEvent: {}
+[9.927007] (-) TimerEvent: {}
+[10.028351] (-) TimerEvent: {}
+[10.129750] (-) TimerEvent: {}
+[10.231060] (-) TimerEvent: {}
+[10.332331] (-) TimerEvent: {}
+[10.433668] (-) TimerEvent: {}
+[10.535021] (-) TimerEvent: {}
+[10.636360] (-) TimerEvent: {}
+[10.737763] (-) TimerEvent: {}
+[10.839026] (-) TimerEvent: {}
+[10.940400] (-) TimerEvent: {}
+[11.041790] (-) TimerEvent: {}
+[11.142941] (-) TimerEvent: {}
+[11.244336] (-) TimerEvent: {}
+[11.345751] (-) TimerEvent: {}
+[11.447081] (-) TimerEvent: {}
+[11.548314] (-) TimerEvent: {}
+[11.649651] (-) TimerEvent: {}
+[11.751158] (-) TimerEvent: {}
+[11.789110] (RoverReceive) StdoutLine: {'line': b'running egg_info\n'}
+[11.795058] (RoverReceive) StdoutLine: {'line': b'writing ../../build/RoverReceive/RoverReceive.egg-info/PKG-INFO\n'}
+[11.796897] (rover_stream) StdoutLine: {'line': b'running egg_info\n'}
+[11.798992] (RoverReceive) StdoutLine: {'line': b'writing dependency_links to ../../build/RoverReceive/RoverReceive.egg-info/dependency_links.txt\n'}
+[11.800742] (RoverReceive) StdoutLine: {'line': b'writing entry points to ../../build/RoverReceive/RoverReceive.egg-info/entry_points.txt\n'}
+[11.802761] (RoverReceive) StdoutLine: {'line': b'writing requirements to ../../build/RoverReceive/RoverReceive.egg-info/requires.txt\n'}
+[11.804334] (RoverReceive) StdoutLine: {'line': b'writing top-level names to ../../build/RoverReceive/RoverReceive.egg-info/top_level.txt\n'}
+[11.805935] (rover_stream) StdoutLine: {'line': b'writing ../../build/rover_stream/rover_stream.egg-info/PKG-INFO\n'}
+[11.808002] (rover_stream) StdoutLine: {'line': b'writing dependency_links to ../../build/rover_stream/rover_stream.egg-info/dependency_links.txt\n'}
+[11.809490] (rover_stream) StdoutLine: {'line': b'writing entry points to ../../build/rover_stream/rover_stream.egg-info/entry_points.txt\n'}
+[11.811548] (rover_stream) StdoutLine: {'line': b'writing requirements to ../../build/rover_stream/rover_stream.egg-info/requires.txt\n'}
+[11.813477] (rover_stream) StdoutLine: {'line': b'writing top-level names to ../../build/rover_stream/rover_stream.egg-info/top_level.txt\n'}
+[11.825338] (RoverReceive) StdoutLine: {'line': b"reading manifest file '../../build/RoverReceive/RoverReceive.egg-info/SOURCES.txt'\n"}
+[11.828678] (RoverReceive) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[11.832062] (rover_stream) StdoutLine: {'line': b"reading manifest file '../../build/rover_stream/rover_stream.egg-info/SOURCES.txt'\n"}
+[11.835349] (RoverReceive) StdoutLine: {'line': b"writing manifest file '../../build/RoverReceive/RoverReceive.egg-info/SOURCES.txt'\n"}
+[11.836886] (RoverReceive) StdoutLine: {'line': b'running build\n'}
+[11.838378] (RoverReceive) StdoutLine: {'line': b'running build_py\n'}
+[11.840929] (RoverReceive) StdoutLine: {'line': b'running install\n'}
+[11.842559] (rover_stream) StdoutLine: {'line': b"writing manifest file '../../build/rover_stream/rover_stream.egg-info/SOURCES.txt'\n"}
+[11.844395] (rover_stream) StdoutLine: {'line': b'running build\n'}
+[11.845832] (rover_stream) StdoutLine: {'line': b'running build_py\n'}
+[11.847444] (RoverReceive) StdoutLine: {'line': b'running install_lib\n'}
+[11.848566] (rover_stream) StdoutLine: {'line': b'copying rover_stream/webrtc_streamer.py -> /home/arno/RoombaV2Onboard/build/rover_stream/build/lib/rover_stream\n'}
+[11.850089] (rover_stream) StdoutLine: {'line': b'running install\n'}
+[11.851224] (-) TimerEvent: {}
+[11.852932] (rover_stream) StdoutLine: {'line': b'running install_lib\n'}
+[11.857987] (RoverReceive) StdoutLine: {'line': b'running install_data\n'}
+[11.859526] (RoverReceive) StdoutLine: {'line': b'running install_egg_info\n'}
+[11.861037] (rover_stream) StdoutLine: {'line': b'copying /home/arno/RoombaV2Onboard/build/rover_stream/build/lib/rover_stream/webrtc_streamer.py -> /home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages/rover_stream\n'}
+[11.867347] (rover_stream) StdoutLine: {'line': b'byte-compiling /home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages/rover_stream/webrtc_streamer.py to webrtc_streamer.cpython-310.pyc\n'}
+[11.875497] (rover_stream) StdoutLine: {'line': b'running install_data\n'}
+[11.877289] (RoverReceive) StdoutLine: {'line': b"removing '/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[11.878673] (rover_stream) StdoutLine: {'line': b'running install_egg_info\n'}
+[11.881657] (RoverReceive) StdoutLine: {'line': b'Copying ../../build/RoverReceive/RoverReceive.egg-info to /home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive-0.0.0-py3.10.egg-info\n'}
+[11.894585] (rover_stream) StdoutLine: {'line': b"removing '/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages/rover_stream-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[11.896055] (RoverReceive) StdoutLine: {'line': b'running install_scripts\n'}
+[11.899159] (rover_stream) StdoutLine: {'line': b'Copying ../../build/rover_stream/rover_stream.egg-info to /home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages/rover_stream-0.0.0-py3.10.egg-info\n'}
+[11.913183] (rover_stream) StdoutLine: {'line': b'running install_scripts\n'}
+[11.951558] (-) TimerEvent: {}
+[12.053657] (-) TimerEvent: {}
+[12.096544] (RoverReceive) StdoutLine: {'line': b'Installing receive_node script to /home/arno/RoombaV2Onboard/install/RoverReceive/lib/RoverReceive\n'}
+[12.100263] (RoverReceive) StdoutLine: {'line': b"writing list of installed files to '/home/arno/RoombaV2Onboard/build/RoverReceive/install.log'\n"}
+[12.115477] (rover_stream) StdoutLine: {'line': b'Installing webrtc_streamer script to /home/arno/RoombaV2Onboard/install/rover_stream/lib/rover_stream\n'}
+[12.119577] (rover_stream) StdoutLine: {'line': b"writing list of installed files to '/home/arno/RoombaV2Onboard/build/rover_stream/install.log'\n"}
+[12.153986] (-) TimerEvent: {}
+[12.256394] (-) TimerEvent: {}
+[12.358779] (-) TimerEvent: {}
+[12.396456] (RoverReceive) CommandEnded: {'returncode': 0}
+[12.461605] (-) TimerEvent: {}
+[12.501065] (RoverReceive) JobEnded: {'identifier': 'RoverReceive', 'rc': 0}
+[12.512575] (rover_stream) CommandEnded: {'returncode': 0}
+[12.562182] (-) TimerEvent: {}
+[12.573038] (rover_stream) JobEnded: {'identifier': 'rover_stream', 'rc': 0}
+[12.578961] (-) EventReactorShutdown: {}

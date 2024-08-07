@@ -14,7 +14,7 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='arno',
-    maintainer_email='arno@todo.todo',
+    maintainer_email='arno.blan334@gmail.com',
     description='Node that receives and processes inputs(keyboard or controller) given my the control station via a ros2 topic',
     license='Apache-2.0',
     tests_require=['pytest'],

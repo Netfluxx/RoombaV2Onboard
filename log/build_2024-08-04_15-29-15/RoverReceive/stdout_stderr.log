@@ -1,0 +1,29 @@
+running egg_info
+writing ../../build/RoverReceive/RoverReceive.egg-info/PKG-INFO
+writing dependency_links to ../../build/RoverReceive/RoverReceive.egg-info/dependency_links.txt
+writing entry points to ../../build/RoverReceive/RoverReceive.egg-info/entry_points.txt
+writing requirements to ../../build/RoverReceive/RoverReceive.egg-info/requires.txt
+writing top-level names to ../../build/RoverReceive/RoverReceive.egg-info/top_level.txt
+reading manifest file '../../build/RoverReceive/RoverReceive.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/RoverReceive/RoverReceive.egg-info/SOURCES.txt'
+running build
+running build_py
+copying RoverReceive/receive_node.py -> /home/arno/RoombaV2Onboard/build/RoverReceive/build/lib/RoverReceive
+running install
+running install_lib
+copying /home/arno/RoombaV2Onboard/build/RoverReceive/build/lib/RoverReceive/receive_node.py -> /home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive
+byte-compiling /home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive/receive_node.py to receive_node.cpython-310.pyc
+  File "/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive/receive_node.py", line 54
+    self.get_logger().info(f"Rover Log @{time.strftime("%Y-%m-%d %H:%M")}: {received_from_arduino}")
+                                                        ^
+SyntaxError: f-string: unmatched '('
+
+running install_data
+copying package.xml -> /home/arno/RoombaV2Onboard/install/RoverReceive/share/RoverReceive
+running install_egg_info
+removing '/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/RoverReceive/RoverReceive.egg-info to /home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive-0.0.0-py3.10.egg-info
+running install_scripts
+Installing receive_node script to /home/arno/RoombaV2Onboard/install/RoverReceive/lib/RoverReceive
+writing list of installed files to '/home/arno/RoombaV2Onboard/build/RoverReceive/install.log'

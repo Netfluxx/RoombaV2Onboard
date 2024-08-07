@@ -1,0 +1,19 @@
+[8.300s] Invoking command in '/home/arno/RoombaV2Onboard/src/rover_stream': PYTHONPATH=/home/arno/RoombaV2Onboard/build/rover_stream/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rover_stream build --build-base /home/arno/RoombaV2Onboard/build/rover_stream/build install --record /home/arno/RoombaV2Onboard/build/rover_stream/install.log --single-version-externally-managed install_data
+[10.588s] running egg_info
+[10.594s] writing ../../build/rover_stream/rover_stream.egg-info/PKG-INFO
+[10.597s] writing dependency_links to ../../build/rover_stream/rover_stream.egg-info/dependency_links.txt
+[10.599s] writing entry points to ../../build/rover_stream/rover_stream.egg-info/entry_points.txt
+[10.601s] writing requirements to ../../build/rover_stream/rover_stream.egg-info/requires.txt
+[10.604s] writing top-level names to ../../build/rover_stream/rover_stream.egg-info/top_level.txt
+[10.610s] reading manifest file '../../build/rover_stream/rover_stream.egg-info/SOURCES.txt'
+[10.619s] writing manifest file '../../build/rover_stream/rover_stream.egg-info/SOURCES.txt'
+[10.620s] running build
+[10.622s] running install
+[10.625s] running install_data
+[10.627s] running install_egg_info
+[10.645s] removing '/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages/rover_stream-0.0.0-py3.10.egg-info' (and everything under it)
+[10.649s] Copying ../../build/rover_stream/rover_stream.egg-info to /home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages/rover_stream-0.0.0-py3.10.egg-info
+[10.661s] running install_scripts
+[10.841s] Installing streamer_node script to /home/arno/RoombaV2Onboard/install/rover_stream/lib/rover_stream
+[10.844s] writing list of installed files to '/home/arno/RoombaV2Onboard/build/rover_stream/install.log'
+[11.220s] Invoked command in '/home/arno/RoombaV2Onboard/src/rover_stream' returned '0': PYTHONPATH=/home/arno/RoombaV2Onboard/build/rover_stream/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/rover_stream build --build-base /home/arno/RoombaV2Onboard/build/rover_stream/build install --record /home/arno/RoombaV2Onboard/build/rover_stream/install.log --single-version-externally-managed install_data

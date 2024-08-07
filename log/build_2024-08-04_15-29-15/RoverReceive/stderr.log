@@ -1,0 +1,5 @@
+  File "/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive/receive_node.py", line 54
+    self.get_logger().info(f"Rover Log @{time.strftime("%Y-%m-%d %H:%M")}: {received_from_arduino}")
+                                                        ^
+SyntaxError: f-string: unmatched '('
+

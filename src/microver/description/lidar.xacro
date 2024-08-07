@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="microver">
+
+    <joint name="lidar_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="lidar_frame"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/> #TODO: FIX THESE COORDINATES TO REPRESENT REAL WORLD !
+    </joint>
+
+    <link name="lidar_frame">
+
+        <visual>
+            <geometry>
+                <cylinder radius="${LIDAR_RADIUS}" length="${LIDAR_WIDTH}" />
+            </geometry>
+            <material name="black" />
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="${LIDAR_RADIUS}" length="${LIDAR_WIDTH}" />
+            </geometry>
+        </collision>
+        <xacro:inertial_cylinder mass="${LIDAR_MASS}" length="${LIDAR_WIDTH}" radius="${LIDAR_RADIUS}">
+            <origin xyz="0 0 0"/>
+        </xacro:inertial_cylinder>
+    </link>
+
+</robot>

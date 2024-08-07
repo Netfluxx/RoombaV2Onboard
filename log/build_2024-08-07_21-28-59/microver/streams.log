@@ -1,0 +1,33 @@
+[12.854s] Invoking command in '/home/arno/RoombaV2Onboard/src/microver': PYTHONPATH=/home/arno/RoombaV2Onboard/build/microver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/microver/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/microver build --build-base /home/arno/RoombaV2Onboard/build/microver/build install --record /home/arno/RoombaV2Onboard/build/microver/install.log --single-version-externally-managed install_data
+[15.774s] running egg_info
+[15.780s] creating ../../build/microver/microver.egg-info
+[15.784s] writing ../../build/microver/microver.egg-info/PKG-INFO
+[15.793s] writing dependency_links to ../../build/microver/microver.egg-info/dependency_links.txt
+[15.799s] writing entry points to ../../build/microver/microver.egg-info/entry_points.txt
+[15.803s] writing requirements to ../../build/microver/microver.egg-info/requires.txt
+[15.808s] writing top-level names to ../../build/microver/microver.egg-info/top_level.txt
+[15.819s] writing manifest file '../../build/microver/microver.egg-info/SOURCES.txt'
+[15.834s] reading manifest file '../../build/microver/microver.egg-info/SOURCES.txt'
+[15.847s] writing manifest file '../../build/microver/microver.egg-info/SOURCES.txt'
+[15.850s] running build
+[15.852s] running build_py
+[15.859s] creating /home/arno/RoombaV2Onboard/build/microver/build
+[15.861s] creating /home/arno/RoombaV2Onboard/build/microver/build/lib
+[15.863s] creating /home/arno/RoombaV2Onboard/build/microver/build/lib/microver
+[15.871s] copying microver/__init__.py -> /home/arno/RoombaV2Onboard/build/microver/build/lib/microver
+[15.874s] running install
+[15.876s] running install_lib
+[15.878s] creating /home/arno/RoombaV2Onboard/install/microver/lib/python3.10/site-packages/microver
+[15.879s] copying /home/arno/RoombaV2Onboard/build/microver/build/lib/microver/__init__.py -> /home/arno/RoombaV2Onboard/install/microver/lib/python3.10/site-packages/microver
+[15.889s] byte-compiling /home/arno/RoombaV2Onboard/install/microver/lib/python3.10/site-packages/microver/__init__.py to __init__.cpython-310.pyc
+[15.896s] running install_data
+[15.898s] creating /home/arno/RoombaV2Onboard/install/microver/share/ament_index
+[15.899s] creating /home/arno/RoombaV2Onboard/install/microver/share/ament_index/resource_index
+[15.901s] creating /home/arno/RoombaV2Onboard/install/microver/share/ament_index/resource_index/packages
+[15.903s] copying resource/microver -> /home/arno/RoombaV2Onboard/install/microver/share/ament_index/resource_index/packages
+[15.904s] copying package.xml -> /home/arno/RoombaV2Onboard/install/microver/share/microver
+[15.906s] running install_egg_info
+[15.920s] Copying ../../build/microver/microver.egg-info to /home/arno/RoombaV2Onboard/install/microver/lib/python3.10/site-packages/microver-0.0.0-py3.10.egg-info
+[15.927s] running install_scripts
+[16.166s] writing list of installed files to '/home/arno/RoombaV2Onboard/build/microver/install.log'
+[16.644s] Invoked command in '/home/arno/RoombaV2Onboard/src/microver' returned '0': PYTHONPATH=/home/arno/RoombaV2Onboard/build/microver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/microver/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/microver build --build-base /home/arno/RoombaV2Onboard/build/microver/build install --record /home/arno/RoombaV2Onboard/build/microver/install.log --single-version-externally-managed install_data
