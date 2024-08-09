@@ -1,0 +1,6 @@
+Invoking command in '/home/arno/RoombaV2Onboard/build/microver_dusty': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/arno/RoombaV2Onboard/src/microver_dusty -DCMAKE_INSTALL_PREFIX=/home/arno/RoombaV2Onboard/install/microver_dusty
+Invoked command in '/home/arno/RoombaV2Onboard/build/microver_dusty' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/arno/RoombaV2Onboard/src/microver_dusty -DCMAKE_INSTALL_PREFIX=/home/arno/RoombaV2Onboard/install/microver_dusty
+Invoking command in '/home/arno/RoombaV2Onboard/build/microver_dusty': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/microver_dusty -- -j4 -l4
+Invoked command in '/home/arno/RoombaV2Onboard/build/microver_dusty' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/microver_dusty -- -j4 -l4
+Invoking command in '/home/arno/RoombaV2Onboard/build/microver_dusty': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/microver_dusty
+Invoked command in '/home/arno/RoombaV2Onboard/build/microver_dusty' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/microver_dusty

@@ -1,0 +1,39 @@
+-- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/arno/RoombaV2Onboard/build/microver_dusty
+-- Install configuration: ""
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/config
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/launch
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/launch/microver.launch.py
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/maps
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/meshes
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/microver.urdf.xacro
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/inertial_macros.xacro
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/params
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/rviz
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/rviz/urdf_config.rviz
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/src
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/worlds
+-- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/ament_index/resource_index/package_run_dependencies/microver_dusty
+-- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/ament_index/resource_index/parent_prefix_path/microver_dusty
+-- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/environment/ament_prefix_path.sh
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/environment/path.sh
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/environment/path.dsv
+-- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/local_setup.bash
+-- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/local_setup.sh
+-- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/local_setup.zsh
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/local_setup.dsv
+-- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/package.dsv
+-- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/ament_index/resource_index/packages/microver_dusty
+-- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/cmake/microver_dustyConfig.cmake
+-- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/cmake/microver_dustyConfig-version.cmake
+-- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/package.xml

@@ -1,0 +1,29 @@
+[2.550s] Invoking command in '/home/arno/RoombaV2Onboard/build/microver_dusty': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/microver_dusty -- -j4 -l4
+[2.759s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[4.051s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[4.760s] -- Added test 'flake8' to check Python code syntax and style conventions
+[4.770s] -- Added test 'lint_cmake' to check CMake code style
+[4.776s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[4.808s] -- Added test 'xmllint' to check XML markup files
+[4.817s] -- Configuring done
+[4.858s] -- Generating done
+[4.872s] -- Build files have been written to: /home/arno/RoombaV2Onboard/build/microver_dusty
+[5.402s] Invoked command in '/home/arno/RoombaV2Onboard/build/microver_dusty' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/microver_dusty -- -j4 -l4
+[5.695s] Invoking command in '/home/arno/RoombaV2Onboard/build/microver_dusty': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/microver_dusty
+[5.765s] -- Install configuration: ""
+[5.766s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/ament_index/resource_index/package_run_dependencies/microver_dusty
+[5.771s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/ament_index/resource_index/parent_prefix_path/microver_dusty
+[5.772s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/environment/ament_prefix_path.sh
+[5.776s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/environment/ament_prefix_path.dsv
+[5.782s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/environment/path.sh
+[5.785s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/environment/path.dsv
+[5.791s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/local_setup.bash
+[5.794s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/local_setup.sh
+[5.796s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/local_setup.zsh
+[5.798s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/local_setup.dsv
+[5.800s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/package.dsv
+[5.805s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/ament_index/resource_index/packages/microver_dusty
+[5.810s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/cmake/microver_dustyConfig.cmake
+[5.811s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/cmake/microver_dustyConfig-version.cmake
+[5.812s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/package.xml
+[5.839s] Invoked command in '/home/arno/RoombaV2Onboard/build/microver_dusty' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/microver_dusty

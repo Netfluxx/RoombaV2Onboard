@@ -1,0 +1,8 @@
+source;share/microver_dusty/hook/cmake_prefix_path.ps1
+source;share/microver_dusty/hook/cmake_prefix_path.dsv
+source;share/microver_dusty/hook/cmake_prefix_path.sh
+source;share/microver_dusty/local_setup.bash
+source;share/microver_dusty/local_setup.dsv
+source;share/microver_dusty/local_setup.ps1
+source;share/microver_dusty/local_setup.sh
+source;share/microver_dusty/local_setup.zsh

@@ -1,0 +1,9 @@
+/home/arno/RoombaV2Onboard/build/microver_dusty/CMakeFiles/uninstall.dir
+/home/arno/RoombaV2Onboard/build/microver_dusty/CMakeFiles/microver_dusty_uninstall.dir
+/home/arno/RoombaV2Onboard/build/microver_dusty/CMakeFiles/test.dir
+/home/arno/RoombaV2Onboard/build/microver_dusty/CMakeFiles/edit_cache.dir
+/home/arno/RoombaV2Onboard/build/microver_dusty/CMakeFiles/rebuild_cache.dir
+/home/arno/RoombaV2Onboard/build/microver_dusty/CMakeFiles/list_install_components.dir
+/home/arno/RoombaV2Onboard/build/microver_dusty/CMakeFiles/install.dir
+/home/arno/RoombaV2Onboard/build/microver_dusty/CMakeFiles/install/local.dir
+/home/arno/RoombaV2Onboard/build/microver_dusty/CMakeFiles/install/strip.dir
