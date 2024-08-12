@@ -1,7 +1,14 @@
+/home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/config/ekf.yaml
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/launch/microver.launch.py
+/home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/constants.xacro
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/microver.urdf.xacro
+/home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/microver_description/model.config
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/inertial_macros.xacro
+/home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/microver.sdf
+/home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/microver.urdf
+/home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/gazebo_control.xacro
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/rviz/urdf_config.rviz
+/home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/worlds/microver_world/default.world
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/ament_index/resource_index/package_run_dependencies/microver_dusty
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/ament_index/resource_index/parent_prefix_path/microver_dusty
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/environment/ament_prefix_path.sh

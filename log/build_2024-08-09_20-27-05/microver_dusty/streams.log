@@ -1,0 +1,52 @@
+[0.497s] Invoking command in '/home/arno/RoombaV2Onboard/build/microver_dusty': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/microver:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/microver_dusty -- -j8 -l8
+[0.539s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.749s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.869s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.873s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.874s] -- Added test 'lint_cmake' to check CMake code style
+[0.875s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.877s] -- Added test 'xmllint' to check XML markup files
+[0.878s] -- Configuring done
+[0.883s] -- Generating done
+[0.885s] -- Build files have been written to: /home/arno/RoombaV2Onboard/build/microver_dusty
+[1.000s] Invoked command in '/home/arno/RoombaV2Onboard/build/microver_dusty' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/microver:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/microver_dusty -- -j8 -l8
+[1.052s] Invoking command in '/home/arno/RoombaV2Onboard/build/microver_dusty': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/microver:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/microver_dusty
+[1.064s] -- Install configuration: ""
+[1.064s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/config
+[1.064s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/config/ekf.yaml
+[1.064s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/launch
+[1.065s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/launch/microver.launch.py
+[1.065s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/maps
+[1.065s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/meshes
+[1.065s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models
+[1.066s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/constants.xacro
+[1.066s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/microver.urdf.xacro
+[1.066s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/microver_description
+[1.066s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/microver_description/model.config
+[1.067s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/inertial_macros.xacro
+[1.067s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/microver.sdf
+[1.067s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/microver.urdf
+[1.067s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/gazebo_control.xacro
+[1.067s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/params
+[1.068s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/rviz
+[1.068s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/rviz/urdf_config.rviz
+[1.068s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/src
+[1.068s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/worlds
+[1.069s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/worlds/microver_world
+[1.069s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/worlds/microver_world/default.world
+[1.069s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/ament_index/resource_index/package_run_dependencies/microver_dusty
+[1.069s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/ament_index/resource_index/parent_prefix_path/microver_dusty
+[1.069s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/environment/ament_prefix_path.sh
+[1.070s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/environment/ament_prefix_path.dsv
+[1.070s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/environment/path.sh
+[1.071s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/environment/path.dsv
+[1.071s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/local_setup.bash
+[1.072s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/local_setup.sh
+[1.072s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/local_setup.zsh
+[1.073s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/local_setup.dsv
+[1.074s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/package.dsv
+[1.074s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/ament_index/resource_index/packages/microver_dusty
+[1.074s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/cmake/microver_dustyConfig.cmake
+[1.075s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/cmake/microver_dustyConfig-version.cmake
+[1.075s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/package.xml
+[1.075s] Invoked command in '/home/arno/RoombaV2Onboard/build/microver_dusty' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/microver:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/microver_dusty

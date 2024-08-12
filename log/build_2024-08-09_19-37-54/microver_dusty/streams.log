@@ -1,0 +1,22 @@
+[0.392s] Invoking command in '/home/arno/RoombaV2Onboard/build/microver_dusty': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/microver_dusty -- -j8 -l8
+[0.808s] Invoked command in '/home/arno/RoombaV2Onboard/build/microver_dusty' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/microver_dusty -- -j8 -l8
+[0.853s] Invoking command in '/home/arno/RoombaV2Onboard/build/microver_dusty': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/microver_dusty
+[0.863s] -- Install configuration: ""
+[0.864s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/config
+[0.864s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/launch
+[0.864s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/launch/microver.launch.py
+[0.865s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/maps
+[0.865s] [31mCMake Error at cmake_install.cmake:46 (file):
+[0.865s]   file INSTALL cannot find
+[0.865s]   "/home/arno/RoombaV2Onboard/src/microver_dusty/src": No such file or
+[0.866s]   directory.
+[0.866s] 
+[0.866s] [0m
+[0.866s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/meshes
+[0.866s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models
+[0.867s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/microver.urdf.xacro
+[0.867s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/inertial_macros.xacro
+[0.867s] -- Installing: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/params
+[0.867s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/rviz
+[0.867s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/rviz/urdf_config.rviz
+[0.868s] Invoked command in '/home/arno/RoombaV2Onboard/build/microver_dusty' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/microver_dusty
