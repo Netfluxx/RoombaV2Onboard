@@ -1,0 +1,81 @@
+# Combined nav2_params.yaml
+
+amcl:
+  ros__parameters:
+    use_sim_time: False
+    odom_frame_id: "odom"
+    base_frame_id: "base_link"
+    global_frame_id: "map"
+    scan_topic: "scan"
+    min_particles: 500
+    max_particles: 2000
+    alpha1: 0.2
+    alpha2: 0.2
+    alpha3: 0.2
+    alpha4: 0.2
+    alpha5: 0.1
+    resample_interval: 1
+    update_min_d: 0.2
+    update_min_a: 0.2
+    laser_min_range: 0.0
+    laser_max_range: 12.0
+    laser_max_beams: 60
+    transform_tolerance: 0.5
+    recovery_alpha_slow: 0.005
+    recovery_alpha_fast: 0.1
+    tf_broadcast: True
+    map_type: "occupancy"
+
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      update_frequency: 1.0
+      publish_frequency: 0.5
+      global_frame: "map"
+      robot_base_frame: "base_link"
+      use_sim_time: False
+      rolling_window: False
+      resolution: 0.05
+      width: 10.0
+      height: 10.0
+      origin_x: -5.0
+      origin_y: -5.0
+      plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
+
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      update_frequency: 5.0
+      publish_frequency: 2.0
+      global_frame: "odom"
+      robot_base_frame: "base_link"
+      use_sim_time: False
+      rolling_window: True
+      width: 3.0
+      height: 3.0
+      resolution: 0.05
+      plugins: ["obstacle_layer", "inflation_layer"]
+
+planner_server:
+  ros__parameters:
+    expected_planner_frequency: 20.0
+    use_sim_time: False
+    planner_plugins: ["GridBased"]
+
+controller_server:
+  ros__parameters:
+    use_sim_time: False
+    controller_frequency: 20.0
+    min_vel_x: 0.0
+    min_vel_y: 0.0
+    max_vel_x: 0.26
+    max_vel_y: 0.0
+    acc_lim_x: 2.5
+    acc_lim_y: 0.0
+    acc_lim_theta: 3.2
+    controller_plugins: ["FollowPath"]
+
+recovery_server:
+  ros__parameters:
+    use_sim_time: False
+    recovery_plugins: ["Spin", "BackUp", "Wait"]

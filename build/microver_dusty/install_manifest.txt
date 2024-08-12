@@ -1,4 +1,9 @@
+/home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/config/planner_params.yaml
+/home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/config/nav2_params.yaml
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/config/ekf.yaml
+/home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/config/amcl_params.yaml
+/home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/config/costmap_params.yaml
+/home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/launch/nav2_bringup.launch.py
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/launch/microver.launch.py
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/constants.xacro
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/microver.sdf
