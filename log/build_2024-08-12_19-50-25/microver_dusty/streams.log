@@ -1,0 +1,25 @@
+[2.575s] Invoking command in '/home/arno/RoombaV2Onboard/build/microver_dusty': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/microver:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/microver_dusty -- -j4 -l4
+[2.898s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[4.315s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[5.079s] -- Added test 'copyright' to check source files copyright and LICENSE
+[5.136s] -- Added test 'flake8' to check Python code syntax and style conventions
+[5.146s] -- Added test 'lint_cmake' to check CMake code style
+[5.153s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[5.184s] -- Added test 'xmllint' to check XML markup files
+[5.203s] -- Configuring done
+[5.267s] -- Generating done
+[5.281s] -- Build files have been written to: /home/arno/RoombaV2Onboard/build/microver_dusty
+[5.516s] Invoked command in '/home/arno/RoombaV2Onboard/build/microver_dusty' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/microver:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/microver_dusty -- -j4 -l4
+[5.806s] Invoking command in '/home/arno/RoombaV2Onboard/build/microver_dusty': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/microver:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/microver_dusty
+[5.866s] -- Install configuration: ""
+[5.868s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/config
+[5.869s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/config/ekf.yaml
+[5.871s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/launch
+[5.873s] [31mCMake Error at cmake_install.cmake:46 (file):
+[5.875s]   file INSTALL cannot find
+[5.876s]   "/home/arno/RoombaV2Onboard/src/microver_dusty/maps": No such file or
+[5.877s]   directory.
+[5.878s] 
+[5.879s] [0m
+[5.880s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/launch/microver.launch.py
+[5.895s] Invoked command in '/home/arno/RoombaV2Onboard/build/microver_dusty' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/microver:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/microver_dusty

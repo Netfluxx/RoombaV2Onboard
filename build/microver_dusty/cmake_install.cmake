@@ -47,10 +47,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/arno/RoombaV2Onboard/src/microver_dusty/config"
     "/home/arno/RoombaV2Onboard/src/microver_dusty/launch"
     "/home/arno/RoombaV2Onboard/src/microver_dusty/maps"
-    "/home/arno/RoombaV2Onboard/src/microver_dusty/meshes"
     "/home/arno/RoombaV2Onboard/src/microver_dusty/models"
     "/home/arno/RoombaV2Onboard/src/microver_dusty/params"
-    "/home/arno/RoombaV2Onboard/src/microver_dusty/rviz"
     "/home/arno/RoombaV2Onboard/src/microver_dusty/src"
     "/home/arno/RoombaV2Onboard/src/microver_dusty/worlds"
     )
