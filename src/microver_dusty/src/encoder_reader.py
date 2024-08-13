@@ -7,20 +7,25 @@ from tf_transformations import quaternion_from_euler
 import math
 import time
 from random import randrange
+from tf2_ros import TransformBroadcaster
+from geometry_msgs.msg import TransformStamped
+
 
 class OdometryNode(Node):
 
     def __init__(self):
-        super().__init__('odometry_node')
-        self.odom_pub = self.create_publisher(Odometry, '/odom', 10)
-        self.timer = self.create_timer(0.1, self.publish_odometry)
+    super().__init__('odometry_node')
+    self.odom_pub = self.create_publisher(Odometry, '/odom', 10)
+    self.tf_broadcaster = TransformBroadcaster(self)  # Add this line
+    self.timer = self.create_timer(0.1, self.publish_odometry)
 
-        self.x = 0.0
-        self.y = 0.0
-        self.theta = 0.0
-        self.last_time = self.get_clock().now()
-        self.rover_width = 0.2 #20cm between the centers of the left and right wheels.
-        self.rover_mass = 4 #kg
+    self.x = 0.0
+    self.y = 0.0
+    self.theta = 0.0
+    self.last_time = self.get_clock().now()
+    self.rover_width = 0.2  # 20cm between the centers of the left and right wheels.
+    self.rover_mass = 4  # kg
+
 
     def compute_velocities(self):
         #TODO: Get encoder ticks from arduino, v=omega*wheel radius, omega = nbr of ticks/(nbr of ticks per rev * delta_t) probably
@@ -35,37 +40,47 @@ class OdometryNode(Node):
         return v, omega
 
     def publish_odometry(self):
-        current_time = self.get_clock().now()
-        dt = (current_time - self.last_time).nanoseconds / 1e9
+    current_time = self.get_clock().now()
+    dt = (current_time - self.last_time).nanoseconds / 1e9
 
-        v, omega = self.compute_velocities()
+    v, omega = self.compute_velocities()
 
-        # Update the pose by integration of speed
-        delta_x = v * math.cos(self.theta) * dt
-        delta_y = v * math.sin(self.theta) * dt
-        delta_theta = omega * dt
+    # Update the pose by integration of speed
+    delta_x = v * math.cos(self.theta) * dt
+    delta_y = v * math.sin(self.theta) * dt
+    delta_theta = omega * dt
 
-        self.x += delta_x
-        self.y += delta_y
-        self.theta += delta_theta
+    self.x += delta_x
+    self.y += delta_y
+    self.theta += delta_theta
 
-        # Create the odometry message
-        odom = Odometry()
-        odom.header.stamp = current_time.to_msg()
+    # Create the odometry message
+    odom = Odometry()
+    odom.header.stamp = current_time.to_msg()
+    odom.header.frame_id = "odom"
+    odom.pose.pose.position.x = self.x
+    odom.pose.pose.position.y = self.y
+    odom.pose.pose.position.z = 0.0
+    odom.pose.pose.orientation = quaternion_from_euler(0, 0, self.theta)
+    odom.child_frame_id = "base_link"
+    odom.twist.twist.linear.x = v
+    odom.twist.twist.linear.y = 0.0
+    odom.twist.twist.angular.z = omega
+    self.odom_pub.publish(odom)
 
-        odom.header.frame_id = "odom"
-        odom.pose.pose.position.x = self.x
-        odom.pose.pose.position.y = self.y
-        odom.pose.pose.position.z = 0.0
-        odom.pose.pose.orientation = quaternion_from_euler(0, 0, self.theta)
+    # Broadcast the transform
+    transform = TransformStamped()
+    transform.header.stamp = current_time.to_msg()
+    transform.header.frame_id = "odom"
+    transform.child_frame_id = "base_link"
+    transform.transform.translation.x = self.x
+    transform.transform.translation.y = self.y
+    transform.transform.translation.z = 0.0
+    transform.transform.rotation = odom.pose.pose.orientation
 
-        odom.child_frame_id = "base_link"
-        odom.twist.twist.linear.x = v
-        odom.twist.twist.linear.y = 0.0
-        odom.twist.twist.angular.z = omega
+    self.tf_broadcaster.sendTransform(transform)    #AMCL needs the transform from odom to base_link
+    self.last_time = current_time
 
-        self.odom_pub.publish(odom)
-        self.last_time = current_time
 
 def main(args=None):
     rclpy.init(args=args)

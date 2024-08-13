@@ -164,7 +164,7 @@ sllidar_client: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_c.so
 sllidar_client: /opt/ros/humble/lib/libgeometry_msgs__rosidl_generator_c.so
 sllidar_client: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_py.so
 sllidar_client: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_py.so
-sllidar_client: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+sllidar_client: /usr/lib/aarch64-linux-gnu/libpython3.10.so
 sllidar_client: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_c.so
 sllidar_client: /opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_c.so
 sllidar_client: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_c.so

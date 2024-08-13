@@ -56,7 +56,7 @@ def generate_launch_description():
         executable='static_transform_publisher',
         name='static_transform_publisher',
         output='screen',
-        arguments=['0.2', '0.0', '0.1', '0', '0', '0', 'base_link', 'lidar_frame']
+        arguments=['0.2', '0.0', '0.1', '0', '0', '0', 'base_link', 'lidar_link']
     )
 
     # Create the launch description and populate
