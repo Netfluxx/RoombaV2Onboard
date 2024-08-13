@@ -43,6 +43,13 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/microver_dusty" TYPE PROGRAM FILES
+    "/home/arno/RoombaV2Onboard/src/microver_dusty/src/nav2_motor_controller.py"
+    "/home/arno/RoombaV2Onboard/src/microver_dusty/src/encoder_reader.py"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/microver_dusty" TYPE DIRECTORY FILES
     "/home/arno/RoombaV2Onboard/src/microver_dusty/config"
     "/home/arno/RoombaV2Onboard/src/microver_dusty/launch"

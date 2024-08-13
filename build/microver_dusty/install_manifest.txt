@@ -1,3 +1,5 @@
+/home/arno/RoombaV2Onboard/install/microver_dusty/lib/microver_dusty/nav2_motor_controller.py
+/home/arno/RoombaV2Onboard/install/microver_dusty/lib/microver_dusty/encoder_reader.py
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/config/planner_params.yaml
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/config/nav2_params.yaml
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/config/ekf.yaml
@@ -13,6 +15,8 @@
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/ros2_control.xacro
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/inertial_macros.xacro
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/models/microver_description/model.config
+/home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/src/encoder_reader.py
+/home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/src/nav2_motor_controller.py
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/microver_dusty/worlds/microver_world/default.world
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/ament_index/resource_index/package_run_dependencies/microver_dusty
 /home/arno/RoombaV2Onboard/install/microver_dusty/share/ament_index/resource_index/parent_prefix_path/microver_dusty

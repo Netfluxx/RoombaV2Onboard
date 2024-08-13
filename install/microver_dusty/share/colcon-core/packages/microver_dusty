@@ -1,1 +1,1 @@
-joint_state_publisher:robot_localization:robot_state_publisher:rviz:xacro
+geometry_msgs:joint_state_publisher:nav_msgs:rclpy:robot_localization:robot_state_publisher:rviz:std_msgs:xacro

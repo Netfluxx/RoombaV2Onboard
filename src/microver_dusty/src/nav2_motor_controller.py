@@ -1,4 +1,4 @@
-#RPi ReceiverNode
+#RPi Nav2 Motor Controller Node
 
 import rclpy
 from rclpy.node import Node
@@ -26,7 +26,7 @@ class Nav2MotorControl(Node):
                                                history=rclpy.qos.HistoryPolicy.KEEP_LAST,
                                                depth=1)
         self.subscription = self.create_subscription(
-            String,
+            Twist,
             '/cmd_vel',
             self.message_callback,
             10
@@ -48,9 +48,10 @@ class Nav2MotorControl(Node):
     def message_callback(self, msg):
         lin_vel = msg.linear.x
         ang_vel = msg.angular.z
-        pwms = computeKinematics(lin_vel, ang_vel)
+        pwms = compute_kinematics(lin_vel, ang_vel)
+        
         msg = f"{pwms[0]}, {pwms[1]}"
-        self.serial_port.write((msg + '\n').encode('utf-8'))
+        self.serial_port.write((msg + '\n').encode('utf-8'))    #sends pwm left, pwm right. Example : 145, -145
 
         received_from_arduino = self.serial_port.readline().decode('utf-8').strip()
         #in the form: Master ACK, FR_ACK, FL_ACK, BR_ACK, BL_ACK, FR_SPEED, FL_SPEED, BR_SPEED, BL_SPEED
@@ -70,20 +71,21 @@ class Nav2MotorControl(Node):
         return max(min(pwm_val, 255), -255)
     
 
-    def computeKinematics(self, lin_vel, ang_vel):
+    def compute_kinematics(self, lin_vel, ang_vel):
         WHEEL_RADIUS = 0.15 #m
         WHEEL_DIST =   0.3  #m
         MU = 0.15   
         MASS = 4 #kg
-        corr_factor =  1 + (MU*WHEEL_DIST*ang_vel/(2*MASS*9.81))
         MAX_LIN_SPEED = 4#m/s probably???
-        MAX_ANG_SPEED = 3.14 #rad/sec = 180 in 1 sec, seems reasonnable
+        MAX_ANG_SPEED = 3.14 #rad/sec = 180 in 1 sec, seems like a reasonnable max speed
+
+        corr_factor =  1 + (MU*WHEEL_DIST*ang_vel/(2*MASS*9.81))
 
         speed_left =  (lin_vel - (WHEEL_DIST*ang_vel/2))/corr_factor
         speed_right = (lin_vel + (WHEEL_DIST*ang_vel/2))/corr_factor
 
-        #estim_lin_vel = (speed_left + speed_right) /2
-        #estim_ang_vwl = (speed_right - speed_left)/WHEEL_DIST
+        #estim_lin_vel = (speed_left + speed_right) / 2
+        #estim_ang_vwl = (speed_right - speed_left) / WHEEL_DIST
 
         pwm_left = clamp_pwm((speed_left/MAX_LIN_SPEED)*255)
         pwm_right = clamp_pwm((speed_right/MAX_LIN_SPEED)*255)

@@ -47,7 +47,9 @@ class ReceiveNode(Node):
             stripped_msg = msg.data.replace("RV2", "")
             #send command to master arduino
             self.serial_port.write((stripped_msg + '\n').encode('utf-8'))
-        
+        else:
+            self.get_logger().error(f"Message skipped, missing 'RV2'")
+
         received_from_arduino = self.serial_port.readline().decode('utf-8').strip()
         #in the form: Master ACK, FR_ACK, FL_ACK, BR_ACK, BL_ACK, FR_SPEED, FL_SPEED, BR_SPEED, BL_SPEED
         
