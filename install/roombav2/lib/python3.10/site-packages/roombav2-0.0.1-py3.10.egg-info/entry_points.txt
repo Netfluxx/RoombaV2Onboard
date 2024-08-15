@@ -1,0 +1,4 @@
+[console_scripts]
+encoder_reader = roombav2.encoder_reader:main
+nav2_motor_controller = roombav2.nav2_motor_controller:main
+

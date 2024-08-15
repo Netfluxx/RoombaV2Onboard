@@ -1,0 +1,53 @@
+[7.355s] Invoking command in '/home/arno/RoombaV2Onboard/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/sllidar_ros2 -- -j4 -l4
+[10.556s] [ 10%] Built target sllidar_client
+[10.563s] [100%] Built target sllidar_node
+[10.644s] Invoked command in '/home/arno/RoombaV2Onboard/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/sllidar_ros2 -- -j4 -l4
+[11.406s] Invoking command in '/home/arno/RoombaV2Onboard/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/sllidar_ros2
+[11.479s] -- Install configuration: ""
+[11.557s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch
+[11.726s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m7_launch.py
+[11.734s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a3_launch.py
+[11.739s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_c1_launch.py
+[11.744s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s1_tcp_launch.py
+[11.745s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s2_launch.py
+[11.747s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a3_launch.py
+[11.748s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s2e_launch.py
+[11.749s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s3_launch.py
+[11.749s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m8_launch.py
+[11.750s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s2_launch.py
+[11.751s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s3_launch.py
+[11.752s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s1_tcp_launch.py
+[11.752s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m8_launch.py
+[11.753s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a1_launch.py
+[11.753s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a1_launch.py
+[11.754s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s1_launch.py
+[11.754s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s2e_launch.py
+[11.755s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_t1_launch.py
+[11.756s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_t1_launch.py
+[11.756s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s1_launch.py
+[11.757s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m12_launch.py
+[11.757s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m7_launch.py
+[11.758s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_c1_launch.py
+[11.759s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m12_launch .py
+[11.760s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/rviz
+[11.891s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/rviz/sllidar_ros2.rviz
+[12.136s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/lib/sllidar_ros2/sllidar_node
+[12.299s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/lib/sllidar_ros2/sllidar_client
+[12.459s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/ament_index/resource_index/package_run_dependencies/sllidar_ros2
+[12.539s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/ament_index/resource_index/parent_prefix_path/sllidar_ros2
+[12.624s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.sh
+[12.626s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.dsv
+[12.628s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/environment/path.sh
+[12.630s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/environment/path.dsv
+[12.631s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/local_setup.bash
+[12.633s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/local_setup.sh
+[12.634s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/local_setup.zsh
+[12.634s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/local_setup.dsv
+[12.635s] -- Installing: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/package.dsv
+[12.790s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/ament_index/resource_index/packages/sllidar_ros2
+[12.800s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_dependencies-extras.cmake
+[12.802s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_include_directories-extras.cmake
+[12.803s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config.cmake
+[12.805s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config-version.cmake
+[12.806s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/package.xml
+[12.820s] Invoked command in '/home/arno/RoombaV2Onboard/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/sllidar_ros2

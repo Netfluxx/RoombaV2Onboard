@@ -1,0 +1,301 @@
+[0.000000] (-) TimerEvent: {}
+[0.002569] (RoverReceive) JobQueued: {'identifier': 'RoverReceive', 'dependencies': OrderedDict()}
+[0.003033] (roombav2) JobQueued: {'identifier': 'roombav2', 'dependencies': OrderedDict()}
+[0.003616] (rover_stream) JobQueued: {'identifier': 'rover_stream', 'dependencies': OrderedDict()}
+[0.003948] (sllidar_ros2) JobQueued: {'identifier': 'sllidar_ros2', 'dependencies': OrderedDict()}
+[0.004194] (RoverReceive) JobStarted: {'identifier': 'RoverReceive'}
+[0.075117] (roombav2) JobStarted: {'identifier': 'roombav2'}
+[0.095770] (-) TimerEvent: {}
+[0.127100] (rover_stream) JobStarted: {'identifier': 'rover_stream'}
+[0.177891] (sllidar_ros2) JobStarted: {'identifier': 'sllidar_ros2'}
+[0.196028] (-) TimerEvent: {}
+[0.297165] (-) TimerEvent: {}
+[0.398396] (-) TimerEvent: {}
+[0.499597] (-) TimerEvent: {}
+[0.600884] (-) TimerEvent: {}
+[0.702103] (-) TimerEvent: {}
+[0.803400] (-) TimerEvent: {}
+[0.904674] (-) TimerEvent: {}
+[1.005872] (-) TimerEvent: {}
+[1.107075] (-) TimerEvent: {}
+[1.208345] (-) TimerEvent: {}
+[1.309522] (-) TimerEvent: {}
+[1.410776] (-) TimerEvent: {}
+[1.512147] (-) TimerEvent: {}
+[1.613350] (-) TimerEvent: {}
+[1.714522] (-) TimerEvent: {}
+[1.815717] (-) TimerEvent: {}
+[1.916963] (-) TimerEvent: {}
+[2.018156] (-) TimerEvent: {}
+[2.119562] (-) TimerEvent: {}
+[2.220882] (-) TimerEvent: {}
+[2.322083] (-) TimerEvent: {}
+[2.423360] (-) TimerEvent: {}
+[2.524799] (-) TimerEvent: {}
+[2.629260] (-) TimerEvent: {}
+[2.731701] (-) TimerEvent: {}
+[2.832947] (-) TimerEvent: {}
+[2.934167] (-) TimerEvent: {}
+[3.035457] (-) TimerEvent: {}
+[3.136800] (-) TimerEvent: {}
+[3.238010] (-) TimerEvent: {}
+[3.339267] (-) TimerEvent: {}
+[3.440604] (-) TimerEvent: {}
+[3.541745] (-) TimerEvent: {}
+[3.642925] (-) TimerEvent: {}
+[3.744223] (-) TimerEvent: {}
+[3.845444] (-) TimerEvent: {}
+[3.946643] (-) TimerEvent: {}
+[4.047781] (-) TimerEvent: {}
+[4.149069] (-) TimerEvent: {}
+[4.250216] (-) TimerEvent: {}
+[4.351412] (-) TimerEvent: {}
+[4.452687] (-) TimerEvent: {}
+[4.553917] (-) TimerEvent: {}
+[4.655171] (-) TimerEvent: {}
+[4.756422] (-) TimerEvent: {}
+[4.857649] (-) TimerEvent: {}
+[4.958989] (-) TimerEvent: {}
+[5.060481] (-) TimerEvent: {}
+[5.161776] (-) TimerEvent: {}
+[5.263047] (-) TimerEvent: {}
+[5.364348] (-) TimerEvent: {}
+[5.465712] (-) TimerEvent: {}
+[5.566874] (-) TimerEvent: {}
+[5.668125] (-) TimerEvent: {}
+[5.769290] (-) TimerEvent: {}
+[5.870488] (-) TimerEvent: {}
+[5.971665] (-) TimerEvent: {}
+[6.072940] (-) TimerEvent: {}
+[6.174063] (-) TimerEvent: {}
+[6.275296] (-) TimerEvent: {}
+[6.376551] (-) TimerEvent: {}
+[6.477724] (-) TimerEvent: {}
+[6.578956] (-) TimerEvent: {}
+[6.680178] (-) TimerEvent: {}
+[6.781362] (-) TimerEvent: {}
+[6.882548] (-) TimerEvent: {}
+[6.983797] (-) TimerEvent: {}
+[7.085227] (-) TimerEvent: {}
+[7.186471] (-) TimerEvent: {}
+[7.287752] (-) TimerEvent: {}
+[7.389266] (-) TimerEvent: {}
+[7.454078] (sllidar_ros2) JobProgress: {'identifier': 'sllidar_ros2', 'progress': 'cmake'}
+[7.459438] (sllidar_ros2) JobProgress: {'identifier': 'sllidar_ros2', 'progress': 'build'}
+[7.464843] (sllidar_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/arno/RoombaV2Onboard/build/sllidar_ros2', '--', '-j4', '-l4'], 'cwd': '/home/arno/RoombaV2Onboard/build/sllidar_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'arno'), ('SSH_CLIENT', '192.168.113.158 56038 22'), ('LC_TIME', 'de_CH.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/arno'), ('OLDPWD', '/home/arno/RoombaV2Onboard/src'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'de_CH.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/arno/RoombaV2Onboard/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'arno'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/arno/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'de_CH.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'de_CH.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/arno/RoombaV2Onboard/install/sllidar_ros2:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/microver_dusty:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'de_CH.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'de_CH.UTF-8'), ('LC_IDENTIFICATION', 'de_CH.UTF-8'), ('PWD', '/home/arno/RoombaV2Onboard/build/sllidar_ros2'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.113.158 56038 192.168.113.115 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'de_CH.UTF-8'), ('LC_PAPER', 'de_CH.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/arno/RoombaV2Onboard/install/sllidar_ros2:/home/arno/RoombaV2Onboard/install/microver_dusty:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble')]), 'shell': False}
+[7.489534] (-) TimerEvent: {}
+[7.597333] (-) TimerEvent: {}
+[7.698858] (-) TimerEvent: {}
+[7.800566] (-) TimerEvent: {}
+[7.902015] (-) TimerEvent: {}
+[8.004888] (-) TimerEvent: {}
+[8.107744] (-) TimerEvent: {}
+[8.142825] (sllidar_ros2) StdoutLine: {'line': b'[ 10%] Built target sllidar_client\n'}
+[8.183491] (sllidar_ros2) StdoutLine: {'line': b'[100%] Built target sllidar_node\n'}
+[8.208256] (-) TimerEvent: {}
+[8.296669] (sllidar_ros2) CommandEnded: {'returncode': 0}
+[8.308582] (-) TimerEvent: {}
+[8.410489] (-) TimerEvent: {}
+[8.512439] (-) TimerEvent: {}
+[8.614122] (-) TimerEvent: {}
+[8.715823] (-) TimerEvent: {}
+[8.817618] (-) TimerEvent: {}
+[8.920621] (-) TimerEvent: {}
+[9.023261] (-) TimerEvent: {}
+[9.117685] (sllidar_ros2) JobProgress: {'identifier': 'sllidar_ros2', 'progress': 'install'}
+[9.123525] (-) TimerEvent: {}
+[9.206324] (sllidar_ros2) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/arno/RoombaV2Onboard/build/sllidar_ros2'], 'cwd': '/home/arno/RoombaV2Onboard/build/sllidar_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'arno'), ('SSH_CLIENT', '192.168.113.158 56038 22'), ('LC_TIME', 'de_CH.UTF-8'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/arno'), ('OLDPWD', '/home/arno/RoombaV2Onboard/src'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('LC_MONETARY', 'de_CH.UTF-8'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLCON_PREFIX_PATH', '/home/arno/RoombaV2Onboard/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'arno'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/arno/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('LC_ADDRESS', 'de_CH.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('LANG', 'en_US.UTF-8'), ('LC_TELEPHONE', 'de_CH.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/arno/RoombaV2Onboard/install/sllidar_ros2:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/microver_dusty:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'de_CH.UTF-8'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'de_CH.UTF-8'), ('LC_IDENTIFICATION', 'de_CH.UTF-8'), ('PWD', '/home/arno/RoombaV2Onboard/build/sllidar_ros2'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.113.158 56038 192.168.113.115 22'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'de_CH.UTF-8'), ('LC_PAPER', 'de_CH.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/arno/RoombaV2Onboard/install/sllidar_ros2:/home/arno/RoombaV2Onboard/install/microver_dusty:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble')]), 'shell': False}
+[9.225198] (-) TimerEvent: {}
+[9.300435] (sllidar_ros2) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[9.302234] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch\n'}
+[9.303921] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m7_launch.py\n'}
+[9.305211] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a3_launch.py\n'}
+[9.306408] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_c1_launch.py\n'}
+[9.308484] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s1_tcp_launch.py\n'}
+[9.312021] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s2_launch.py\n'}
+[9.326160] (-) TimerEvent: {}
+[9.327260] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a3_launch.py\n'}
+[9.328958] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s2e_launch.py\n'}
+[9.330483] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s3_launch.py\n'}
+[9.331730] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m8_launch.py\n'}
+[9.333684] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s2_launch.py\n'}
+[9.345220] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s3_launch.py\n'}
+[9.346473] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s1_tcp_launch.py\n'}
+[9.348035] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m8_launch.py\n'}
+[9.350011] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a1_launch.py\n'}
+[9.352229] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a1_launch.py\n'}
+[9.365955] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s1_launch.py\n'}
+[9.370706] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_s2e_launch.py\n'}
+[9.372153] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_t1_launch.py\n'}
+[9.373566] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_t1_launch.py\n'}
+[9.374889] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_s1_launch.py\n'}
+[9.376307] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_a2m12_launch.py\n'}
+[9.377703] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m7_launch.py\n'}
+[9.379105] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/view_sllidar_c1_launch.py\n'}
+[9.392663] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/launch/sllidar_a2m12_launch .py\n'}
+[9.395660] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/rviz\n'}
+[9.397257] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/rviz/sllidar_ros2.rviz\n'}
+[9.398598] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/lib/sllidar_ros2/sllidar_node\n'}
+[9.399989] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/lib/sllidar_ros2/sllidar_client\n'}
+[9.401627] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/ament_index/resource_index/package_run_dependencies/sllidar_ros2\n'}
+[9.402877] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/ament_index/resource_index/parent_prefix_path/sllidar_ros2\n'}
+[9.404325] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.sh\n'}
+[9.406826] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/environment/ament_prefix_path.dsv\n'}
+[9.410652] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/environment/path.sh\n'}
+[9.414002] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/environment/path.dsv\n'}
+[9.416771] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/local_setup.bash\n'}
+[9.421566] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/local_setup.sh\n'}
+[9.424485] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/local_setup.zsh\n'}
+[9.427835] (-) TimerEvent: {}
+[9.431684] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/local_setup.dsv\n'}
+[9.437147] (sllidar_ros2) StdoutLine: {'line': b'-- Installing: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/package.dsv\n'}
+[9.438543] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/ament_index/resource_index/packages/sllidar_ros2\n'}
+[9.439838] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[9.441456] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[9.442714] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config.cmake\n'}
+[9.444015] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/cmake/sllidar_ros2Config-version.cmake\n'}
+[9.445382] (sllidar_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/package.xml\n'}
+[9.446755] (sllidar_ros2) CommandEnded: {'returncode': 0}
+[9.528484] (-) TimerEvent: {}
+[9.636818] (-) TimerEvent: {}
+[9.738358] (-) TimerEvent: {}
+[9.840452] (-) TimerEvent: {}
+[9.941982] (-) TimerEvent: {}
+[10.043538] (-) TimerEvent: {}
+[10.146465] (-) TimerEvent: {}
+[10.249617] (-) TimerEvent: {}
+[10.353365] (-) TimerEvent: {}
+[10.452827] (sllidar_ros2) JobEnded: {'identifier': 'sllidar_ros2', 'rc': 0}
+[10.457113] (-) TimerEvent: {}
+[10.558698] (-) TimerEvent: {}
+[10.662330] (-) TimerEvent: {}
+[10.772407] (-) TimerEvent: {}
+[10.884586] (-) TimerEvent: {}
+[11.006227] (-) TimerEvent: {}
+[11.118200] (-) TimerEvent: {}
+[11.220864] (-) TimerEvent: {}
+[11.322508] (-) TimerEvent: {}
+[11.424496] (-) TimerEvent: {}
+[11.527891] (-) TimerEvent: {}
+[11.631363] (-) TimerEvent: {}
+[11.734800] (-) TimerEvent: {}
+[11.838185] (-) TimerEvent: {}
+[11.940875] (-) TimerEvent: {}
+[12.043635] (-) TimerEvent: {}
+[12.147635] (-) TimerEvent: {}
+[12.166295] (RoverReceive) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/RoverReceive', 'build', '--build-base', '/home/arno/RoombaV2Onboard/build/RoverReceive/build', 'install', '--record', '/home/arno/RoombaV2Onboard/build/RoverReceive/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/arno/RoombaV2Onboard/src/RoverReceive', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'arno', 'SSH_CLIENT': '192.168.113.158 56038 22', 'LC_TIME': 'de_CH.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/arno', 'OLDPWD': '/home/arno/RoombaV2Onboard/src', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'de_CH.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'arno', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '1', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/arno/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'de_CH.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'de_CH.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install/sllidar_ros2:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/microver_dusty:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'de_CH.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'de_CH.UTF-8', 'LC_IDENTIFICATION': 'de_CH.UTF-8', 'PWD': '/home/arno/RoombaV2Onboard/build/RoverReceive', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.113.158 56038 192.168.113.115 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/arno/RoombaV2Onboard/build/RoverReceive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'de_CH.UTF-8', 'LC_PAPER': 'de_CH.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install/sllidar_ros2:/home/arno/RoombaV2Onboard/install/microver_dusty'}, 'shell': False}
+[12.230294] (rover_stream) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/rover_stream', 'build', '--build-base', '/home/arno/RoombaV2Onboard/build/rover_stream/build', 'install', '--record', '/home/arno/RoombaV2Onboard/build/rover_stream/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/arno/RoombaV2Onboard/src/rover_stream', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'arno', 'SSH_CLIENT': '192.168.113.158 56038 22', 'LC_TIME': 'de_CH.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/arno', 'OLDPWD': '/home/arno/RoombaV2Onboard/src', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'de_CH.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'arno', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '1', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/arno/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'de_CH.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'de_CH.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install/sllidar_ros2:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/microver_dusty:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'de_CH.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'de_CH.UTF-8', 'LC_IDENTIFICATION': 'de_CH.UTF-8', 'PWD': '/home/arno/RoombaV2Onboard/build/rover_stream', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.113.158 56038 192.168.113.115 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/arno/RoombaV2Onboard/build/rover_stream/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'de_CH.UTF-8', 'LC_PAPER': 'de_CH.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install/sllidar_ros2:/home/arno/RoombaV2Onboard/install/microver_dusty'}, 'shell': False}
+[12.248230] (-) TimerEvent: {}
+[12.256917] (roombav2) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/roombav2', 'build', '--build-base', '/home/arno/RoombaV2Onboard/build/roombav2/build', 'install', '--record', '/home/arno/RoombaV2Onboard/build/roombav2/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/arno/RoombaV2Onboard/src/roombav2', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'arno', 'SSH_CLIENT': '192.168.113.158 56038 22', 'LC_TIME': 'de_CH.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/arno', 'OLDPWD': '/home/arno/RoombaV2Onboard/src', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'de_CH.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'arno', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '1', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/arno/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'de_CH.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'de_CH.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install/sllidar_ros2:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/microver_dusty:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'de_CH.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'de_CH.UTF-8', 'LC_IDENTIFICATION': 'de_CH.UTF-8', 'PWD': '/home/arno/RoombaV2Onboard/build/roombav2', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.113.158 56038 192.168.113.115 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/arno/RoombaV2Onboard/build/roombav2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'de_CH.UTF-8', 'LC_PAPER': 'de_CH.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install/sllidar_ros2:/home/arno/RoombaV2Onboard/install/microver_dusty'}, 'shell': False}
+[12.348567] (-) TimerEvent: {}
+[12.452146] (-) TimerEvent: {}
+[12.553413] (-) TimerEvent: {}
+[12.654904] (-) TimerEvent: {}
+[12.756503] (-) TimerEvent: {}
+[12.857903] (-) TimerEvent: {}
+[12.959239] (-) TimerEvent: {}
+[13.060692] (-) TimerEvent: {}
+[13.161934] (-) TimerEvent: {}
+[13.265288] (-) TimerEvent: {}
+[13.369027] (-) TimerEvent: {}
+[13.472451] (-) TimerEvent: {}
+[13.575031] (-) TimerEvent: {}
+[13.677510] (-) TimerEvent: {}
+[13.779235] (-) TimerEvent: {}
+[13.882742] (-) TimerEvent: {}
+[13.985686] (-) TimerEvent: {}
+[14.088648] (-) TimerEvent: {}
+[14.191625] (-) TimerEvent: {}
+[14.294962] (-) TimerEvent: {}
+[14.396309] (-) TimerEvent: {}
+[14.497760] (-) TimerEvent: {}
+[14.599231] (-) TimerEvent: {}
+[14.702171] (-) TimerEvent: {}
+[14.805653] (-) TimerEvent: {}
+[14.908893] (-) TimerEvent: {}
+[15.011126] (-) TimerEvent: {}
+[15.114691] (-) TimerEvent: {}
+[15.218184] (-) TimerEvent: {}
+[15.321510] (-) TimerEvent: {}
+[15.422821] (-) TimerEvent: {}
+[15.524302] (-) TimerEvent: {}
+[15.627288] (-) TimerEvent: {}
+[15.728702] (-) TimerEvent: {}
+[15.831257] (-) TimerEvent: {}
+[15.923392] (roombav2) StdoutLine: {'line': b'running egg_info\n'}
+[15.925353] (RoverReceive) StdoutLine: {'line': b'running egg_info\n'}
+[15.927029] (rover_stream) StdoutLine: {'line': b'running egg_info\n'}
+[15.930153] (roombav2) StdoutLine: {'line': b'writing ../../build/roombav2/roombav2.egg-info/PKG-INFO\n'}
+[15.931381] (-) TimerEvent: {}
+[15.939587] (RoverReceive) StdoutLine: {'line': b'writing ../../build/RoverReceive/RoverReceive.egg-info/PKG-INFO\n'}
+[15.942766] (rover_stream) StdoutLine: {'line': b'writing ../../build/rover_stream/rover_stream.egg-info/PKG-INFO\n'}
+[15.945252] (RoverReceive) StdoutLine: {'line': b'writing dependency_links to ../../build/RoverReceive/RoverReceive.egg-info/dependency_links.txt\n'}
+[15.947081] (roombav2) StdoutLine: {'line': b'writing dependency_links to ../../build/roombav2/roombav2.egg-info/dependency_links.txt\n'}
+[15.949136] (rover_stream) StdoutLine: {'line': b'writing dependency_links to ../../build/rover_stream/rover_stream.egg-info/dependency_links.txt\n'}
+[15.950434] (RoverReceive) StdoutLine: {'line': b'writing entry points to ../../build/RoverReceive/RoverReceive.egg-info/entry_points.txt\n'}
+[15.951833] (roombav2) StdoutLine: {'line': b'writing entry points to ../../build/roombav2/roombav2.egg-info/entry_points.txt\n'}
+[15.953317] (roombav2) StdoutLine: {'line': b'writing requirements to ../../build/roombav2/roombav2.egg-info/requires.txt\n'}
+[15.954525] (rover_stream) StdoutLine: {'line': b'writing entry points to ../../build/rover_stream/rover_stream.egg-info/entry_points.txt\n'}
+[15.955953] (roombav2) StdoutLine: {'line': b'writing top-level names to ../../build/roombav2/roombav2.egg-info/top_level.txt\n'}
+[15.957480] (RoverReceive) StdoutLine: {'line': b'writing requirements to ../../build/RoverReceive/RoverReceive.egg-info/requires.txt\n'}
+[15.959001] (rover_stream) StdoutLine: {'line': b'writing requirements to ../../build/rover_stream/rover_stream.egg-info/requires.txt\n'}
+[15.960667] (rover_stream) StdoutLine: {'line': b'writing top-level names to ../../build/rover_stream/rover_stream.egg-info/top_level.txt\n'}
+[15.962023] (RoverReceive) StdoutLine: {'line': b'writing top-level names to ../../build/RoverReceive/RoverReceive.egg-info/top_level.txt\n'}
+[15.966012] (rover_stream) StdoutLine: {'line': b"reading manifest file '../../build/rover_stream/rover_stream.egg-info/SOURCES.txt'\n"}
+[15.968682] (roombav2) StdoutLine: {'line': b"reading manifest file '../../build/roombav2/roombav2.egg-info/SOURCES.txt'\n"}
+[15.969726] (RoverReceive) StdoutLine: {'line': b"reading manifest file '../../build/RoverReceive/RoverReceive.egg-info/SOURCES.txt'\n"}
+[15.971356] (RoverReceive) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[15.976286] (rover_stream) StdoutLine: {'line': b"writing manifest file '../../build/rover_stream/rover_stream.egg-info/SOURCES.txt'\n"}
+[15.980842] (rover_stream) StdoutLine: {'line': b'running build\n'}
+[15.982317] (rover_stream) StdoutLine: {'line': b'running build_py\n'}
+[15.983817] (RoverReceive) StdoutLine: {'line': b"writing manifest file '../../build/RoverReceive/RoverReceive.egg-info/SOURCES.txt'\n"}
+[15.987033] (RoverReceive) StdoutLine: {'line': b'running build\n'}
+[15.989624] (RoverReceive) StdoutLine: {'line': b'running build_py\n'}
+[15.990997] (roombav2) StdoutLine: {'line': b"writing manifest file '../../build/roombav2/roombav2.egg-info/SOURCES.txt'\n"}
+[15.992574] (roombav2) StdoutLine: {'line': b'running build\n'}
+[15.993895] (roombav2) StdoutLine: {'line': b'running build_py\n'}
+[15.995047] (rover_stream) StdoutLine: {'line': b'running install\n'}
+[15.996282] (RoverReceive) StdoutLine: {'line': b'running install\n'}
+[15.997388] (roombav2) StdoutLine: {'line': b'running install\n'}
+[15.998742] (RoverReceive) StdoutLine: {'line': b'running install_lib\n'}
+[15.999925] (rover_stream) StdoutLine: {'line': b'running install_lib\n'}
+[16.002356] (roombav2) StdoutLine: {'line': b'running install_lib\n'}
+[16.005077] (rover_stream) StdoutLine: {'line': b'running install_data\n'}
+[16.006412] (RoverReceive) StdoutLine: {'line': b'running install_data\n'}
+[16.007746] (RoverReceive) StdoutLine: {'line': b'running install_egg_info\n'}
+[16.009827] (rover_stream) StdoutLine: {'line': b'running install_egg_info\n'}
+[16.011024] (roombav2) StdoutLine: {'line': b'running install_data\n'}
+[16.012395] (roombav2) StdoutLine: {'line': b'copying config/slam_toolbox_params.yaml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config\n'}
+[16.014362] (roombav2) StdoutLine: {'line': b'running install_egg_info\n'}
+[16.023632] (rover_stream) StdoutLine: {'line': b"removing '/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages/rover_stream-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[16.025043] (RoverReceive) StdoutLine: {'line': b"removing '/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[16.027647] (RoverReceive) StdoutLine: {'line': b'Copying ../../build/RoverReceive/RoverReceive.egg-info to /home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive-0.0.0-py3.10.egg-info\n'}
+[16.029376] (rover_stream) StdoutLine: {'line': b'Copying ../../build/rover_stream/rover_stream.egg-info to /home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages/rover_stream-0.0.0-py3.10.egg-info\n'}
+[16.031859] (-) TimerEvent: {}
+[16.035105] (roombav2) StdoutLine: {'line': b"removing '/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages/roombav2-0.0.1-py3.10.egg-info' (and everything under it)\n"}
+[16.038835] (roombav2) StdoutLine: {'line': b'Copying ../../build/roombav2/roombav2.egg-info to /home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages/roombav2-0.0.1-py3.10.egg-info\n'}
+[16.042733] (RoverReceive) StdoutLine: {'line': b'running install_scripts\n'}
+[16.044046] (rover_stream) StdoutLine: {'line': b'running install_scripts\n'}
+[16.053972] (roombav2) StdoutLine: {'line': b'running install_scripts\n'}
+[16.132362] (-) TimerEvent: {}
+[16.236488] (-) TimerEvent: {}
+[16.271325] (rover_stream) StdoutLine: {'line': b'Installing webrtc_streamer script to /home/arno/RoombaV2Onboard/install/rover_stream/lib/rover_stream\n'}
+[16.274746] (roombav2) StdoutLine: {'line': b'Installing encoder_reader script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2\n'}
+[16.278031] (roombav2) StdoutLine: {'line': b'Installing nav2_motor_controller script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2\n'}
+[16.283187] (RoverReceive) StdoutLine: {'line': b'Installing receive_node script to /home/arno/RoombaV2Onboard/install/RoverReceive/lib/RoverReceive\n'}
+[16.285853] (rover_stream) StdoutLine: {'line': b"writing list of installed files to '/home/arno/RoombaV2Onboard/build/rover_stream/install.log'\n"}
+[16.288704] (RoverReceive) StdoutLine: {'line': b"writing list of installed files to '/home/arno/RoombaV2Onboard/build/RoverReceive/install.log'\n"}
+[16.290721] (roombav2) StdoutLine: {'line': b"writing list of installed files to '/home/arno/RoombaV2Onboard/build/roombav2/install.log'\n"}
+[16.336951] (-) TimerEvent: {}
+[16.439378] (-) TimerEvent: {}
+[16.541838] (-) TimerEvent: {}
+[16.643332] (RoverReceive) CommandEnded: {'returncode': 0}
+[16.646488] (-) TimerEvent: {}
+[16.713371] (RoverReceive) JobEnded: {'identifier': 'RoverReceive', 'rc': 0}
+[16.722138] (roombav2) CommandEnded: {'returncode': 0}
+[16.747079] (-) TimerEvent: {}
+[16.782242] (roombav2) JobEnded: {'identifier': 'roombav2', 'rc': 0}
+[16.792406] (rover_stream) CommandEnded: {'returncode': 0}
+[16.848706] (rover_stream) JobEnded: {'identifier': 'rover_stream', 'rc': 0}
+[16.854523] (-) TimerEvent: {}
+[16.855206] (-) EventReactorShutdown: {}

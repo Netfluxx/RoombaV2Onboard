@@ -1,0 +1,24 @@
+# slam_toolbox_params.yaml
+slam_toolbox:
+  ros__parameters:
+    # General parameters
+    map_frame: map
+    odom_frame: odom
+    scan_topic: /scan
+    base_frame: base_link
+    max_range: 25.0
+    minimum_travel_distance: 0.5
+    minimum_travel_heading: 0.35
+    resolution: 0.05
+
+    # Loop closure parameters
+    matcher_type: s2d
+    solver_type: g2o
+    closure_scan_max_distance: 1.0
+    enable_interactive_mode: false
+    enable_loop_closure: true
+
+    # Other parameters
+    enable_imu: false
+    queue_size: 20
+    buffer_duration: 2.0
