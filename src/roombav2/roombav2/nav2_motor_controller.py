@@ -27,11 +27,14 @@ class Nav2MotorControl(Node):
                                                depth=1)
         self.subscription = self.create_subscription(
             Twist,
-            '/cmd_vel',
+            '/joystick_cmd_vel',
             self.message_callback,
             10
         )
 
+    def clamp_pwm(self, pwm_val):
+        return max(min(pwm_val, 255), -255)
+    
     def detect_serial_port(self):
         ports = serial.tools.list_ports.comports()
         for port in ports:
@@ -45,6 +48,26 @@ class Nav2MotorControl(Node):
                     self.get_logger().error(f"Failed to open serial port {port.device}: {e}")
         return None
 
+    def compute_kinematics(self, lin_vel, ang_vel):
+        WHEEL_RADIUS = 0.15 #m
+        WHEEL_DIST =   0.3  #m
+        MU = 0.15   
+        MASS = 4 #kg
+        MAX_LIN_SPEED = 4#m/s probably???
+        MAX_ANG_SPEED = 3.14 #rad/sec = 180 in 1 sec, seems like a reasonnable max speed
+
+        corr_factor =  1 + (MU*WHEEL_DIST*ang_vel/(2*MASS*9.81))
+
+        speed_left =  (lin_vel - (WHEEL_DIST*ang_vel/2))/corr_factor
+        speed_right = (lin_vel + (WHEEL_DIST*ang_vel/2))/corr_factor
+
+        #estim_lin_vel = (speed_left + speed_right) / 2
+        #estim_ang_vwl = (speed_right - speed_left) / WHEEL_DIST
+
+        pwm_left = clamp_pwm((speed_left/MAX_LIN_SPEED)*255)
+        pwm_right = clamp_pwm((speed_right/MAX_LIN_SPEED)*255)
+        return [pwm_left, pwm_right]
+    
     def message_callback(self, msg):
         lin_vel = msg.linear.x
         ang_vel = msg.angular.z
@@ -67,29 +90,10 @@ class Nav2MotorControl(Node):
             print("----------------")
         
 
-    def clamp_pwm(self, pwm_val):
-        return max(min(pwm_val, 255), -255)
+    
     
 
-    def compute_kinematics(self, lin_vel, ang_vel):
-        WHEEL_RADIUS = 0.15 #m
-        WHEEL_DIST =   0.3  #m
-        MU = 0.15   
-        MASS = 4 #kg
-        MAX_LIN_SPEED = 4#m/s probably???
-        MAX_ANG_SPEED = 3.14 #rad/sec = 180 in 1 sec, seems like a reasonnable max speed
 
-        corr_factor =  1 + (MU*WHEEL_DIST*ang_vel/(2*MASS*9.81))
-
-        speed_left =  (lin_vel - (WHEEL_DIST*ang_vel/2))/corr_factor
-        speed_right = (lin_vel + (WHEEL_DIST*ang_vel/2))/corr_factor
-
-        #estim_lin_vel = (speed_left + speed_right) / 2
-        #estim_ang_vwl = (speed_right - speed_left) / WHEEL_DIST
-
-        pwm_left = clamp_pwm((speed_left/MAX_LIN_SPEED)*255)
-        pwm_right = clamp_pwm((speed_right/MAX_LIN_SPEED)*255)
-        return [pwm_left, pwm_right]
 
 
 def main(args=None):

@@ -1,32 +1,42 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 package_name = 'roombav2'
 
 setup(
     name=package_name,
-    version='0.0.1',
-    packages=[package_name],
-    data_files=[
-        ('share/' + package_name, ['package.xml']),
-        ('share/' + package_name + '/launch', [
-            'launch/nav2_bringup.launch.py',
-            'launch/microver.launch.py'
-        ]),
-        ('share/' + package_name + '/config', ['config/amcl_params.yaml', 'config/costmap_params.yaml', 'config/planner_params.yaml', 'config/slam_toolbox_params.yaml']),
+    version='0.0.0',
+    packages=find_packages(),
+    # data_files=[
+    #     ('share/' + package_name, ['package.xml']),
+    #     ('share/' + package_name, [package_name+'/encoder_reader.py', 
+    #                                package_name+'/joystick_reader.py', 
+    #                                package_name+'/nav2_motor_controller.py'])
+    #     ('share/' + package_name + '/launch', [
+    #         'launch/nav2_bringup.launch.py',
+    #         'launch/microver.launch.py'
+    #     ]),
+    #     ('share/' + package_name + '/config', ['config/amcl_params.yaml', 'config/costmap_params.yaml', 'config/planner_params.yaml', 'config/slam_toolbox_params.yaml']),
+    #     ('share/' + package_name + '/models', ['models/microver.urdf.xacro', 'models/constants.xacro', 'models/inertial_macros.xacro']),
+    # ],
+
         #('share/' + package_name + '/maps', ['maps/some_map.pgm']),
-        ('share/' + package_name + '/models', ['models/microver.urdf.xacro', 'models/constants.xacro', 'models/inertial_macros.xacro']),
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='your_name',
+    maintainer='arno',
     maintainer_email='arno.laurie@epfl.ch',
-    description='Description of the package',
+    description='receives ps4 joystick inputs from the CS and sends the wheel speds to the master arduino according to differential drive kinematics',
     license='Apache License 2.0',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'encoder_reader = roombav2.encoder_reader:main',
-            'nav2_motor_controller = roombav2.nav2_motor_controller:main'
+            'nav2_motor_controller = roombav2.nav2_motor_controller:main',
+            'joystick_motor_controller = roombav2.joystick_motor_controller:main',
         ],
     },
 )
