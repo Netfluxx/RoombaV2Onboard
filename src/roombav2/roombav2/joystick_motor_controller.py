@@ -36,12 +36,12 @@ class JoystickMotorControl(Node):
         for port in ports:
             if 'USB' in port.description and '1A86:7523' in port.hwid: #master arduino hwid number
                 try:
-                    print(port.hwid)
+                    #print(port.hwid)
                     serial_port = serial.Serial(port.device, 9600, timeout=1)
-                    self.get_logger().info(f"Connected to serial port: {port.device}")
+                    self.get_logger().info(f"CONNECTED to serial port: {port.device}")
                     return serial_port
                 except serial.SerialException as e:
-                    self.get_logger().error(f"Failed to open serial port {port.device}: {e}")
+                    self.get_logger().error(f"FAILED to open serial port {port.device}: {e}")
         return None
     
     def message_callback(self, msg):
@@ -61,7 +61,7 @@ class JoystickMotorControl(Node):
         if received_from_arduino:
 
             curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
-            self.get_logger().info(f"Rover Log @{curr_time}: {received_from_arduino}")
+            self.get_logger().info(f"Rover Master Nano @{curr_time}: {received_from_arduino}")
             print("----------------")
     
     def compute_kinematics(self, lin_vel, ang_vel):
