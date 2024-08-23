@@ -1,5 +1,6 @@
 #RPi Nav2 Motor Controller Node
-
+#subcribes to /cmd_vel (twist message coming from nav2) and applies the rover's kinematics
+#and sends the speeds to the master arduino
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
@@ -27,7 +28,7 @@ class Nav2MotorControl(Node):
                                                depth=1)
         self.subscription = self.create_subscription(
             Twist,
-            '/joystick_cmd_vel',
+            '/cmd_vel',
             self.message_callback,
             10
         )
