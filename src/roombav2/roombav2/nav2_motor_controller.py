@@ -32,6 +32,10 @@ class Nav2MotorControl(Node):
             10
         )
 
+        #add timer to read the serial port for messages from the arduino
+        timer_period = 0.01  # seconds
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+
     def clamp_pwm(self, pwm_val):
         return max(min(pwm_val, 255), -255)
     
@@ -73,11 +77,12 @@ class Nav2MotorControl(Node):
         ang_vel = msg.angular.z
         pwms = compute_kinematics(lin_vel, ang_vel)
         
-        msg = f"{pwms[0]}, {pwms[1]}"
-        self.serial_port.write((msg + '\n').encode('utf-8'))    #sends pwm left, pwm right. Example : 145, -145
+        msg = f"{pwms[0]:.2f},{pwms[1]:.2f},{pwms[0]:.2f},{pwms[1]:.2f}"
+        self.serial_port.write((msg + '\n').encode('utf-8'))
 
         received_from_arduino = self.serial_port.readline().decode('utf-8').strip()
-        #in the form: Master ACK, FR_ACK, FL_ACK, BR_ACK, BL_ACK, FR_SPEED, FL_SPEED, BR_SPEED, BL_SPEED
+        #in the form: FR_SPEED, FL_SPEED, BR_SPEED, BL_SPEED
+
         
         if received_from_arduino:
             #master_log = received_from_arduino.split(",")
@@ -88,13 +93,13 @@ class Nav2MotorControl(Node):
             curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
             self.get_logger().info(f"Rover Log @{curr_time}: {received_from_arduino}")
             print("----------------")
+    def timer_callback():
+        received_from_arduino = self.serial_port.readline().decode('utf-8').strip()
+        if received_from_arduino:
+            curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
+            self.get_logger().info(f"Rover Master Nano @{curr_time}: {received_from_arduino}")
+            print("----------------")
         
-
-    
-    
-
-
-
 
 def main(args=None):
     rclpy.init(args=args)
