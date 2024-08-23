@@ -68,16 +68,14 @@ class Nav2MotorControl(Node):
         #estim_lin_vel = (speed_left + speed_right) / 2
         #estim_ang_vwl = (speed_right - speed_left) / WHEEL_DIST
 
-        pwm_left = clamp_pwm((speed_left/MAX_LIN_SPEED)*255)
-        pwm_right = clamp_pwm((speed_right/MAX_LIN_SPEED)*255)
-        return [pwm_left, pwm_right]
+        return [speed_right, speed_left]
     
     def message_callback(self, msg):
         lin_vel = msg.linear.x
         ang_vel = msg.angular.z
-        pwms = compute_kinematics(lin_vel, ang_vel)
+        speeds_to_send = compute_kinematics(lin_vel, ang_vel)
         
-        msg = f"{pwms[0]:.2f},{pwms[1]:.2f},{pwms[0]:.2f},{pwms[1]:.2f}"
+        msg = f"{speeds_to_send[0]:.2f},{speeds_to_send[1]:.2f},{speeds_to_send[0]:.2f},{speeds_to_send[1]:.2f}"
         self.serial_port.write((msg + '\n').encode('utf-8'))
 
         received_from_arduino = self.serial_port.readline().decode('utf-8').strip()
