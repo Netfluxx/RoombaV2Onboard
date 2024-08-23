@@ -19,14 +19,17 @@ class JoystickMotorControl(Node):
         self.serial_port = self.detect_serial_port()
 
         if not self.serial_port:
-            self.get_logger().error("No valid serial port found")
-            raise RuntimeError("No valid serial port found")
+            self.get_logger().error("NO VALID SERIAL PORT FOUND THE MASTER ARDUINO IS COOOOOKED")
+            raise RuntimeError("VALID PORT FOUND LETS F*CKING GOOOO")
+
+        self.wheel_speeds_publisher = self.create_publisher(String, '/wheel_speeds', 10)
 
         # Subscribe to the input topic
         #reliability best effort qos profile for the subscriber (UDP-like)
         self.qos_policy = rclpy.qos.QoSProfile(reliability=rclpy.qos.ReliabilityPolicy.BEST_EFFORT,
                                                 history=rclpy.qos.HistoryPolicy.KEEP_LAST,
                                                 depth=5)
+        
         self.subscription = self.create_subscription(
             Twist,
             '/joystick_cmd_vel',
@@ -69,14 +72,21 @@ class JoystickMotorControl(Node):
         if received_from_arduino:
             curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
             self.get_logger().info(f"Rover Master Nano @{curr_time}: {received_from_arduino}")
-            print("----------------")
+            self.get_logger().info(f"----------------")
 
     def timer_callback(self):
         received_from_arduino = self.serial_port.readline().decode('utf-8').strip()
         if received_from_arduino:
             curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
             self.get_logger().info(f"Rover Master Nano @{curr_time}: {received_from_arduino}")
-            print("----------------")
+
+            required_terms = ["FRONT RIGHT", "FRONT LEFT", "BACK RIGHT", "BACK LEFT"]  #parsing the incoming arduino logs 
+            if all(term in received_from_arduino for term in required_terms):
+                wheel_speeds_msg = received_from_arduino
+                self.wheel_speeds_publisher.publish(wheel_speeds_msg)
+
+
+            self.get_logger().info(f"----------------")
     
     def compute_kinematics(self, lin_vel, ang_vel):
     
