@@ -2,6 +2,8 @@
 #speed values to each wheel of the rover in m/s.
 
 
+#JOYSTICK MOTOR CONTROLLER DEBUGGGGG TESTINGSSGSGSGDSGDSFDS
+
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
@@ -31,6 +33,11 @@ class JoystickMotorControl(Node):
             self.message_callback,
             10
         )
+
+        #add timer to read the serial port for messages from the arduino
+        timer_period = 0.01  # seconds
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+
     def detect_serial_port(self):
         ports = serial.tools.list_ports.comports()
         for port in ports:
@@ -49,7 +56,8 @@ class JoystickMotorControl(Node):
         ang_vel = msg.angular.z
         wheel_vels = self.compute_kinematics(lin_vel, ang_vel)
 
-        #format speed values to 2 decimal points and send as string : front_right_speed,front_left_speed,back_right_speed,back_left_speed
+        #format speed values to 2 decimal points and send as string : 
+        #front_right_speed,front_left_speed,back_right_speed,back_left_speed
         
         msg = f"{wheel_vels[0]:.2f},{wheel_vels[1]:.2f},{wheel_vels[2]:.2f},{wheel_vels[3]:.2f}"
 
@@ -59,7 +67,13 @@ class JoystickMotorControl(Node):
         received_from_arduino = self.serial_port.readline().decode('utf-8').strip()
     
         if received_from_arduino:
+            curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
+            self.get_logger().info(f"Rover Master Nano @{curr_time}: {received_from_arduino}")
+            print("----------------")
 
+    def timer_callback(self):
+        received_from_arduino = self.serial_port.readline().decode('utf-8').strip()
+        if received_from_arduino:
             curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
             self.get_logger().info(f"Rover Master Nano @{curr_time}: {received_from_arduino}")
             print("----------------")
