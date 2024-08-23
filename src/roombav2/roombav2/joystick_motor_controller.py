@@ -99,7 +99,7 @@ def main(args=None):
     except KeyboardInterrupt:
         pass
     finally:
-        #node.serial_port.close()
+        node.serial_port.close()
         rclpy.shutdown()
 
 if __name__ == '__main__':
