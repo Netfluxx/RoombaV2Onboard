@@ -6,30 +6,39 @@ setup(
     name=package_name,
     version='0.0.0',
     packages=find_packages(),
-    # data_files=[
-    #     ('share/' + package_name, ['package.xml']),
-    #     ('share/' + package_name, [package_name+'/encoder_reader.py', 
-    #                                package_name+'/joystick_reader.py', 
-    #                                package_name+'/nav2_motor_controller.py'])
-    #     ('share/' + package_name + '/launch', [
-    #         'launch/nav2_bringup.launch.py',
-    #         'launch/microver.launch.py'
-    #     ]),
-    #     ('share/' + package_name + '/config', ['config/amcl_params.yaml', 'config/costmap_params.yaml', 'config/planner_params.yaml', 'config/slam_toolbox_params.yaml']),
-    #     ('share/' + package_name + '/models', ['models/microver.urdf.xacro', 'models/constants.xacro', 'models/inertial_macros.xacro']),
-    # ],
-
-        #('share/' + package_name + '/maps', ['maps/some_map.pgm']),
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name, [
+            package_name+'/encoder_reader.py', 
+            package_name+'/joystick_motor_controller.py', 
+            package_name+'/nav2_motor_controller.py'
+        ]),
+        ('share/' + package_name + '/launch', [
+            'launch/nav2_bringup.launch.py',
+            'launch/microver.launch.py',
+        ]),
+        ('share/' + package_name + '/config', [
+            'config/amcl_params.yaml', 
+            'config/costmap_params.yaml', 
+            'config/planner_params.yaml', 
+            'config/slam_toolbox_params.yaml'
+        ]),
+        ('share/' + package_name + '/models', [
+            'models/microver.urdf.xacro', 
+            'models/constants.xacro', 
+            'models/inertial_macros.xacro'
+        ]),
+        # ('share/' + package_name + '/maps', [
+        #     'maps/some_map.pgm'
+        # ]),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='arno',
     maintainer_email='arno.laurie@epfl.ch',
-    description='receives ps4 joystick inputs from the CS and sends the wheel speds to the master arduino according to differential drive kinematics',
+    description='Receives PS4 joystick inputs from the CS and sends the wheel speeds to the master Arduino according to differential drive kinematics.',
     license='Apache License 2.0',
     tests_require=['pytest'],
     entry_points={

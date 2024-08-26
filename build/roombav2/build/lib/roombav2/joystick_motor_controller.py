@@ -2,6 +2,8 @@
 #speed values to each wheel of the rover in m/s.
 
 
+#JOYSTICK MOTOR CONTROLLER DEBUGGGGG TESTINGSSGSGSGDSGDSFDS
+
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
@@ -17,31 +19,39 @@ class JoystickMotorControl(Node):
         self.serial_port = self.detect_serial_port()
 
         if not self.serial_port:
-            self.get_logger().error("No valid serial port found")
-            raise RuntimeError("No valid serial port found")
+            self.get_logger().error("NO VALID SERIAL PORT FOUND THE MASTER ARDUINO IS COOOOOKED")
+            raise RuntimeError("VALID PORT FOUND LETS F*CKING GOOOO")
+
+        self.wheel_speeds_publisher = self.create_publisher(String, '/wheel_speeds', 10)
 
         # Subscribe to the input topic
         #reliability best effort qos profile for the subscriber (UDP-like)
         self.qos_policy = rclpy.qos.QoSProfile(reliability=rclpy.qos.ReliabilityPolicy.BEST_EFFORT,
                                                 history=rclpy.qos.HistoryPolicy.KEEP_LAST,
                                                 depth=5)
+        
         self.subscription = self.create_subscription(
             Twist,
             '/joystick_cmd_vel',
             self.message_callback,
             10
         )
+
+        #add timer to read the serial port for messages from the arduino
+        timer_period = 0.01  # seconds
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+
     def detect_serial_port(self):
         ports = serial.tools.list_ports.comports()
         for port in ports:
             if 'USB' in port.description and '1A86:7523' in port.hwid: #master arduino hwid number
                 try:
-                    print(port.hwid)
+                    #print(port.hwid)
                     serial_port = serial.Serial(port.device, 9600, timeout=1)
-                    self.get_logger().info(f"Connected to serial port: {port.device}")
+                    self.get_logger().info(f"CONNECTED to serial port: {port.device}")
                     return serial_port
                 except serial.SerialException as e:
-                    self.get_logger().error(f"Failed to open serial port {port.device}: {e}")
+                    self.get_logger().error(f"FAILED to open serial port {port.device}: {e}")
         return None
     
     def message_callback(self, msg):
@@ -49,7 +59,8 @@ class JoystickMotorControl(Node):
         ang_vel = msg.angular.z
         wheel_vels = self.compute_kinematics(lin_vel, ang_vel)
 
-        #format speed values to 2 decimal points and send as string : front_right_speed,front_left_speed,back_right_speed,back_left_speed
+        #format speed values to 2 decimal points and send as string : 
+        #front_right_speed,front_left_speed,back_right_speed,back_left_speed
         
         msg = f"{wheel_vels[0]:.2f},{wheel_vels[1]:.2f},{wheel_vels[2]:.2f},{wheel_vels[3]:.2f}"
 
@@ -59,10 +70,23 @@ class JoystickMotorControl(Node):
         received_from_arduino = self.serial_port.readline().decode('utf-8').strip()
     
         if received_from_arduino:
-
             curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
-            self.get_logger().info(f"Rover Log @{curr_time}: {received_from_arduino}")
-            print("----------------")
+            self.get_logger().info(f"Rover Master Nano @{curr_time}: {received_from_arduino}")
+            self.get_logger().info(f"----------------")
+
+    def timer_callback(self):
+        received_from_arduino = self.serial_port.readline().decode('utf-8').strip()
+        if received_from_arduino:
+            curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
+            self.get_logger().info(f"Rover Master Nano @{curr_time}: {received_from_arduino}")
+
+            required_terms = ["FRONT RIGHT", "FRONT LEFT", "BACK RIGHT", "BACK LEFT"]  #parsing the incoming arduino logs 
+            if all(term in received_from_arduino for term in required_terms):
+                wheel_speeds_msg = received_from_arduino
+                self.wheel_speeds_publisher.publish(wheel_speeds_msg)
+
+
+            self.get_logger().info(f"----------------")
     
     def compute_kinematics(self, lin_vel, ang_vel):
     
@@ -85,7 +109,7 @@ def main(args=None):
     except KeyboardInterrupt:
         pass
     finally:
-        #node.serial_port.close()
+        node.serial_port.close()
         rclpy.shutdown()
 
 if __name__ == '__main__':

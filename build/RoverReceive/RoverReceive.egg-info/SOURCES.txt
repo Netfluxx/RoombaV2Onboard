@@ -1,4 +1,3 @@
-LICENSE
 package.xml
 setup.cfg
 setup.py
@@ -11,7 +10,11 @@ setup.py
 ../../build/RoverReceive/RoverReceive.egg-info/zip-safe
 RoverReceive/__init__.py
 RoverReceive/receive_node.py
+RoverReceive.egg-info/PKG-INFO
+RoverReceive.egg-info/SOURCES.txt
+RoverReceive.egg-info/dependency_links.txt
+RoverReceive.egg-info/entry_points.txt
+RoverReceive.egg-info/requires.txt
+RoverReceive.egg-info/top_level.txt
+RoverReceive.egg-info/zip-safe
 resource/RoverReceive
-test/test_copyright.py
-test/test_flake8.py
-test/test_pep257.py

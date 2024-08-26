@@ -43,10 +43,10 @@ def generate_launch_description():
 
     lidar_launch_include = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([lidar_launch_file_path]),
-        launch_arguments={'parameter_name': 'parameter_value'}.items()  # Adjust these as necessary
+        launch_arguments={'parameter_name': 'parameter_value'}.items()
     )
 
-    static_tf_odom_base = Node(
+    static_tf_odom_base = Node(  #should use robot_localization package with ekf.yaml
         package='tf2_ros',
         executable='static_transform_publisher',
         name='static_tf_pub_odom_to_base_link',
@@ -57,7 +57,7 @@ def generate_launch_description():
         package='tf2_ros',
         executable='static_transform_publisher',
         name='static_tf_pub_base_to_lidar_link',
-        arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'laser']  # x, y, z, yaw, pitch, roll
+        arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'lidar_link']  # x, y, z, yaw, pitch, roll
     )
 
     wtf_is_this = Node(
@@ -66,6 +66,8 @@ def generate_launch_description():
         name='scan_to_map',
         arguments=['0', '0', '0', '0', '0', '0', 'map', 'scan']  # x, y, z, yaw, pitch, roll
     )
+
+
     return LaunchDescription([
         DeclareLaunchArgument(
             'model',
@@ -82,6 +84,7 @@ def generate_launch_description():
         slam_toolbox_node,
         static_tf_odom_base,
         static_tf_base_lidar,
-        lidar_launch_include  # Add this line to include the Lidar launch
+        wtf_is_this,
+        lidar_launch_include
     ])
 

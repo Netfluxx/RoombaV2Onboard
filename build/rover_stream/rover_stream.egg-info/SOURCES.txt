@@ -11,6 +11,10 @@ setup.py
 resource/rover_stream
 rover_stream/__init__.py
 rover_stream/webrtc_streamer.py
-test/test_copyright.py
-test/test_flake8.py
-test/test_pep257.py
+rover_stream.egg-info/PKG-INFO
+rover_stream.egg-info/SOURCES.txt
+rover_stream.egg-info/dependency_links.txt
+rover_stream.egg-info/entry_points.txt
+rover_stream.egg-info/requires.txt
+rover_stream.egg-info/top_level.txt
+rover_stream.egg-info/zip-safe

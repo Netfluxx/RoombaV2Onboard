@@ -32,8 +32,8 @@ class OdometryNode(Node):
     def compute_velocities(self):
         #TODO: Get encoder ticks from arduino, v=omega*wheel radius, omega = nbr of ticks/(nbr of ticks per rev * delta_t) probably
 
-        left_wheel_velocity = randrange(1, 4) / 5.0
-        right_wheel_velocity = randrange(1, 4) / 5.0
+        left_wheel_velocity = 0#randrange(1, 4) / 5.0
+        right_wheel_velocity = 0#randrange(1, 4) / 5.0
 
         # basic differential kinematic TODO: Add friction
         v = (right_wheel_velocity + left_wheel_velocity) / 2.0
