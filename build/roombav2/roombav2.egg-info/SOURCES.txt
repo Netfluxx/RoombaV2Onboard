@@ -10,6 +10,7 @@ setup.py
 ../../build/roombav2/roombav2.egg-info/zip-safe
 config/amcl_params.yaml
 config/costmap_params.yaml
+config/ekf.yaml
 config/planner_params.yaml
 config/slam_toolbox_params.yaml
 launch/microver.launch.py

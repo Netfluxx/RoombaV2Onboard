@@ -17,9 +17,6 @@
         <color rgba="0.2 0.2 1 1" />
     </material>
 
-    <material name="purple">
-        <color rgba="0.62 0.12 0.94 1" />
-    </material>
 
 
 
@@ -113,7 +110,7 @@
                     <!-- ####################### LIDAR SETUP #################### -->
                      
     <joint name="lidar_joint" type="fixed">
-        <origin xyz="0 0 0.12" rpy="0 0 0" />
+        <origin xyz="0 0 0.168" rpy="0 0 ${pi}" />
         <parent link="base_link" />
         <child link="lidar_link" />
     </joint>
@@ -122,11 +119,6 @@
                     <!-- ####################### LINKS ########################## -->
                      <!-- TODO: EDIT THE RANDOM ASS VALUES IN THE LIDAR LINK -->
     <link name="lidar_link">
-        <inertial>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <mass value="0.125"/>
-            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
-        </inertial>
 
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -256,13 +248,13 @@
             <geometry>
                 <cylinder radius="${WHEEL_RADIUS}" length="${WHEEL_WIDTH}" />
             </geometry>
-            <material name="purple" />
+            <material name="white" />
         </visual>
-        <collision>
+        <!-- <collision>
             <geometry>
                 <cylinder radius="${WHEEL_RADIUS}" length="${WHEEL_WIDTH}" />
             </geometry>
-        </collision>
+        </collision> -->
         <xacro:inertial_cylinder mass="${WHEEL_MASS}" length="${WHEEL_WIDTH}" radius="${WHEEL_RADIUS}">
             <origin xyz="0 0 0"/>
         </xacro:inertial_cylinder>
@@ -275,13 +267,13 @@
             <geometry>
                 <cylinder radius="${WHEEL_RADIUS}" length="${WHEEL_WIDTH}" />
             </geometry>
-            <material name="purple" />
+            <material name="white" />
         </visual>
-        <collision>
+        <!-- <collision>
             <geometry>
                 <cylinder radius="${WHEEL_RADIUS}" length="${WHEEL_WIDTH}" />
             </geometry>
-        </collision>
+        </collision> -->
         <xacro:inertial_cylinder mass="${WHEEL_MASS}" length="${WHEEL_WIDTH}" radius="${WHEEL_RADIUS}">
             <origin xyz="0 0 0"/>
         </xacro:inertial_cylinder>
@@ -294,13 +286,13 @@
             <geometry>
                 <cylinder radius="${WHEEL_RADIUS}" length="${WHEEL_WIDTH}" />
             </geometry>
-            <material name="purple" />
+            <material name="white" />
         </visual>
-        <collision>
+        <!-- <collision>
             <geometry>
                 <cylinder radius="${WHEEL_RADIUS}" length="${WHEEL_WIDTH}" />
             </geometry>
-        </collision>
+        </collision> -->
         <xacro:inertial_cylinder mass="${WHEEL_MASS}" length="${WHEEL_WIDTH}" radius="${WHEEL_RADIUS}">
             <origin xyz="0 0 0"/>
         </xacro:inertial_cylinder>
@@ -313,13 +305,13 @@
             <geometry>
                 <cylinder radius="${WHEEL_RADIUS}" length="${WHEEL_WIDTH}" />
             </geometry>
-            <material name="purple" />
+            <material name="white" />
         </visual>
-        <collision>
+        <!-- <collision>
             <geometry>
                 <cylinder radius="${WHEEL_RADIUS}" length="${WHEEL_WIDTH}" />
             </geometry>
-        </collision>
+        </collision> -->
         <xacro:inertial_cylinder mass="${WHEEL_MASS}" length="${WHEEL_WIDTH}" radius="${WHEEL_RADIUS}">
             <origin xyz="0 0 0"/>
         </xacro:inertial_cylinder>
@@ -352,25 +344,25 @@
     </gazebo>
 
     <gazebo reference="front_left_wheel_link">
-        <material>Gazebo/Purple</material>
+        <material>Gazebo/white</material>
         <mu1 value="${MU1}" />
         <mu2 value="${MU2}" />
     </gazebo>
 
     <gazebo reference="front_right_wheel_link">
-        <material>Gazebo/Purple</material>
+        <material>Gazebo/white</material>
         <mu1 value="${MU1}" />
         <mu2 value="${MU2}" />
     </gazebo>
 
     <gazebo reference="back_left_wheel_link">
-        <material>Gazebo/Purple</material>
+        <material>Gazebo/white</material>
         <mu1 value="${MU1}" />
         <mu2 value="${MU2}" />
     </gazebo>
 
     <gazebo reference="back_right_wheel_link">
-        <material>Gazebo/Purple</material>
+        <material>Gazebo/white</material>
         <mu1 value="${MU1}" />
         <mu2 value="${MU2}" />
     </gazebo> -->

@@ -23,12 +23,13 @@ setup(
             'config/amcl_params.yaml', 
             'config/costmap_params.yaml', 
             'config/planner_params.yaml', 
-            'config/slam_toolbox_params.yaml'
+            'config/slam_toolbox_params.yaml',
+            'config/ekf.yaml',
         ]),
         ('share/' + package_name + '/models', [
             'models/microver.urdf.xacro', 
             'models/constants.xacro', 
-            'models/inertial_macros.xacro'
+            'models/inertial_macros.xacro',
         ]),
         # ('share/' + package_name + '/maps', [
         #     'maps/some_map.pgm'

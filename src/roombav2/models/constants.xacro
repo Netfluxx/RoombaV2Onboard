@@ -7,8 +7,8 @@
     <xacro:property name="MAX_SPEED"    value="5.5"  />
     <xacro:property name="MIN_SPEED"    value="0.0"  />
 
-    <xacro:property name="WHEEL_RADIUS" value="0.04" />
-    <xacro:property name="WHEEL_WIDTH"  value="0.05"  />
+    <xacro:property name="WHEEL_RADIUS" value="0.06" />
+    <xacro:property name="WHEEL_WIDTH"  value="0.06"  />
     <xacro:property name="WHEELBASE"    value="0.5"  />
     <xacro:property name="WHEEL_MASS"   value="0.45"  />
 

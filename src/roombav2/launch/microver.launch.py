@@ -1,3 +1,5 @@
+#LAUNCH FILE FOR SLAM AND MANUAL CONTROL
+
 import os
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
@@ -12,6 +14,7 @@ def generate_launch_description():
     default_model_path = os.path.join(pkg_share, 'models/microver.urdf.xacro')
     slam_config_path = os.path.join(pkg_share, 'config', 'slam_toolbox_params.yaml')
     lidar_launch_file_path = FindPackageShare('sllidar_ros2').find('sllidar_ros2') + '/launch/sllidar_c1_launch.py'
+    robot_localization_config_path = os.path.join(pkg_share, 'config', 'ekf.yaml')
 
     model = LaunchConfiguration('model', default=default_model_path)
     use_sim_time = LaunchConfiguration('use_sim_time', default='False')
@@ -24,6 +27,13 @@ def generate_launch_description():
             'use_sim_time': use_sim_time,
             'robot_description': ParameterValue(Command(['xacro ', model]), value_type=str)
         }]
+    )
+
+    joint_state_publisher_node = Node(
+        package='joint_state_publisher',
+        executable='joint_state_publisher',
+        name='joint_state_publisher',
+        output='screen'
     )
 
     encoder_reader_node = Node(
@@ -41,32 +51,25 @@ def generate_launch_description():
         parameters=[slam_config_path]
     )
 
+    robot_localization_node = Node(  #does odom -> base_link dynamic tf using ekf with odom and later imu
+        package = 'robot_localization',
+        executable = 'ekf_node',
+        name='ekf_filter_node',
+        output='screen',
+        parameters=[robot_localization_config_path, {'use_sim_time': use_sim_time}],
+    )
+
     lidar_launch_include = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([lidar_launch_file_path]),
         launch_arguments={'parameter_name': 'parameter_value'}.items()
-    )
-
-    static_tf_odom_base = Node(  #should use robot_localization package with ekf.yaml
-        package='tf2_ros',
-        executable='static_transform_publisher',
-        name='static_tf_pub_odom_to_base_link',
-        arguments=['0', '0', '0', '0', '0', '0', 'odom', 'base_link']  # x, y, z, yaw, pitch, roll
     )
 
     static_tf_base_lidar = Node(
         package='tf2_ros',
         executable='static_transform_publisher',
         name='static_tf_pub_base_to_lidar_link',
-        arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'lidar_link']  # x, y, z, yaw, pitch, roll
+        arguments=['0', '0', '0.168', '0', '0', '3.141592653589793', 'base_link', 'lidar_link']  # x, y, z, yaw, pitch, roll
     )
-
-    wtf_is_this = Node(
-        package='tf2_ros',
-        executable='static_transform_publisher',
-        name='scan_to_map',
-        arguments=['0', '0', '0', '0', '0', '0', 'map', 'scan']  # x, y, z, yaw, pitch, roll
-    )
-
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -80,11 +83,11 @@ def generate_launch_description():
             description='Use simulation (Gazebo) clock if true'
         ),
         robot_state_publisher,
+        joint_state_publisher_node,
         encoder_reader_node,
-        slam_toolbox_node,
-        static_tf_odom_base,
         static_tf_base_lidar,
-        wtf_is_this,
-        lidar_launch_include
+        lidar_launch_include,
+        slam_toolbox_node,
+        robot_localization_node,
     ])
 

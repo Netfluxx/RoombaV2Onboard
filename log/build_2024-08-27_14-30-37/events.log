@@ -1,0 +1,144 @@
+[0.000000] (-) TimerEvent: {}
+[0.003226] (-) JobUnselected: {'identifier': 'RoverReceive'}
+[0.004293] (-) JobUnselected: {'identifier': 'rf2o_laser_odometry'}
+[0.004681] (-) JobUnselected: {'identifier': 'rover_stream'}
+[0.005292] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.005637] (roombav2) JobQueued: {'identifier': 'roombav2', 'dependencies': OrderedDict()}
+[0.005870] (roombav2) JobStarted: {'identifier': 'roombav2'}
+[0.097312] (-) TimerEvent: {}
+[0.198490] (-) TimerEvent: {}
+[0.299622] (-) TimerEvent: {}
+[0.400692] (-) TimerEvent: {}
+[0.502030] (-) TimerEvent: {}
+[0.603200] (-) TimerEvent: {}
+[0.704434] (-) TimerEvent: {}
+[0.805480] (-) TimerEvent: {}
+[0.906686] (-) TimerEvent: {}
+[1.007846] (-) TimerEvent: {}
+[1.109420] (-) TimerEvent: {}
+[1.210944] (-) TimerEvent: {}
+[1.311988] (-) TimerEvent: {}
+[1.413111] (-) TimerEvent: {}
+[1.514233] (-) TimerEvent: {}
+[1.615264] (-) TimerEvent: {}
+[1.716342] (-) TimerEvent: {}
+[1.817423] (-) TimerEvent: {}
+[1.918482] (-) TimerEvent: {}
+[2.019572] (-) TimerEvent: {}
+[2.120688] (-) TimerEvent: {}
+[2.221797] (-) TimerEvent: {}
+[2.322848] (-) TimerEvent: {}
+[2.423980] (-) TimerEvent: {}
+[2.525316] (-) TimerEvent: {}
+[2.628215] (-) TimerEvent: {}
+[2.731890] (-) TimerEvent: {}
+[2.833037] (-) TimerEvent: {}
+[2.934228] (-) TimerEvent: {}
+[3.035226] (-) TimerEvent: {}
+[3.136320] (-) TimerEvent: {}
+[3.237417] (-) TimerEvent: {}
+[3.338588] (-) TimerEvent: {}
+[3.439628] (-) TimerEvent: {}
+[3.540811] (-) TimerEvent: {}
+[3.641966] (-) TimerEvent: {}
+[3.742973] (-) TimerEvent: {}
+[3.844032] (-) TimerEvent: {}
+[3.945218] (-) TimerEvent: {}
+[4.046471] (-) TimerEvent: {}
+[4.147494] (-) TimerEvent: {}
+[4.248647] (-) TimerEvent: {}
+[4.351009] (-) TimerEvent: {}
+[4.452084] (-) TimerEvent: {}
+[4.553208] (-) TimerEvent: {}
+[4.654401] (-) TimerEvent: {}
+[4.755536] (-) TimerEvent: {}
+[4.856796] (-) TimerEvent: {}
+[4.957963] (-) TimerEvent: {}
+[5.058987] (-) TimerEvent: {}
+[5.160248] (-) TimerEvent: {}
+[5.261411] (-) TimerEvent: {}
+[5.362629] (-) TimerEvent: {}
+[5.464001] (-) TimerEvent: {}
+[5.565218] (-) TimerEvent: {}
+[5.666718] (-) TimerEvent: {}
+[5.767996] (-) TimerEvent: {}
+[5.869189] (-) TimerEvent: {}
+[5.970643] (-) TimerEvent: {}
+[6.071895] (-) TimerEvent: {}
+[6.173177] (-) TimerEvent: {}
+[6.274285] (-) TimerEvent: {}
+[6.375374] (-) TimerEvent: {}
+[6.476553] (-) TimerEvent: {}
+[6.577754] (-) TimerEvent: {}
+[6.679015] (-) TimerEvent: {}
+[6.780237] (-) TimerEvent: {}
+[6.881612] (-) TimerEvent: {}
+[6.925028] (roombav2) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/arno/RoombaV2Onboard/build/roombav2/build', '--no-deps', 'symlink_data'], 'cwd': '/home/arno/RoombaV2Onboard/build/roombav2', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'arno', 'SSH_CLIENT': '192.168.177.158 45674 22', 'LC_TIME': 'de_CH.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/arno', 'OLDPWD': '/home/arno/RoombaV2Onboard/src', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'de_CH.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'arno', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '1', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/arno/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'de_CH.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'de_CH.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install/sllidar_ros2:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'de_CH.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'de_CH.UTF-8', 'LC_IDENTIFICATION': 'de_CH.UTF-8', 'PWD': '/home/arno/RoombaV2Onboard/build/roombav2', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.177.158 45674 192.168.177.115 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/arno/RoombaV2Onboard/build/roombav2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/build/rover_stream:/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/build/roombav2:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/build/RoverReceive:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'de_CH.UTF-8', 'LC_PAPER': 'de_CH.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install/sllidar_ros2'}, 'shell': False}
+[6.981858] (-) TimerEvent: {}
+[7.083018] (-) TimerEvent: {}
+[7.184111] (-) TimerEvent: {}
+[7.285145] (-) TimerEvent: {}
+[7.386511] (-) TimerEvent: {}
+[7.487612] (-) TimerEvent: {}
+[7.588770] (-) TimerEvent: {}
+[7.690007] (-) TimerEvent: {}
+[7.791172] (-) TimerEvent: {}
+[7.892198] (-) TimerEvent: {}
+[7.993339] (-) TimerEvent: {}
+[8.094486] (-) TimerEvent: {}
+[8.195556] (-) TimerEvent: {}
+[8.296651] (-) TimerEvent: {}
+[8.397665] (-) TimerEvent: {}
+[8.498758] (-) TimerEvent: {}
+[8.599786] (-) TimerEvent: {}
+[8.700845] (-) TimerEvent: {}
+[8.802098] (-) TimerEvent: {}
+[8.903193] (-) TimerEvent: {}
+[9.004346] (-) TimerEvent: {}
+[9.105477] (-) TimerEvent: {}
+[9.206662] (-) TimerEvent: {}
+[9.307798] (-) TimerEvent: {}
+[9.403218] (roombav2) StdoutLine: {'line': b'running develop\n'}
+[9.408067] (-) TimerEvent: {}
+[9.411148] (roombav2) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.\n'}
+[9.412932] (roombav2) StderrLine: {'line': b'  warnings.warn(\n'}
+[9.508364] (-) TimerEvent: {}
+[9.609425] (-) TimerEvent: {}
+[9.710583] (-) TimerEvent: {}
+[9.811612] (-) TimerEvent: {}
+[9.912752] (-) TimerEvent: {}
+[10.013941] (-) TimerEvent: {}
+[10.115037] (-) TimerEvent: {}
+[10.216092] (-) TimerEvent: {}
+[10.317187] (-) TimerEvent: {}
+[10.418399] (-) TimerEvent: {}
+[10.519677] (-) TimerEvent: {}
+[10.620759] (-) TimerEvent: {}
+[10.721945] (-) TimerEvent: {}
+[10.823052] (-) TimerEvent: {}
+[10.924105] (-) TimerEvent: {}
+[11.025200] (-) TimerEvent: {}
+[11.087335] (roombav2) StdoutLine: {'line': b'running egg_info\n'}
+[11.088789] (roombav2) StdoutLine: {'line': b'writing roombav2.egg-info/PKG-INFO\n'}
+[11.090994] (roombav2) StdoutLine: {'line': b'writing dependency_links to roombav2.egg-info/dependency_links.txt\n'}
+[11.093689] (roombav2) StdoutLine: {'line': b'writing entry points to roombav2.egg-info/entry_points.txt\n'}
+[11.095663] (roombav2) StdoutLine: {'line': b'writing requirements to roombav2.egg-info/requires.txt\n'}
+[11.097206] (roombav2) StdoutLine: {'line': b'writing top-level names to roombav2.egg-info/top_level.txt\n'}
+[11.112662] (roombav2) StdoutLine: {'line': b"reading manifest file 'roombav2.egg-info/SOURCES.txt'\n"}
+[11.121252] (roombav2) StdoutLine: {'line': b"writing manifest file 'roombav2.egg-info/SOURCES.txt'\n"}
+[11.125460] (-) TimerEvent: {}
+[11.133406] (roombav2) StdoutLine: {'line': b'running build_ext\n'}
+[11.135624] (roombav2) StdoutLine: {'line': b'Creating /home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages/roombav2.egg-link (link to .)\n'}
+[11.143395] (roombav2) StdoutLine: {'line': b'Installing encoder_reader script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2\n'}
+[11.145149] (roombav2) StdoutLine: {'line': b'Installing joystick_motor_controller script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2\n'}
+[11.146799] (roombav2) StdoutLine: {'line': b'Installing nav2_motor_controller script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2\n'}
+[11.149368] (roombav2) StdoutLine: {'line': b'\n'}
+[11.150887] (roombav2) StdoutLine: {'line': b'Installed /home/arno/RoombaV2Onboard/build/roombav2\n'}
+[11.151998] (roombav2) StdoutLine: {'line': b'running symlink_data\n'}
+[11.225796] (-) TimerEvent: {}
+[11.327161] (-) TimerEvent: {}
+[11.428510] (-) TimerEvent: {}
+[11.433818] (roombav2) CommandEnded: {'returncode': 0}
+[11.530735] (-) TimerEvent: {}
+[11.574557] (roombav2) JobEnded: {'identifier': 'roombav2', 'rc': 0}
+[11.580200] (-) EventReactorShutdown: {}
