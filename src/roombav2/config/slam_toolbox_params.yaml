@@ -1,7 +1,6 @@
 # slam_toolbox_params.yaml
 slam_toolbox:
   ros__parameters:
-    # General parameters
     resolution: 0.05
     max_laser_range: 12.0
     map_frame: map
@@ -16,7 +15,7 @@ slam_toolbox:
     scan_buffer_maximum_scan_distance: 12.0
     use_sim_time: false
     transform_publish_period: 0.02
-	  transform_timeout: 0.2
+    transform_timeout: 0.2
 
     # Loop closure parameters
     matcher_type: s2d
@@ -27,5 +26,6 @@ slam_toolbox:
 
     # Other parameters
     enable_imu: false
-    queue_size: 20
+    queue_size: 50
     buffer_duration: 2.0
+    scan_frame: lidar_link
