@@ -1,0 +1,26 @@
+[5.516s] Invoking command in '/home/arno/RoombaV2Onboard/build/rover_stream': PYTHONPATH=/home/arno/RoombaV2Onboard/build/rover_stream/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/rover_stream/build --no-deps symlink_data
+[7.137s] running develop
+[7.140s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[7.141s]   warnings.warn(
+[8.261s] running egg_info
+[8.264s] creating rover_stream.egg-info
+[8.265s] writing rover_stream.egg-info/PKG-INFO
+[8.268s] writing dependency_links to rover_stream.egg-info/dependency_links.txt
+[8.270s] writing entry points to rover_stream.egg-info/entry_points.txt
+[8.271s] writing requirements to rover_stream.egg-info/requires.txt
+[8.273s] writing top-level names to rover_stream.egg-info/top_level.txt
+[8.274s] writing manifest file 'rover_stream.egg-info/SOURCES.txt'
+[8.283s] reading manifest file 'rover_stream.egg-info/SOURCES.txt'
+[8.288s] writing manifest file 'rover_stream.egg-info/SOURCES.txt'
+[8.300s] running build_ext
+[8.302s] Creating /home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages/rover-stream.egg-link (link to .)
+[8.310s] Installing webrtc_streamer script to /home/arno/RoombaV2Onboard/install/rover_stream/lib/rover_stream
+[8.312s] 
+[8.314s] Installed /home/arno/RoombaV2Onboard/build/rover_stream
+[8.316s] running symlink_data
+[8.319s] creating /home/arno/RoombaV2Onboard/install/rover_stream/share/ament_index
+[8.321s] creating /home/arno/RoombaV2Onboard/install/rover_stream/share/ament_index/resource_index
+[8.323s] creating /home/arno/RoombaV2Onboard/install/rover_stream/share/ament_index/resource_index/packages
+[8.326s] symbolically linking /home/arno/RoombaV2Onboard/build/rover_stream/resource/rover_stream -> /home/arno/RoombaV2Onboard/install/rover_stream/share/ament_index/resource_index/packages
+[8.344s] symbolically linking /home/arno/RoombaV2Onboard/build/rover_stream/package.xml -> /home/arno/RoombaV2Onboard/install/rover_stream/share/rover_stream
+[8.477s] Invoked command in '/home/arno/RoombaV2Onboard/build/rover_stream' returned '0': PYTHONPATH=/home/arno/RoombaV2Onboard/build/rover_stream/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/rover_stream/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/rover_stream/build --no-deps symlink_data

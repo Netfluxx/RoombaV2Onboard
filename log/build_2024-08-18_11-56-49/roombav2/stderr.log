@@ -1,5 +1,0 @@
-  File "/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages/roombav2/joystick_motor_controller.py", line 54
-    msg = f"{"{:.2f}".format(wheel_vels[0])},{"{:.2f}".format(wheel_vels[1])},{"{:.2f}".format(wheel_vels[2])},{"{:.2f}".format(wheel_vels[3])}"
-                 ^
-SyntaxError: invalid decimal literal
-
