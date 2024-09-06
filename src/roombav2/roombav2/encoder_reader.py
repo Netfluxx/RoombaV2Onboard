@@ -1,3 +1,5 @@
+#gets wheel speeds from master arduino through topic and sends them to /odom
+
 import rclpy
 from rclpy.node import Node
 from nav_msgs.msg import Odometry
@@ -28,6 +30,30 @@ class OdometryNode(Node):
         self.rover_width = 0.2  # 20cm between the centers of the left and right wheels.
         self.rover_mass = 4  # kg
 
+        self.qos_policy = rclpy.qos.QoSProfile(reliability=rclpy.qos.ReliabilityPolicy.BEST_EFFORT,
+                                                history=rclpy.qos.HistoryPolicy.KEEP_LAST,
+                                                depth=5)
+
+        self.serial_port = self.detect_serial_port()
+        if not self.serial_port:
+            self.get_logger().error("NO VALID SERIAL PORT FOUND THE MASTER ARDUINO IS COOOOOKED")
+            raise RuntimeError("NO VALID SERIAL PORT FOUND")
+        else:
+            self.get_logger().info("VAILD SERIAL PORT FOUND LETS GOOOO")
+
+    
+    def detect_serial_port(self):
+        ports = serial.tools.list_ports.comports()
+        for port in ports:
+            if 'USB' in port.description: #and '1A86:7523' in port.hwid: #master arduino hwid number
+                try:
+                    #print(f"HWID: " {port.hwid})
+                    serial_port = serial.Serial(port.device, 9600, timeout=1)
+                    self.get_logger().info(f"CONNECTED to serial port: {port.device} with hwid {port.hwid}")
+                    return serial_port
+                except serial.SerialException as e:
+                    self.get_logger().error(f"FAILED to open serial port {port.device}: {e}")
+        return None
 
     def compute_velocities(self):
         #TODO: Get encoder ticks from arduino, v=omega*wheel radius, omega = nbr of ticks/(nbr of ticks per rev * delta_t) probably
@@ -35,7 +61,7 @@ class OdometryNode(Node):
         left_wheel_velocity = 0#randrange(1, 4) / 5.0
         right_wheel_velocity = 0#randrange(1, 4) / 5.0
 
-        # basic differential kinematic TODO: Add friction
+        # basic differential kinematic TODO: Add friction and correct slip? difficult without IMU
         v = (right_wheel_velocity + left_wheel_velocity) / 2.0
         omega = (right_wheel_velocity - left_wheel_velocity) / self.rover_width
 

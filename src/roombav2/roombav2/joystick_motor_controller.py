@@ -1,16 +1,29 @@
-#subscribes to /joystick_cmd_vel and applies the rover's kinematics to send the 
+#subscribes to /joystick_cmd_vel data sent from joystick and applies the rover's kinematics to send the 
 #speed values to each wheel of the rover in m/s.
+#then sends the speeds to the master arduino
+#also periodically reads from the arduino serial port to check the wheel speeds and send them to /odom for slam
 
 
-#JOYSTICK MOTOR CONTROLLER DEBUGGGGG TESTINGSSGSGSGDSGDSFDS
+#JOYSTICK CONTROLLER FOR SLAM AND MANUAL CONTROL
+
 
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
-from geometry_msgs.msg import Twist
+from geometry_msgs.msg import Twist, Pose
 import serial
 from serial.tools import list_ports
 import time
+
+from nav_msgs.msg import Odometry
+from geometry_msgs.msg import Twist, Pose
+from sensor_msgs.msg import JointState
+from tf_transformations import quaternion_from_euler
+import math
+from random import randrange
+from tf2_ros import TransformBroadcaster
+from geometry_msgs.msg import TransformStamped
+from geometry_msgs.msg import Quaternion
 
 
 class JoystickMotorControl(Node):
@@ -20,9 +33,8 @@ class JoystickMotorControl(Node):
 
         if not self.serial_port:
             self.get_logger().error("NO VALID SERIAL PORT FOUND THE MASTER ARDUINO IS COOOOOKED")
-            raise RuntimeError("VALID PORT FOUND LETS F*CKING GOOOO")
+            raise RuntimeError("NO VALID SERIAL PORT FOUND THE MASTER ARDUINO IS COOOOOKED")
 
-        self.wheel_speeds_publisher = self.create_publisher(String, '/wheel_speeds', 10)
 
         # Subscribe to the input topic
         #reliability best effort qos profile for the subscriber (UDP-like)
@@ -33,28 +45,45 @@ class JoystickMotorControl(Node):
         self.subscription = self.create_subscription(
             Twist,
             '/joystick_cmd_vel',
-            self.message_callback,
+            self.joystick_cmd_callback,
             10
         )
+
+        self.wheel_speeds_publisher = self.create_publisher(String, '/wheel_speeds', 10)
+
+        self.odom_pub = self.create_publisher(Odometry, '/odom', 10)
+        self.tf_broadcaster = TransformBroadcaster(self)
+        self.timer = self.create_timer(0.1, self.publish_odometry)
+
+        self.x = 0.0
+        self.y = 0.0
+        self.theta = 0.0
+        self.last_time = self.get_clock().now()
+        self.rover_width = 0.25  # 20cm between the centers of the left and right wheels.
+        self.rover_mass = 4  # kg
 
         #add timer to read the serial port for messages from the arduino
         timer_period = 0.01  # seconds
         self.timer = self.create_timer(timer_period, self.timer_callback)
+
+        self.fr_wheel_speed = 0.0
+        self.fl_wheel_speed = 0.0
+        self.br_wheel_speed = 0.0
+        self.bl_wheel_speed = 0.0
 
     def detect_serial_port(self):
         ports = serial.tools.list_ports.comports()
         for port in ports:
             if 'USB' in port.description and '1A86:7523' in port.hwid: #master arduino hwid number
                 try:
-                    #print(port.hwid)
                     serial_port = serial.Serial(port.device, 9600, timeout=1)
-                    self.get_logger().info(f"CONNECTED to serial port: {port.device}")
+                    self.get_logger().info(f"CONNECTED to serial port: {port.device} at hwid: {port.hwid}")
                     return serial_port
                 except serial.SerialException as e:
                     self.get_logger().error(f"FAILED to open serial port {port.device}: {e}")
         return None
     
-    def message_callback(self, msg):
+    def joystick_cmd_callback(self, msg):
         lin_vel = msg.linear.x
         ang_vel = msg.angular.z
         wheel_vels = self.compute_kinematics(lin_vel, ang_vel)
@@ -67,37 +96,93 @@ class JoystickMotorControl(Node):
         self.get_logger().info(f"sent: {msg}")
 
         self.serial_port.write((msg + '\n').encode('utf-8'))
-        received_from_arduino = self.serial_port.readline().decode('utf-8').strip()
-    
-        if received_from_arduino:
-            curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
-            self.get_logger().info(f"Rover Master Nano @{curr_time}: {received_from_arduino}")
-            self.get_logger().info(f"----------------")
+
 
     def timer_callback(self):
-        received_from_arduino = self.serial_port.readline().decode('utf-8').strip()
+        received_from_arduino = self.serial_port.readline().decode('utf-8', errors = 'ignore').strip()
         if received_from_arduino:
             curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
             self.get_logger().info(f"Rover Master Nano @{curr_time}: {received_from_arduino}")
 
-            required_terms = ["FRONT RIGHT", "FRONT LEFT", "BACK RIGHT", "BACK LEFT"]  #parsing the incoming arduino logs 
+            required_terms = ["FR", "FL", "BR", "BL"]  #parsing the incoming arduino logs 
             if all(term in received_from_arduino for term in required_terms):
-                wheel_speeds_msg = received_from_arduino
-                self.wheel_speeds_publisher.publish(wheel_speeds_msg)
-
-
+                #TODO: PARSE THE DATA AND UPDATE THE WHEEL SPEEDS
+                #self.fr_wheel_speed = ...
+                #wheel_speeds_msg = received_from_arduino ...
+                #self.wheel_speeds_publisher.publish(wheel_speeds_msg)
+                pass
             self.get_logger().info(f"----------------")
     
     def compute_kinematics(self, lin_vel, ang_vel):
-    
-        WHEEL_DIST =   0.3  #m, dist from center of right wheel to center of left wheel
-
-        vel_left =  (lin_vel - (WHEEL_DIST*ang_vel/2))
-        vel_right = (lin_vel + (WHEEL_DIST*ang_vel/2))
-
-        #for odom : omega = (vel_right - vel_left)/WHEEL_DIST
+        #very simple kinematics but doesn't take into account wheel slip and/or friction
+        vel_left =  (lin_vel - (self.rover_width*ang_vel/2))
+        vel_right = (lin_vel + (self.rover_width*ang_vel/2))
 
         return [vel_right, vel_left, vel_right, vel_left]
+
+
+    def get_velocities(self):
+
+        right_wheel_velocity = (self.fr_wheel_speed + self.br_wheel_speed)/2.0
+        left_wheel_velocity = (self.fl_wheel_speed + self.bl_wheel_speed)/2.0
+
+        v = (right_wheel_velocity + left_wheel_velocity) / 2.0
+        omega = (right_wheel_velocity - left_wheel_velocity) / self.rover_width
+
+        return v, omega
+
+    def publish_odometry(self):
+        
+        current_time = self.get_clock().now()
+        dt = (current_time - self.last_time).nanoseconds / 1e9
+
+        v, omega = self.get_velocities()
+
+        # Update the pose by integration of speed
+        delta_x = v * math.cos(self.theta) * dt
+        delta_y = v * math.sin(self.theta) * dt
+        delta_theta = omega * dt
+
+        self.x += delta_x
+        self.y += delta_y
+        self.theta += delta_theta
+
+        # Create the odometry message
+        odom = Odometry()
+        odom.header.stamp = current_time.to_msg()
+        odom.header.frame_id = "odom"
+        odom.pose.pose.position.x = self.x
+        odom.pose.pose.position.y = self.y
+        odom.pose.pose.position.z = 0.0
+        #odom.pose.pose.orientation = quaternion_from_euler(0, 0, self.theta)
+        
+        q = quaternion_from_euler(0, 0, self.theta)
+        quaternion_msg = Quaternion()
+        quaternion_msg.x = q[0]
+        quaternion_msg.y = q[1]
+        quaternion_msg.z = q[2]
+        quaternion_msg.w = q[3]
+    
+        odom.pose.pose.orientation = quaternion_msg
+
+        odom.child_frame_id = "base_link"
+        odom.twist.twist.linear.x = v
+        odom.twist.twist.linear.y = 0.0
+        odom.twist.twist.angular.z = omega
+        self.odom_pub.publish(odom)
+
+        # Broadcast the transform
+        transform = TransformStamped()
+        transform.header.stamp = current_time.to_msg()
+        transform.header.frame_id = "odom"
+        transform.child_frame_id = "base_link"
+        transform.transform.translation.x = self.x
+        transform.transform.translation.y = self.y
+        transform.transform.translation.z = 0.0
+        transform.transform.rotation = odom.pose.pose.orientation
+
+        self.tf_broadcaster.sendTransform(transform)    #AMCL needs the transform from odom to base_link
+        self.last_time = current_time
 
 
 
