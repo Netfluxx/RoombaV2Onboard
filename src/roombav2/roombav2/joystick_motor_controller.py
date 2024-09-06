@@ -106,11 +106,35 @@ class JoystickMotorControl(Node):
 
             required_terms = ["FR", "FL", "BR", "BL"]  #parsing the incoming arduino logs 
             if all(term in received_from_arduino for term in required_terms):
-                #TODO: PARSE THE DATA AND UPDATE THE WHEEL SPEEDS
-                #self.fr_wheel_speed = ...
-                #wheel_speeds_msg = received_from_arduino ...
-                #self.wheel_speeds_publisher.publish(wheel_speeds_msg)
-                pass
+                parsed_speeds = received_from_arduino.split(',')
+                parsed_speeds = [_.split(':') for _ in parsed_speeds]
+
+                self.get_logger().info(f"parsed_speeds split: {parsed_speeds}")
+
+                if parsed_speeds[0][1] != "NAN":
+                    self.fr_wheel_speed = float(parsed_speeds[0][1])
+                else:
+                    self.fr_wheel_speed = 0.00
+
+                if parsed_speeds[1][1] != "NAN":
+                    self.fr_wheel_speed = float(parsed_speeds[1][1])
+                else:
+                    self.fr_wheel_speed = 0.00
+
+                if parsed_speeds[2][1] != "NAN":
+                    self.fr_wheel_speed = float(parsed_speeds[2][1])
+                else:
+                    self.fr_wheel_speed = 0.00
+
+                if parsed_speeds[3][1] != "NAN":
+                    self.fr_wheel_speed = float(parsed_speeds[3][1])
+                else:
+                    self.fr_wheel_speed = 0.00
+
+                
+                wheel_speed_msg = f"{self.fr_wheel_speed},{self.fl_wheel_speed},{self.br_wheel_speed},{self.bl_wheel_speed}"
+                self.wheel_speeds_publisher.publish(wheel_speed_msg)
+                
             self.get_logger().info(f"----------------")
     
     def compute_kinematics(self, lin_vel, ang_vel):
@@ -127,7 +151,7 @@ class JoystickMotorControl(Node):
         left_wheel_velocity = (self.fl_wheel_speed + self.bl_wheel_speed)/2.0
 
         v = (right_wheel_velocity + left_wheel_velocity) / 2.0
-        omega = (right_wheel_velocity - left_wheel_velocity) / self.rover_width
+        omega = ( (right_wheel_velocity - left_wheel_velocity) / self.rover_width ) *1.5  #scaling it up because it seems too low
 
         return v, omega
 
