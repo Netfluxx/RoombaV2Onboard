@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+mode_manager/__init__.py
+mode_manager/mode_manager.py
+mode_manager.egg-info/PKG-INFO
+mode_manager.egg-info/SOURCES.txt
+mode_manager.egg-info/dependency_links.txt
+mode_manager.egg-info/entry_points.txt
+mode_manager.egg-info/requires.txt
+mode_manager.egg-info/top_level.txt
+mode_manager.egg-info/zip-safe
+resource/mode_manager

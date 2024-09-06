@@ -9,9 +9,9 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
 
     # Set up directories and paths
-    bringup_dir = FindPackageShare('microver_dusty').find('microver_dusty')
-    config_dir = FindPackageShare('your_package').find('your_package') + '/config/'
-    map_dir = FindPackageShare('your_package').find('your_package') + '/maps/your_map.yaml'
+    bringup_dir = FindPackageShare('roombav2').find('roombav2')
+    config_dir = FindPackageShare('roombav2').find('roombav2') + '/config/'
+    map_dir = FindPackageShare('roombav2').find('roombav2') + '/maps/'
 
     # Declare launch arguments
     use_sim_time = LaunchConfiguration('use_sim_time', default='False')

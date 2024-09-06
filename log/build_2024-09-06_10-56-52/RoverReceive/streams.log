@@ -1,0 +1,19 @@
+[12.846s] Invoking command in '/home/arno/RoombaV2Onboard/build/RoverReceive': PYTHONPATH=/home/arno/RoombaV2Onboard/build/RoverReceive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/RoverReceive/build --no-deps symlink_data
+[14.459s] running develop
+[14.462s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[14.462s]   warnings.warn(
+[15.511s] running egg_info
+[15.512s] writing RoverReceive.egg-info/PKG-INFO
+[15.514s] writing dependency_links to RoverReceive.egg-info/dependency_links.txt
+[15.515s] writing entry points to RoverReceive.egg-info/entry_points.txt
+[15.516s] writing requirements to RoverReceive.egg-info/requires.txt
+[15.517s] writing top-level names to RoverReceive.egg-info/top_level.txt
+[15.528s] reading manifest file 'RoverReceive.egg-info/SOURCES.txt'
+[15.535s] writing manifest file 'RoverReceive.egg-info/SOURCES.txt'
+[15.551s] running build_ext
+[15.555s] Creating /home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive.egg-link (link to .)
+[15.565s] Installing receive_node script to /home/arno/RoombaV2Onboard/install/RoverReceive/lib/RoverReceive
+[15.570s] 
+[15.571s] Installed /home/arno/RoombaV2Onboard/build/RoverReceive
+[15.573s] running symlink_data
+[16.019s] Invoked command in '/home/arno/RoombaV2Onboard/build/RoverReceive' returned '0': PYTHONPATH=/home/arno/RoombaV2Onboard/build/RoverReceive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/RoverReceive/build --no-deps symlink_data
