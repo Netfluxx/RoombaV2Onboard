@@ -1,0 +1,19 @@
+[5.683s] Invoking command in '/home/arno/RoombaV2Onboard/build/mode_manager': PYTHONPATH=/home/arno/RoombaV2Onboard/build/mode_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/mode_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/mode_manager/build --no-deps symlink_data
+[7.122s] running develop
+[7.125s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[7.127s]   warnings.warn(
+[8.055s] running egg_info
+[8.056s] writing mode_manager.egg-info/PKG-INFO
+[8.057s] writing dependency_links to mode_manager.egg-info/dependency_links.txt
+[8.058s] writing entry points to mode_manager.egg-info/entry_points.txt
+[8.059s] writing requirements to mode_manager.egg-info/requires.txt
+[8.060s] writing top-level names to mode_manager.egg-info/top_level.txt
+[8.067s] reading manifest file 'mode_manager.egg-info/SOURCES.txt'
+[8.071s] writing manifest file 'mode_manager.egg-info/SOURCES.txt'
+[8.078s] running build_ext
+[8.079s] Creating /home/arno/RoombaV2Onboard/install/mode_manager/lib/python3.10/site-packages/mode-manager.egg-link (link to .)
+[8.085s] Installing mode_manager script to /home/arno/RoombaV2Onboard/install/mode_manager/lib/mode_manager
+[8.087s] 
+[8.089s] Installed /home/arno/RoombaV2Onboard/build/mode_manager
+[8.090s] running symlink_data
+[8.347s] Invoked command in '/home/arno/RoombaV2Onboard/build/mode_manager' returned '0': PYTHONPATH=/home/arno/RoombaV2Onboard/build/mode_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/mode_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/mode_manager/build --no-deps symlink_data

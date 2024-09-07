@@ -13,7 +13,8 @@ setup(
         ('share/' + package_name, [
             package_name+'/encoder_reader.py', 
             package_name+'/joystick_motor_controller.py', 
-            package_name+'/nav2_motor_controller.py'
+            package_name+'/nav2_motor_controller.py',
+            package_name+'/system_info.py',
         ]),
         ('share/' + package_name + '/launch', [
             'launch/nav2_bringup.launch.py',
@@ -48,6 +49,7 @@ setup(
             'encoder_reader = roombav2.encoder_reader:main',
             'nav2_motor_controller = roombav2.nav2_motor_controller:main',
             'joystick_motor_controller = roombav2.joystick_motor_controller:main',
+            'system_info = roombav2.system_info:main',
         ],
     },
 )

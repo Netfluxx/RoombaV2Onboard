@@ -53,6 +53,13 @@ def generate_launch_description():
         output='screen'
     )
 
+    system_info_node = Node(
+        package='roombav2',
+        executable='system_info',
+        name='system_info',
+        output='screen'
+    )
+
     slam_toolbox_node = Node(
         package='slam_toolbox',
         executable='async_slam_toolbox_node',
@@ -94,6 +101,7 @@ def generate_launch_description():
         ),
         robot_state_publisher,
         joint_state_publisher_node,
+        system_info_node,
         joystick_control_node,
         static_tf_base_lidar,
         lidar_launch_include,

@@ -1,0 +1,22 @@
+[5.734s] Invoking command in '/home/arno/RoombaV2Onboard/build/roombav2': PYTHONPATH=/home/arno/RoombaV2Onboard/build/roombav2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/roombav2/build --no-deps symlink_data
+[7.161s] running develop
+[7.163s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[7.163s]   warnings.warn(
+[8.107s] running egg_info
+[8.110s] writing roombav2.egg-info/PKG-INFO
+[8.112s] writing dependency_links to roombav2.egg-info/dependency_links.txt
+[8.115s] writing entry points to roombav2.egg-info/entry_points.txt
+[8.118s] writing requirements to roombav2.egg-info/requires.txt
+[8.121s] writing top-level names to roombav2.egg-info/top_level.txt
+[8.143s] reading manifest file 'roombav2.egg-info/SOURCES.txt'
+[8.152s] writing manifest file 'roombav2.egg-info/SOURCES.txt'
+[8.168s] running build_ext
+[8.170s] Creating /home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages/roombav2.egg-link (link to .)
+[8.182s] Installing encoder_reader script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2
+[8.185s] Installing joystick_motor_controller script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2
+[8.187s] Installing nav2_motor_controller script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2
+[8.190s] Installing system_info script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2
+[8.195s] 
+[8.197s] Installed /home/arno/RoombaV2Onboard/build/roombav2
+[8.199s] running symlink_data
+[8.437s] Invoked command in '/home/arno/RoombaV2Onboard/build/roombav2' returned '0': PYTHONPATH=/home/arno/RoombaV2Onboard/build/roombav2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/roombav2/build --no-deps symlink_data

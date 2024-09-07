@@ -18,6 +18,7 @@ roombav2/encoder_reader.py
 roombav2/joystick_motor_controller.py
 roombav2/motor_control.py
 roombav2/nav2_motor_controller.py
+roombav2/system_info.py
 roombav2.egg-info/PKG-INFO
 roombav2.egg-info/SOURCES.txt
 roombav2.egg-info/dependency_links.txt
