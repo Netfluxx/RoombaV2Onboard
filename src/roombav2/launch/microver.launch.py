@@ -15,6 +15,7 @@ def generate_launch_description():
     slam_config_path = os.path.join(pkg_share, 'config', 'slam_toolbox_params.yaml')
     lidar_launch_file_path = FindPackageShare('sllidar_ros2').find('sllidar_ros2') + '/launch/sllidar_c1_launch.py'
     robot_localization_config_path = os.path.join(pkg_share, 'config', 'ekf.yaml')
+    twist_mux_config_path = os.path.join(pkg_share, 'config', 'twist_mux.yaml')
 
     model = LaunchConfiguration('model', default=default_model_path)
     use_sim_time = LaunchConfiguration('use_sim_time', default='False')
@@ -36,10 +37,19 @@ def generate_launch_description():
         output='screen'
     )
 
-    encoder_reader_node = Node(
+    twist_mux_node = Node(
+        package='twist_mux',
+        executable='twist_mux',
+        name='twist_mux',
+        output='screen',
+        parameters=[twist_mux_config_path],
+    )
+
+
+    joystick_control_node = Node(
         package='roombav2',
-        executable='encoder_reader',
-        name='encoder_reader',
+        executable='joystick_motor_controller',
+        name='joystick_motor_controller',
         output='screen'
     )
 
@@ -84,7 +94,7 @@ def generate_launch_description():
         ),
         robot_state_publisher,
         joint_state_publisher_node,
-        encoder_reader_node,
+        joystick_control_node,
         static_tf_base_lidar,
         lidar_launch_include,
         slam_toolbox_node,

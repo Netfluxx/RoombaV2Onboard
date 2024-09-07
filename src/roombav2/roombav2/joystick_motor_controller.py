@@ -13,6 +13,7 @@ from std_msgs.msg import String
 from geometry_msgs.msg import Twist, Pose
 import serial
 from serial.tools import list_ports
+from serial.serialutil import SerialException
 import time
 
 from nav_msgs.msg import Odometry
@@ -32,9 +33,8 @@ class JoystickMotorControl(Node):
         self.serial_port = self.detect_serial_port()
 
         if not self.serial_port:
-            self.get_logger().error("NO VALID SERIAL PORT FOUND THE MASTER ARDUINO IS COOOOOKED")
-            raise RuntimeError("NO VALID SERIAL PORT FOUND THE MASTER ARDUINO IS COOOOOKED")
-
+            self.get_logger().error("NO VALID SERIAL PORT FOUND, are we cooked ?")
+            self.reconnect_serial()
 
         # Subscribe to the input topic
         #reliability best effort qos profile for the subscriber (UDP-like)
@@ -42,7 +42,7 @@ class JoystickMotorControl(Node):
                                                 history=rclpy.qos.HistoryPolicy.KEEP_LAST,
                                                 depth=5)
         
-        self.subscription = self.create_subscription(
+        self.subscription = self.create_subscription(   #TODO: USE TWIST MUX LIKE ARTICULATED ROBOTICS TO BE ABLE TO TAKE CONTROL OF NAV2 IF NEEDED
             Twist,
             '/joystick_cmd_vel',
             self.joystick_cmd_callback,
@@ -50,6 +50,8 @@ class JoystickMotorControl(Node):
         )
 
         self.wheel_speeds_publisher = self.create_publisher(String, '/wheel_speeds', 10)
+        self.battery_publisher = self.create_publisher(String, '/battery', 10)
+        self.sent_wheel_speeds_publisher = self.create_publisher(String, '/sent_wheel_speeds', 10)
 
         self.odom_pub = self.create_publisher(Odometry, '/odom', 10)
         self.tf_broadcaster = TransformBroadcaster(self)
@@ -63,13 +65,17 @@ class JoystickMotorControl(Node):
         self.rover_mass = 4  # kg
 
         #add timer to read the serial port for messages from the arduino
-        timer_period = 0.01  # seconds
+        timer_period = 0.01  # seconds  MAYBE THIS IS TOO FAST?? we'll have to wait and see the performance with SLAM
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
         self.fr_wheel_speed = 0.0
         self.fl_wheel_speed = 0.0
         self.br_wheel_speed = 0.0
         self.bl_wheel_speed = 0.0
+
+        self.slip_factor = 0.8 #TODO: need to test it empirically 
+        #under-rotating => significant slippage => slip factor lower than 1 (ex: 0.85)
+        #over-rotating => turns too much, too little slippage => slip factor higher than 1
 
     def detect_serial_port(self):
         ports = serial.tools.list_ports.comports()
@@ -83,6 +89,16 @@ class JoystickMotorControl(Node):
                     self.get_logger().error(f"FAILED to open serial port {port.device}: {e}")
         return None
     
+    def reconnect_serial(self):
+        while self.serial_port is None:
+            self.get_logger().info("Trying to reconnect to the Arduino...")
+            self.serial_port = self.detect_serial_port()
+            if self.serial_port:
+                self.get_logger().info("Reconnected to the Arduino.")
+            else:
+                self.get_logger().warn("Arduino not found. Retrying in 5 seconds...")
+                time.sleep(5)  # Wait before retrying
+    
     def joystick_cmd_callback(self, msg):
         lin_vel = msg.linear.x
         ang_vel = msg.angular.z
@@ -92,66 +108,90 @@ class JoystickMotorControl(Node):
         #front_right_speed,front_left_speed,back_right_speed,back_left_speed
         
         msg = f"{wheel_vels[0]:.2f},{wheel_vels[1]:.2f},{wheel_vels[2]:.2f},{wheel_vels[3]:.2f}"
+        sent_wheel_speeds_msg = String()
+        sent_wheel_speeds_msg.data = msg
+        self.sent_wheel_speeds_publisher.publish(sent_wheel_speeds_msg)
 
-        self.get_logger().info(f"sent: {msg}")
+        #self.get_logger().info(f"sent: {msg}")
 
         self.serial_port.write((msg + '\n').encode('utf-8'))
 
 
     def timer_callback(self):
-        received_from_arduino = self.serial_port.readline().decode('utf-8', errors = 'ignore').strip()
-        if received_from_arduino:
-            curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
-            self.get_logger().info(f"Rover Master Nano @{curr_time}: {received_from_arduino}")
+        try: 
+            received_from_arduino = self.serial_port.readline().decode('utf-8', errors = 'ignore').strip()
+            if received_from_arduino:
+                curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
+                #self.get_logger().info(f"Rover Master Nano @{curr_time}: {received_from_arduino}")
 
-            required_terms = ["FR", "FL", "BR", "BL"]  #parsing the incoming arduino logs 
-            if all(term in received_from_arduino for term in required_terms):
-                parsed_speeds = received_from_arduino.split(',')
-                parsed_speeds = [_.split(':') for _ in parsed_speeds]
+                required_terms = ["FR", "FL", "BR", "BL"]  #parsing the incoming arduino logs 
+                if all(term in received_from_arduino for term in required_terms):
+                    parsed_speeds = received_from_arduino.split(',')
+                    parsed_speeds = [_.split(':') for _ in parsed_speeds]
 
-                self.get_logger().info(f"parsed_speeds split: {parsed_speeds}")
+                    #self.get_logger().info(f"parsed_speeds split: {parsed_speeds}")
 
-                if parsed_speeds[0][1] != "NAN":
-                    self.fr_wheel_speed = float(parsed_speeds[0][1])
-                else:
-                    self.fr_wheel_speed = 0.00
+                    if parsed_speeds[0][1] != "NAN":
+                        self.fr_wheel_speed = float(parsed_speeds[0][1])
+                    else:
+                        self.fr_wheel_speed = 0.00
 
-                if parsed_speeds[1][1] != "NAN":
-                    self.fr_wheel_speed = float(parsed_speeds[1][1])
-                else:
-                    self.fr_wheel_speed = 0.00
+                    if parsed_speeds[1][1] != "NAN":
+                        self.fl_wheel_speed = float(parsed_speeds[1][1])
+                    else:
+                        self.fl_wheel_speed = 0.00
 
-                if parsed_speeds[2][1] != "NAN":
-                    self.fr_wheel_speed = float(parsed_speeds[2][1])
-                else:
-                    self.fr_wheel_speed = 0.00
+                    if parsed_speeds[2][1] != "NAN":
+                        self.br_wheel_speed = float(parsed_speeds[2][1])
+                    else:
+                        self.br_wheel_speed = 0.00
 
-                if parsed_speeds[3][1] != "NAN":
-                    self.fr_wheel_speed = float(parsed_speeds[3][1])
-                else:
-                    self.fr_wheel_speed = 0.00
+                    if parsed_speeds[3][1] != "NAN":
+                        self.bl_wheel_speed = float(parsed_speeds[3][1])
+                    else:
+                        self.bl_wheel_speed = 0.00
 
+                    wheel_speed_msg = String()
+                    wheel_speed_msg.data = f"{self.fr_wheel_speed},{self.fl_wheel_speed},{self.br_wheel_speed},{self.bl_wheel_speed}"
+                    self.wheel_speeds_publisher.publish(wheel_speed_msg)
                 
-                wheel_speed_msg = f"{self.fr_wheel_speed},{self.fl_wheel_speed},{self.br_wheel_speed},{self.bl_wheel_speed}"
-                self.wheel_speeds_publisher.publish(wheel_speed_msg)
-                
-            self.get_logger().info(f"----------------")
-    
+                if "battery voltage:" in received_from_arduino:
+                    try:
+                        batt_voltage_str = received_from_arduino.split(':')[1].strip()
+                        batt_voltage = float(batt_voltage_str)
+                        
+                        batt_pub_msg = String()
+                        batt_pub_msg.data = f"{batt_voltage}"
+                        self.battery_publisher.publish(batt_pub_msg)
+
+                    except ValueError:
+                        self.get_logger().warn(f"Invalid battery voltage received: {batt_voltage_str}")
+
+                #self.get_logger().info(f"----------------")
+
+        except SerialException as e:
+            self.get_logger().error(f"SerialException occurred: {e}")
+            #close current connection and try again
+            self.serial_port.close()
+            self.serial_port = None
+            self.reconnect_serial()
+
     def compute_kinematics(self, lin_vel, ang_vel):
-        #very simple kinematics but doesn't take into account wheel slip and/or friction
-        vel_left =  (lin_vel - (self.rover_width*ang_vel/2))
-        vel_right = (lin_vel + (self.rover_width*ang_vel/2))
+        #very simple kinematics
+
+        vel_left  = (lin_vel - self.slip_factor * (self.rover_width * ang_vel/2.0))
+        vel_right = (lin_vel + self.slip_factor * (self.rover_width * ang_vel/2.0))
 
         return [vel_right, vel_left, vel_right, vel_left]
 
 
-    def get_velocities(self):
+    def get_odom_velocities(self):
 
         right_wheel_velocity = (self.fr_wheel_speed + self.br_wheel_speed)/2.0
         left_wheel_velocity = (self.fl_wheel_speed + self.bl_wheel_speed)/2.0
 
         v = (right_wheel_velocity + left_wheel_velocity) / 2.0
-        omega = ( (right_wheel_velocity - left_wheel_velocity) / self.rover_width ) *1.5  #scaling it up because it seems too low
+        omega = ( (right_wheel_velocity - left_wheel_velocity) / self.rover_width )
 
         return v, omega
 
@@ -160,7 +200,7 @@ class JoystickMotorControl(Node):
         current_time = self.get_clock().now()
         dt = (current_time - self.last_time).nanoseconds / 1e9
 
-        v, omega = self.get_velocities()
+        v, omega = self.get_odom_velocities()
 
         # Update the pose by integration of speed
         delta_x = v * math.cos(self.theta) * dt

@@ -1,0 +1,305 @@
+[0.483s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.483s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0xffff849ed8a0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff84b29ff0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff84b29ff0>>, mixin_verb=('build',))
+[1.214s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.214s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.214s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.214s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.215s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.215s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.215s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/arno/RoombaV2Onboard'
+[1.216s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.216s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.217s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.217s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.217s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.218s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.218s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.218s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.218s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.262s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.263s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.264s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.264s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.265s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.266s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.266s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.266s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.267s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.268s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.268s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.268s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[1.268s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[1.269s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[1.269s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[1.269s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[1.269s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[1.269s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[1.269s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[1.269s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[1.270s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[1.270s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[1.270s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[1.270s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[1.270s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[1.271s] Level 1:colcon.colcon_core.package_identification:_identify(src/RoverReceive) by extensions ['ignore', 'ignore_ament_install']
+[1.271s] Level 1:colcon.colcon_core.package_identification:_identify(src/RoverReceive) by extension 'ignore'
+[1.271s] Level 1:colcon.colcon_core.package_identification:_identify(src/RoverReceive) by extension 'ignore_ament_install'
+[1.271s] Level 1:colcon.colcon_core.package_identification:_identify(src/RoverReceive) by extensions ['colcon_pkg']
+[1.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/RoverReceive) by extension 'colcon_pkg'
+[1.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/RoverReceive) by extensions ['colcon_meta']
+[1.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/RoverReceive) by extension 'colcon_meta'
+[1.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/RoverReceive) by extensions ['ros']
+[1.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/RoverReceive) by extension 'ros'
+[1.281s] DEBUG:colcon.colcon_core.package_identification:Package 'src/RoverReceive' with type 'ros.ament_python' and name 'RoverReceive'
+[1.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/mode_manager) by extensions ['ignore', 'ignore_ament_install']
+[1.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/mode_manager) by extension 'ignore'
+[1.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/mode_manager) by extension 'ignore_ament_install'
+[1.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/mode_manager) by extensions ['colcon_pkg']
+[1.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/mode_manager) by extension 'colcon_pkg'
+[1.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/mode_manager) by extensions ['colcon_meta']
+[1.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/mode_manager) by extension 'colcon_meta'
+[1.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/mode_manager) by extensions ['ros']
+[1.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/mode_manager) by extension 'ros'
+[1.286s] DEBUG:colcon.colcon_core.package_identification:Package 'src/mode_manager' with type 'ros.ament_python' and name 'mode_manager'
+[1.286s] Level 1:colcon.colcon_core.package_identification:_identify(src/roombav2) by extensions ['ignore', 'ignore_ament_install']
+[1.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/roombav2) by extension 'ignore'
+[1.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/roombav2) by extension 'ignore_ament_install'
+[1.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/roombav2) by extensions ['colcon_pkg']
+[1.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/roombav2) by extension 'colcon_pkg'
+[1.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/roombav2) by extensions ['colcon_meta']
+[1.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/roombav2) by extension 'colcon_meta'
+[1.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/roombav2) by extensions ['ros']
+[1.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/roombav2) by extension 'ros'
+[1.295s] DEBUG:colcon.colcon_core.package_identification:Package 'src/roombav2' with type 'ros.ament_python' and name 'roombav2'
+[1.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['ignore', 'ignore_ament_install']
+[1.296s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ignore'
+[1.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ignore_ament_install'
+[1.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['colcon_pkg']
+[1.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'colcon_pkg'
+[1.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['colcon_meta']
+[1.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'colcon_meta'
+[1.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extensions ['ros']
+[1.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/sllidar_ros2) by extension 'ros'
+[1.300s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sllidar_ros2' with type 'ros.ament_cmake' and name 'sllidar_ros2'
+[1.300s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.301s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.301s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.301s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.301s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.381s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.381s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.391s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/arno/RoombaV2Onboard/install
+[1.399s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 245 installed packages in /opt/ros/humble
+[1.404s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.589s] Level 5:colcon.colcon_core.verb:set package 'RoverReceive' build argument 'cmake_args' from command line to 'None'
+[1.589s] Level 5:colcon.colcon_core.verb:set package 'RoverReceive' build argument 'cmake_target' from command line to 'None'
+[1.589s] Level 5:colcon.colcon_core.verb:set package 'RoverReceive' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.589s] Level 5:colcon.colcon_core.verb:set package 'RoverReceive' build argument 'cmake_clean_cache' from command line to 'False'
+[1.589s] Level 5:colcon.colcon_core.verb:set package 'RoverReceive' build argument 'cmake_clean_first' from command line to 'False'
+[1.589s] Level 5:colcon.colcon_core.verb:set package 'RoverReceive' build argument 'cmake_force_configure' from command line to 'False'
+[1.589s] Level 5:colcon.colcon_core.verb:set package 'RoverReceive' build argument 'ament_cmake_args' from command line to 'None'
+[1.590s] Level 5:colcon.colcon_core.verb:set package 'RoverReceive' build argument 'catkin_cmake_args' from command line to 'None'
+[1.590s] Level 5:colcon.colcon_core.verb:set package 'RoverReceive' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.590s] DEBUG:colcon.colcon_core.verb:Building package 'RoverReceive' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/arno/RoombaV2Onboard/build/RoverReceive', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/arno/RoombaV2Onboard/install/RoverReceive', 'merge_install': False, 'path': '/home/arno/RoombaV2Onboard/src/RoverReceive', 'symlink_install': True, 'test_result_base': None}
+[1.591s] Level 5:colcon.colcon_core.verb:set package 'mode_manager' build argument 'cmake_args' from command line to 'None'
+[1.591s] Level 5:colcon.colcon_core.verb:set package 'mode_manager' build argument 'cmake_target' from command line to 'None'
+[1.592s] Level 5:colcon.colcon_core.verb:set package 'mode_manager' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.592s] Level 5:colcon.colcon_core.verb:set package 'mode_manager' build argument 'cmake_clean_cache' from command line to 'False'
+[1.592s] Level 5:colcon.colcon_core.verb:set package 'mode_manager' build argument 'cmake_clean_first' from command line to 'False'
+[1.592s] Level 5:colcon.colcon_core.verb:set package 'mode_manager' build argument 'cmake_force_configure' from command line to 'False'
+[1.592s] Level 5:colcon.colcon_core.verb:set package 'mode_manager' build argument 'ament_cmake_args' from command line to 'None'
+[1.592s] Level 5:colcon.colcon_core.verb:set package 'mode_manager' build argument 'catkin_cmake_args' from command line to 'None'
+[1.592s] Level 5:colcon.colcon_core.verb:set package 'mode_manager' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.592s] DEBUG:colcon.colcon_core.verb:Building package 'mode_manager' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/arno/RoombaV2Onboard/build/mode_manager', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/arno/RoombaV2Onboard/install/mode_manager', 'merge_install': False, 'path': '/home/arno/RoombaV2Onboard/src/mode_manager', 'symlink_install': True, 'test_result_base': None}
+[1.594s] Level 5:colcon.colcon_core.verb:set package 'roombav2' build argument 'cmake_args' from command line to 'None'
+[1.594s] Level 5:colcon.colcon_core.verb:set package 'roombav2' build argument 'cmake_target' from command line to 'None'
+[1.594s] Level 5:colcon.colcon_core.verb:set package 'roombav2' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.594s] Level 5:colcon.colcon_core.verb:set package 'roombav2' build argument 'cmake_clean_cache' from command line to 'False'
+[1.594s] Level 5:colcon.colcon_core.verb:set package 'roombav2' build argument 'cmake_clean_first' from command line to 'False'
+[1.594s] Level 5:colcon.colcon_core.verb:set package 'roombav2' build argument 'cmake_force_configure' from command line to 'False'
+[1.594s] Level 5:colcon.colcon_core.verb:set package 'roombav2' build argument 'ament_cmake_args' from command line to 'None'
+[1.594s] Level 5:colcon.colcon_core.verb:set package 'roombav2' build argument 'catkin_cmake_args' from command line to 'None'
+[1.595s] Level 5:colcon.colcon_core.verb:set package 'roombav2' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.595s] DEBUG:colcon.colcon_core.verb:Building package 'roombav2' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/arno/RoombaV2Onboard/build/roombav2', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/arno/RoombaV2Onboard/install/roombav2', 'merge_install': False, 'path': '/home/arno/RoombaV2Onboard/src/roombav2', 'symlink_install': True, 'test_result_base': None}
+[1.596s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_args' from command line to 'None'
+[1.596s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_target' from command line to 'None'
+[1.596s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.596s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_clean_cache' from command line to 'False'
+[1.596s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_clean_first' from command line to 'False'
+[1.597s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_force_configure' from command line to 'False'
+[1.597s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'ament_cmake_args' from command line to 'None'
+[1.597s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'catkin_cmake_args' from command line to 'None'
+[1.597s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.597s] DEBUG:colcon.colcon_core.verb:Building package 'sllidar_ros2' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/arno/RoombaV2Onboard/build/sllidar_ros2', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/arno/RoombaV2Onboard/install/sllidar_ros2', 'merge_install': False, 'path': '/home/arno/RoombaV2Onboard/src/sllidar_ros2', 'symlink_install': True, 'test_result_base': None}
+[1.597s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.601s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.602s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/arno/RoombaV2Onboard/src/RoverReceive' with build type 'ament_python'
+[1.602s] Level 1:colcon.colcon_core.shell:create_environment_hook('RoverReceive', 'ament_prefix_path')
+[1.611s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.612s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/RoverReceive/share/RoverReceive/hook/ament_prefix_path.ps1'
+[1.616s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arno/RoombaV2Onboard/install/RoverReceive/share/RoverReceive/hook/ament_prefix_path.dsv'
+[1.618s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/RoverReceive/share/RoverReceive/hook/ament_prefix_path.sh'
+[1.622s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.622s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.639s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/arno/RoombaV2Onboard/src/mode_manager' with build type 'ament_python'
+[1.640s] Level 1:colcon.colcon_core.shell:create_environment_hook('mode_manager', 'ament_prefix_path')
+[1.641s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/mode_manager/share/mode_manager/hook/ament_prefix_path.ps1'
+[1.643s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arno/RoombaV2Onboard/install/mode_manager/share/mode_manager/hook/ament_prefix_path.dsv'
+[1.645s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/mode_manager/share/mode_manager/hook/ament_prefix_path.sh'
+[1.648s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.649s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.666s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/arno/RoombaV2Onboard/src/roombav2' with build type 'ament_python'
+[1.667s] Level 1:colcon.colcon_core.shell:create_environment_hook('roombav2', 'ament_prefix_path')
+[1.668s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/hook/ament_prefix_path.ps1'
+[1.670s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/hook/ament_prefix_path.dsv'
+[1.672s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/hook/ament_prefix_path.sh'
+[1.675s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.675s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.692s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/arno/RoombaV2Onboard/src/sllidar_ros2' with build type 'ament_cmake'
+[1.693s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/arno/RoombaV2Onboard/src/sllidar_ros2'
+[1.694s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.695s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.857s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/arno/RoombaV2Onboard/src/RoverReceive'
+[2.858s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.858s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.000s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/arno/RoombaV2Onboard/src/mode_manager'
+[4.001s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.001s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.151s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/arno/RoombaV2Onboard/src/roombav2'
+[5.152s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.152s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.188s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/arno/RoombaV2Onboard/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/mode_manager:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/sllidar_ros2 -- -j4 -l4
+[5.730s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/arno/RoombaV2Onboard/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/mode_manager:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/sllidar_ros2 -- -j4 -l4
+[6.217s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/arno/RoombaV2Onboard/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/mode_manager:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/sllidar_ros2
+[6.361s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sllidar_ros2)
+[6.368s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/arno/RoombaV2Onboard/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/rover_stream:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/mode_manager:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/sllidar_ros2
+[6.380s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/sllidar_ros2' for CMake module files
+[6.384s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/sllidar_ros2' for CMake config files
+[6.386s] Level 1:colcon.colcon_core.shell:create_environment_hook('sllidar_ros2', 'cmake_prefix_path')
+[6.387s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.ps1'
+[6.389s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.dsv'
+[6.392s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.sh'
+[6.395s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/sllidar_ros2/lib'
+[6.396s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/sllidar_ros2/bin'
+[6.397s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/sllidar_ros2/lib/pkgconfig/sllidar_ros2.pc'
+[6.398s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/sllidar_ros2/lib/python3.10/site-packages'
+[6.399s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/sllidar_ros2/bin'
+[6.401s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/package.ps1'
+[6.405s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/package.dsv'
+[6.408s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/package.sh'
+[6.413s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/package.bash'
+[6.417s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/package.zsh'
+[6.420s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/colcon-core/packages/sllidar_ros2)
+[6.869s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sllidar_ros2)
+[6.870s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/sllidar_ros2' for CMake module files
+[6.875s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/sllidar_ros2' for CMake config files
+[6.879s] Level 1:colcon.colcon_core.shell:create_environment_hook('sllidar_ros2', 'cmake_prefix_path')
+[6.880s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.ps1'
+[6.883s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.dsv'
+[6.887s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.sh'
+[6.896s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/sllidar_ros2/lib'
+[6.897s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/sllidar_ros2/bin'
+[6.897s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/sllidar_ros2/lib/pkgconfig/sllidar_ros2.pc'
+[6.899s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/sllidar_ros2/lib/python3.10/site-packages'
+[6.901s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/sllidar_ros2/bin'
+[6.903s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/package.ps1'
+[6.905s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/package.dsv'
+[6.909s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/package.sh'
+[6.912s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/package.bash'
+[6.915s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/sllidar_ros2/package.zsh'
+[6.918s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/arno/RoombaV2Onboard/install/sllidar_ros2/share/colcon-core/packages/sllidar_ros2)
+[7.488s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/arno/RoombaV2Onboard/build/roombav2': PYTHONPATH=/home/arno/RoombaV2Onboard/build/roombav2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/roombav2/build --no-deps symlink_data
+[7.702s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/arno/RoombaV2Onboard/build/RoverReceive': PYTHONPATH=/home/arno/RoombaV2Onboard/build/RoverReceive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/RoverReceive/build --no-deps symlink_data
+[7.730s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/arno/RoombaV2Onboard/build/mode_manager': PYTHONPATH=/home/arno/RoombaV2Onboard/build/mode_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/mode_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/mode_manager/build --no-deps symlink_data
+[10.358s] Level 1:colcon.colcon_core.shell:create_environment_hook('RoverReceive', 'pythonpath_develop')
+[10.360s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/build/RoverReceive/share/RoverReceive/hook/pythonpath_develop.ps1'
+[10.362s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/arno/RoombaV2Onboard/build/RoverReceive' returned '0': PYTHONPATH=/home/arno/RoombaV2Onboard/build/RoverReceive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/RoverReceive/build --no-deps symlink_data
+[10.368s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arno/RoombaV2Onboard/build/RoverReceive/share/RoverReceive/hook/pythonpath_develop.dsv'
+[10.370s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/build/RoverReceive/share/RoverReceive/hook/pythonpath_develop.sh'
+[10.377s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/RoverReceive' for CMake module files
+[10.386s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/RoverReceive' for CMake config files
+[10.397s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/RoverReceive/lib'
+[10.398s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/RoverReceive/bin'
+[10.398s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/RoverReceive/lib/pkgconfig/RoverReceive.pc'
+[10.400s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages'
+[10.400s] Level 1:colcon.colcon_core.shell:create_environment_hook('RoverReceive', 'pythonpath')
+[10.401s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/RoverReceive/share/RoverReceive/hook/pythonpath.ps1'
+[10.405s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arno/RoombaV2Onboard/install/RoverReceive/share/RoverReceive/hook/pythonpath.dsv'
+[10.409s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/RoverReceive/share/RoverReceive/hook/pythonpath.sh'
+[10.413s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/RoverReceive/bin'
+[10.414s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(RoverReceive)
+[10.417s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/RoverReceive/share/RoverReceive/package.ps1'
+[10.424s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/arno/RoombaV2Onboard/install/RoverReceive/share/RoverReceive/package.dsv'
+[10.429s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/RoverReceive/share/RoverReceive/package.sh'
+[10.437s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/RoverReceive/share/RoverReceive/package.bash'
+[10.441s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/RoverReceive/share/RoverReceive/package.zsh'
+[10.444s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/arno/RoombaV2Onboard/install/RoverReceive/share/colcon-core/packages/RoverReceive)
+[10.453s] Level 1:colcon.colcon_core.shell:create_environment_hook('roombav2', 'pythonpath_develop')
+[10.455s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/build/roombav2/share/roombav2/hook/pythonpath_develop.ps1'
+[10.458s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/arno/RoombaV2Onboard/build/roombav2' returned '0': PYTHONPATH=/home/arno/RoombaV2Onboard/build/roombav2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/roombav2/build --no-deps symlink_data
+[10.461s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arno/RoombaV2Onboard/build/roombav2/share/roombav2/hook/pythonpath_develop.dsv'
+[10.465s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/build/roombav2/share/roombav2/hook/pythonpath_develop.sh'
+[10.472s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/roombav2' for CMake module files
+[10.477s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/roombav2' for CMake config files
+[10.486s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/roombav2/lib'
+[10.487s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/roombav2/bin'
+[10.488s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/roombav2/lib/pkgconfig/roombav2.pc'
+[10.489s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages'
+[10.490s] Level 1:colcon.colcon_core.shell:create_environment_hook('roombav2', 'pythonpath')
+[10.491s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/hook/pythonpath.ps1'
+[10.494s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/hook/pythonpath.dsv'
+[10.498s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/hook/pythonpath.sh'
+[10.503s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/roombav2/bin'
+[10.503s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(roombav2)
+[10.505s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/package.ps1'
+[10.508s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/package.dsv'
+[10.512s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/package.sh'
+[10.517s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/package.bash'
+[10.521s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/package.zsh'
+[10.525s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/arno/RoombaV2Onboard/install/roombav2/share/colcon-core/packages/roombav2)
+[10.568s] Level 1:colcon.colcon_core.shell:create_environment_hook('mode_manager', 'pythonpath_develop')
+[10.569s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/build/mode_manager/share/mode_manager/hook/pythonpath_develop.ps1'
+[10.570s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/arno/RoombaV2Onboard/build/mode_manager' returned '0': PYTHONPATH=/home/arno/RoombaV2Onboard/build/mode_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/mode_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/mode_manager/build --no-deps symlink_data
+[10.572s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arno/RoombaV2Onboard/build/mode_manager/share/mode_manager/hook/pythonpath_develop.dsv'
+[10.574s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/build/mode_manager/share/mode_manager/hook/pythonpath_develop.sh'
+[10.577s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/mode_manager' for CMake module files
+[10.580s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/mode_manager' for CMake config files
+[10.584s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/mode_manager/lib'
+[10.585s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/mode_manager/bin'
+[10.585s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/mode_manager/lib/pkgconfig/mode_manager.pc'
+[10.586s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/mode_manager/lib/python3.10/site-packages'
+[10.586s] Level 1:colcon.colcon_core.shell:create_environment_hook('mode_manager', 'pythonpath')
+[10.587s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/mode_manager/share/mode_manager/hook/pythonpath.ps1'
+[10.589s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/arno/RoombaV2Onboard/install/mode_manager/share/mode_manager/hook/pythonpath.dsv'
+[10.591s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/arno/RoombaV2Onboard/install/mode_manager/share/mode_manager/hook/pythonpath.sh'
+[10.593s] Level 1:colcon.colcon_core.environment:checking '/home/arno/RoombaV2Onboard/install/mode_manager/bin'
+[10.593s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mode_manager)
+[10.595s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/mode_manager/share/mode_manager/package.ps1'
+[10.597s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/arno/RoombaV2Onboard/install/mode_manager/share/mode_manager/package.dsv'
+[10.599s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/mode_manager/share/mode_manager/package.sh'
+[10.601s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/mode_manager/share/mode_manager/package.bash'
+[10.603s] INFO:colcon.colcon_core.shell:Creating package script '/home/arno/RoombaV2Onboard/install/mode_manager/share/mode_manager/package.zsh'
+[10.604s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/arno/RoombaV2Onboard/install/mode_manager/share/colcon-core/packages/mode_manager)
+[10.605s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[10.606s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[10.607s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[10.607s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[10.631s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[10.631s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[10.632s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[10.632s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[10.635s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[10.635s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[10.636s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/arno/RoombaV2Onboard/install/local_setup.ps1'
+[10.639s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/arno/RoombaV2Onboard/install/_local_setup_util_ps1.py'
+[10.646s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/arno/RoombaV2Onboard/install/setup.ps1'
+[10.653s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/arno/RoombaV2Onboard/install/local_setup.sh'
+[10.655s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/arno/RoombaV2Onboard/install/_local_setup_util_sh.py'
+[10.658s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/arno/RoombaV2Onboard/install/setup.sh'
+[10.663s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/arno/RoombaV2Onboard/install/local_setup.bash'
+[10.665s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/arno/RoombaV2Onboard/install/setup.bash'
+[10.671s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/arno/RoombaV2Onboard/install/local_setup.zsh'
+[10.673s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/arno/RoombaV2Onboard/install/setup.zsh'

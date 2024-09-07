@@ -25,6 +25,7 @@ setup(
             'config/planner_params.yaml', 
             'config/slam_toolbox_params.yaml',
             'config/ekf.yaml',
+            'config/twist_mux.yaml',
         ]),
         ('share/' + package_name + '/models', [
             'models/microver.urdf.xacro', 

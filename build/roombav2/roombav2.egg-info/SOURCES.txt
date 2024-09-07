@@ -6,6 +6,7 @@ config/costmap_params.yaml
 config/ekf.yaml
 config/planner_params.yaml
 config/slam_toolbox_params.yaml
+config/twist_mux.yaml
 launch/microver.launch.py
 launch/nav2_bringup.launch.py
 models/constants.xacro
@@ -15,6 +16,7 @@ resource/roombav2
 roombav2/__init__.py
 roombav2/encoder_reader.py
 roombav2/joystick_motor_controller.py
+roombav2/motor_control.py
 roombav2/nav2_motor_controller.py
 roombav2.egg-info/PKG-INFO
 roombav2.egg-info/SOURCES.txt

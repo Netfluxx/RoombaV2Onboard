@@ -1,7 +1,7 @@
 
 ekf_filter_node:
   ros__parameters:
-    frequency: 30.0  # The frequency at which the filter runs
+    frequency: 10.0  # The frequency at which the filter runs
     sensor_timeout: 0.1  # How long to wait for sensor data before giving up
     two_d_mode: true  # If you're working with a 2D robot (e.g., a ground robot)
 
