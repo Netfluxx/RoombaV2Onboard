@@ -1,6 +1,13 @@
 package.xml
 setup.cfg
 setup.py
+../../build/mode_manager/mode_manager.egg-info/PKG-INFO
+../../build/mode_manager/mode_manager.egg-info/SOURCES.txt
+../../build/mode_manager/mode_manager.egg-info/dependency_links.txt
+../../build/mode_manager/mode_manager.egg-info/entry_points.txt
+../../build/mode_manager/mode_manager.egg-info/requires.txt
+../../build/mode_manager/mode_manager.egg-info/top_level.txt
+../../build/mode_manager/mode_manager.egg-info/zip-safe
 mode_manager/__init__.py
 mode_manager/mode_manager.py
 mode_manager.egg-info/PKG-INFO

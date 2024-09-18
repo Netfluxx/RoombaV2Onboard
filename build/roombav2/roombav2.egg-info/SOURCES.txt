@@ -1,6 +1,13 @@
 package.xml
 setup.cfg
 setup.py
+../../build/roombav2/roombav2.egg-info/PKG-INFO
+../../build/roombav2/roombav2.egg-info/SOURCES.txt
+../../build/roombav2/roombav2.egg-info/dependency_links.txt
+../../build/roombav2/roombav2.egg-info/entry_points.txt
+../../build/roombav2/roombav2.egg-info/requires.txt
+../../build/roombav2/roombav2.egg-info/top_level.txt
+../../build/roombav2/roombav2.egg-info/zip-safe
 config/amcl_params.yaml
 config/costmap_params.yaml
 config/ekf.yaml
@@ -18,6 +25,7 @@ roombav2/encoder_reader.py
 roombav2/joystick_motor_controller.py
 roombav2/motor_control.py
 roombav2/nav2_motor_controller.py
+roombav2/pwm_open_loop.py
 roombav2/system_info.py
 roombav2.egg-info/PKG-INFO
 roombav2.egg-info/SOURCES.txt

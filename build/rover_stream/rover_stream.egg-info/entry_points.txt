@@ -1,3 +1,0 @@
-[console_scripts]
-webrtc_streamer = rover_stream.webrtc_streamer:main
-

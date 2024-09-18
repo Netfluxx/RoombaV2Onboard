@@ -1,1 +1,0 @@
-/home/arno/RoombaV2Onboard/build/roombav2/roombav2/cpu_temp.py

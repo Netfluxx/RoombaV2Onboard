@@ -1,6 +1,13 @@
 package.xml
 setup.cfg
 setup.py
+../../build/RoverReceive/RoverReceive.egg-info/PKG-INFO
+../../build/RoverReceive/RoverReceive.egg-info/SOURCES.txt
+../../build/RoverReceive/RoverReceive.egg-info/dependency_links.txt
+../../build/RoverReceive/RoverReceive.egg-info/entry_points.txt
+../../build/RoverReceive/RoverReceive.egg-info/requires.txt
+../../build/RoverReceive/RoverReceive.egg-info/top_level.txt
+../../build/RoverReceive/RoverReceive.egg-info/zip-safe
 RoverReceive/__init__.py
 RoverReceive/receive_node.py
 RoverReceive.egg-info/PKG-INFO
