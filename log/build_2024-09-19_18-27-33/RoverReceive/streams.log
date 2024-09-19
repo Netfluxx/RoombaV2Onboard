@@ -1,0 +1,22 @@
+[1.521s] Invoking command in '/home/arno/RoombaV2Onboard/src/RoverReceive': PYTHONPATH=/home/arno/RoombaV2Onboard/build/RoverReceive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/RoverReceive build --build-base /home/arno/RoombaV2Onboard/build/RoverReceive/build install --record /home/arno/RoombaV2Onboard/build/RoverReceive/install.log --single-version-externally-managed install_data
+[1.866s] running egg_info
+[1.867s] writing ../../build/RoverReceive/RoverReceive.egg-info/PKG-INFO
+[1.867s] writing dependency_links to ../../build/RoverReceive/RoverReceive.egg-info/dependency_links.txt
+[1.868s] writing entry points to ../../build/RoverReceive/RoverReceive.egg-info/entry_points.txt
+[1.868s] writing requirements to ../../build/RoverReceive/RoverReceive.egg-info/requires.txt
+[1.868s] writing top-level names to ../../build/RoverReceive/RoverReceive.egg-info/top_level.txt
+[1.872s] reading manifest file '../../build/RoverReceive/RoverReceive.egg-info/SOURCES.txt'
+[1.873s] adding license file 'LICENSE'
+[1.874s] writing manifest file '../../build/RoverReceive/RoverReceive.egg-info/SOURCES.txt'
+[1.874s] running build
+[1.874s] running build_py
+[1.874s] running install
+[1.875s] running install_lib
+[1.876s] running install_data
+[1.876s] running install_egg_info
+[1.879s] removing '/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive-0.0.0-py3.10.egg-info' (and everything under it)
+[1.880s] Copying ../../build/RoverReceive/RoverReceive.egg-info to /home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages/RoverReceive-0.0.0-py3.10.egg-info
+[1.881s] running install_scripts
+[1.910s] Installing receive_node script to /home/arno/RoombaV2Onboard/install/RoverReceive/lib/RoverReceive
+[1.911s] writing list of installed files to '/home/arno/RoombaV2Onboard/build/RoverReceive/install.log'
+[1.952s] Invoked command in '/home/arno/RoombaV2Onboard/src/RoverReceive' returned '0': PYTHONPATH=/home/arno/RoombaV2Onboard/build/RoverReceive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/RoverReceive build --build-base /home/arno/RoombaV2Onboard/build/RoverReceive/build install --record /home/arno/RoombaV2Onboard/build/RoverReceive/install.log --single-version-externally-managed install_data

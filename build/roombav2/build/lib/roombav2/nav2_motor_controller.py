@@ -46,7 +46,7 @@ class Nav2MotorControl(Node):
             if 'USB' in port.description and '1A86:7523' in port.hwid: #master arduino hwid number
                 try:
                     #print(port.hwid)
-                    serial_port = serial.Serial(port.device, 9600, timeout=1)
+                    serial_port = serial.Serial(port.device, 115200, timeout=1)
                     self.get_logger().info(f"CONNECTED to serial port: {port.device}")
                     return serial_port
                 except serial.SerialException as e:

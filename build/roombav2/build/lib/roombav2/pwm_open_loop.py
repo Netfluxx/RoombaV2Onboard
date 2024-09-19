@@ -19,7 +19,7 @@ import time
 from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Twist, Pose
 from sensor_msgs.msg import JointState
-from tf_transformations import quaternion_from_euler
+#from tf_transformations import quaternion_from_euler
 import math
 from random import randrange
 from tf2_ros import TransformBroadcaster
@@ -27,9 +27,9 @@ from geometry_msgs.msg import TransformStamped
 from geometry_msgs.msg import Quaternion
 
 
-class JoystickMotorControl(Node):
+class JoyPwmMotorControl(Node):
     def __init__(self):
-        super().__init__('joystick_motor_control')
+        super().__init__('joy_pwm_motor_control')
         self.serial_port = self.detect_serial_port()
 
         if not self.serial_port:
@@ -61,7 +61,7 @@ class JoystickMotorControl(Node):
         self.rover_mass = 4  # kg
 
         #add timer to read the serial port for messages from the arduino
-        timer_period = 0.03  # seconds  MAYBE THIS IS TOO FAST?? we'll have to wait and see the performance with SLAM
+        timer_period = 0.05  # seconds  MAYBE THIS IS TOO FAST?? we'll have to wait and see the performance with SLAM
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
         self.fr_wheel_speed = 0.0
@@ -79,7 +79,7 @@ class JoystickMotorControl(Node):
             for port in ports:
                 if 'USB' in port.description and '1A86:7523' in port.hwid: #master arduino hwid number
                     try:
-                        serial_port = serial.Serial(port.device, 9600, timeout=1)
+                        serial_port = serial.Serial(port.device, 115200, timeout=1)
                         self.get_logger().info(f"CONNECTED to serial port: {port.device} at hwid: {port.hwid}")
                         return serial_port
                     except serial.SerialException as e:
@@ -125,15 +125,22 @@ class JoystickMotorControl(Node):
 
 
     def timer_callback(self):
-        try: 
-            received_from_arduino = self.serial_port.readline().decode('utf-8', errors = 'ignore').strip()
+        try:
+            received_from_arduino = None
+            if self.serial_port.in_waiting > 0:
+                received_from_arduino = self.serial_port.readline().decode('utf-8', errors = 'ignore').strip()
+                #received_from_arduino = self.serial_port.read(self.serial_port.in_waiting).decode('utf-8', errors='ignore').strip()
             if received_from_arduino:
                 curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
-                #self.get_logger().info(f"Rover Master Nano @{curr_time}: {received_from_arduino}")
+                self.get_logger().info(f"Master @{curr_time}: {received_from_arduino}")
 
                 required_terms = ["FR", "FL", "BR", "BL"]  #parsing the incoming arduino logs 
                 if all(term in received_from_arduino for term in required_terms):
+
                     parsed_speeds = received_from_arduino.split(',')
+
+                    self.get_logger().info(f"parsed_speeds: {parsed_speeds}")#debug
+
                     parsed_speeds = [_.split(':') for _ in parsed_speeds]
 
                     #self.get_logger().info(f"parsed_speeds split: {parsed_speeds}")
@@ -179,15 +186,20 @@ class JoystickMotorControl(Node):
         except SerialException as e:
             self.get_logger().error(f"SerialException occurred: {e}")
             #close current connection and try again
-            self.serial_port.close()
-            self.serial_port = None
-            self.reconnect_serial()
+            #self.serial_port.close()
+            #self.serial_port = None
+            #self.reconnect_serial()
 
     def compute_kinematics_pwm(self, lin_vel, ang_vel):
         #simple open loop kinematics that send the pwm values
 
         pwm_left  = (lin_vel - self.slip_factor * (self.rover_width * ang_vel/2.0))
         pwm_right = (lin_vel + self.slip_factor * (self.rover_width * ang_vel/2.0))
+
+        #not enough power to turn the rover, so boost the pwm when turning
+        if ang_vel != 0 and abs(lin_vel) < 1.0:
+            pwm_left = pwm_left * 3.0
+            pwm_right = pwm_right * 3.0
 
         #map 0--> 0 pwm, 2--> 255 pwm
         pwm_left = 255 * (pwm_left/2)
@@ -203,13 +215,14 @@ class JoystickMotorControl(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = JoystickMotorControl()
+    node = JoyPwmMotorControl()
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
         pass
     finally:
-        node.serial_port.close()
+        if node.serial_port:
+            node.serial_port.close()
         rclpy.shutdown()
 
 if __name__ == '__main__':

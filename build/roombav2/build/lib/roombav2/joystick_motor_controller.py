@@ -55,7 +55,7 @@ class JoystickMotorControl(Node):
 
         self.odom_pub = self.create_publisher(Odometry, '/odom', 10)
         self.tf_broadcaster = TransformBroadcaster(self)
-        self.timer = self.create_timer(0.1, self.publish_odometry)
+        #self.timer = self.create_timer(0.1, self.publish_odometry)  #DEBUG MEEEEE AND TEST ME
 
         self.x = 0.0
         self.y = 0.0
@@ -65,7 +65,7 @@ class JoystickMotorControl(Node):
         self.rover_mass = 4  # kg
 
         #add timer to read the serial port for messages from the arduino
-        timer_period = 0.01  # seconds  MAYBE THIS IS TOO FAST?? we'll have to wait and see the performance with SLAM
+        timer_period = 0.05  # seconds  MAYBE THIS IS TOO FAST?? we'll have to wait and see the performance with SLAM
         self.timer = self.create_timer(timer_period, self.timer_callback)
 
         self.fr_wheel_speed = 0.0
@@ -78,16 +78,20 @@ class JoystickMotorControl(Node):
         #over-rotating => turns too much, too little slippage => slip factor higher than 1
 
     def detect_serial_port(self):
-        ports = serial.tools.list_ports.comports()
-        for port in ports:
-            if 'USB' in port.description and '1A86:7523' in port.hwid: #master arduino hwid number
-                try:
-                    serial_port = serial.Serial(port.device, 9600, timeout=1)
-                    self.get_logger().info(f"CONNECTED to serial port: {port.device} at hwid: {port.hwid}")
-                    return serial_port
-                except serial.SerialException as e:
-                    self.get_logger().error(f"FAILED to open serial port {port.device}: {e}")
-        return None
+        try:
+            ports = serial.tools.list_ports.comports()
+            for port in ports:
+                if 'USB' in port.description and '1A86:7523' in port.hwid: #master arduino hwid number
+                    try:
+                        serial_port = serial.Serial(port.device, 115200, timeout=1)
+                        self.get_logger().info(f"CONNECTED to serial port: {port.device} at hwid: {port.hwid}")
+                        return serial_port
+                    except serial.SerialException as e:
+                        self.get_logger().error(f"FAILED to open serial port {port.device}: {e}")
+            return None
+        except Exception as e:
+            self.get_logger().error(f"Error while detecting serial port: {e}")
+            return None
     
     def reconnect_serial(self):
         while self.serial_port is None:
@@ -100,6 +104,9 @@ class JoystickMotorControl(Node):
                 time.sleep(5)  # Wait before retrying
     
     def joystick_cmd_callback(self, msg):
+        if self.serial_port is None:
+            self.get_logger().error("No serial connection. Skipping command.")
+            return
         lin_vel = msg.linear.x
         ang_vel = msg.angular.z
         wheel_vels = self.compute_kinematics(lin_vel, ang_vel)
@@ -114,12 +121,19 @@ class JoystickMotorControl(Node):
 
         #self.get_logger().info(f"sent: {msg}")
 
-        self.serial_port.write((msg + '\n').encode('utf-8'))
+        #self.serial_port.write((msg + '\n').encode('utf-8'))
+        try:
+            self.serial_port.write((msg + '\n').encode('utf-8'))
+        except SerialException as e:
+            self.get_logger().error(f"SerialException occurred: {e}")
 
 
     def timer_callback(self):
-        try: 
-            received_from_arduino = self.serial_port.readline().decode('utf-8', errors = 'ignore').strip()
+        try:
+            received_from_arduino = None
+            if self.serial_port.in_waiting > 0:
+                received_from_arduino = self.serial_port.readline().decode('utf-8', errors = 'ignore').strip()
+            
             if received_from_arduino:
                 curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
                 #self.get_logger().info(f"Rover Master Nano @{curr_time}: {received_from_arduino}")
@@ -172,15 +186,19 @@ class JoystickMotorControl(Node):
         except SerialException as e:
             self.get_logger().error(f"SerialException occurred: {e}")
             #close current connection and try again
-            self.serial_port.close()
-            self.serial_port = None
-            self.reconnect_serial()
+            #self.serial_port.close()
+            #self.serial_port = None
+            #self.reconnect_serial()
 
     def compute_kinematics(self, lin_vel, ang_vel):
         #very simple kinematics
 
         vel_left  = (lin_vel - self.slip_factor * (self.rover_width * ang_vel/2.0))
         vel_right = (lin_vel + self.slip_factor * (self.rover_width * ang_vel/2.0))
+
+        if ang_vel != 0 and abs(lin_vel) < 1.0:
+            vel_left  = vel_left  * 1.6
+            vel_right = vel_right * 1.6
 
         return [vel_right, vel_left, vel_right, vel_left]
 
@@ -258,7 +276,8 @@ def main(args=None):
     except KeyboardInterrupt:
         pass
     finally:
-        node.serial_port.close()
+        if node.serial_port:
+            node.serial_port.close()
         rclpy.shutdown()
 
 if __name__ == '__main__':

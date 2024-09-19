@@ -1,1 +1,54 @@
-/home/arno/RoombaV2Onboard/build/roombav2/config/planner_params.yaml
+planner_server:
+  ros__parameters:
+    expected_planner_frequency: 20.0
+    use_sim_time: False
+    planner_plugins: ["GridBased"]
+
+    GridBased:
+      plugin: "nav2_navfn_planner/NavfnPlanner"
+      tolerance: 0.5
+      use_astar: false
+      allow_unknown: true
+      default_tolerance: 0.0
+
+controller_server:
+  ros__parameters:
+    use_sim_time: False
+    controller_frequency: 20.0
+    min_vel_x: 0.0
+    min_vel_y: 0.0
+    max_vel_x: 0.26
+    max_vel_y: 0.0
+    acc_lim_x: 2.5
+    acc_lim_y: 0.0
+    acc_lim_theta: 3.2
+    min_speed_xy: 0.0
+    max_speed_xy: 0.26
+    min_speed_theta: 0.0
+    max_speed_theta: 1.57
+    use_velocity_scaled_lookahead_dist: True
+    scaled_lookahead_dist: 0.4
+    base_lookahead_dist: 0.2
+    robot_base_frame: "base_link"
+    global_frame: "odom"
+    local_costmap: "local_costmap/costmap"
+    global_costmap: "global_costmap/costmap"
+    controller_plugins: ["FollowPath"]
+
+    FollowPath:
+      plugin: "dwb_core::DWBLocalPlanner"
+      min_vel_x: 0.0
+      min_vel_y: 0.0
+      max_vel_x: 0.26
+      max_vel_y: 0.0
+      acc_lim_x: 2.5
+      acc_lim_y: 0.0
+      acc_lim_theta: 3.2
+      min_speed_xy: 0.0
+      max_speed_xy: 0.26
+      min_speed_theta: 0.0
+      max_speed_theta: 1.57
+      vx_samples: 20
+      vy_samples: 0
+      vtheta_samples: 20
+      controller_frequency: 10.0
