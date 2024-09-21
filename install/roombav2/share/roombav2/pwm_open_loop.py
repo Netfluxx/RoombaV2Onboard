@@ -63,7 +63,6 @@ class JoyPwmMotorControl(Node):
         #add timer to read the serial port for messages from the arduino
         timer_period = 0.05# seconds  MAYBE THIS IS TOO FAST?? we'll have to wait and see the performance with SLAM
         self.timer = self.create_timer(timer_period, self.timer_callback)
-        self.ack_received = True
 
         self.prev_lin_vel = 0.0
         self.prev_ang_vel = 0.0
@@ -106,10 +105,6 @@ class JoyPwmMotorControl(Node):
     
     def joystick_cmd_callback(self, msg):
 
-        #if not self.ack_received:
-        #    self.get_logger().warn("Waiting for ACK...")
-        #    return
-
         if self.serial_port is None:
             self.get_logger().error("No serial connection. Skipping command.")
             return
@@ -126,43 +121,17 @@ class JoyPwmMotorControl(Node):
         self.prev_ang_vel = ang_vel
         
         pwm_vals = self.compute_kinematics_pwm(lin_vel, ang_vel)
-
-        #format speed values to 2 decimal points and send as string : 
-        #front_right_speed,front_left_speed,back_right_speed,back_left_speed
         
         msg = f"{pwm_vals[0]:.2f},{pwm_vals[1]:.2f},{pwm_vals[2]:.2f},{pwm_vals[3]:.2f}"
         sent_wheel_speeds_msg = String()
         sent_wheel_speeds_msg.data = msg
         self.sent_wheel_speeds_publisher.publish(sent_wheel_speeds_msg)
 
-        #self.get_logger().info(f"sent: {msg}")
         try:
             self.serial_port.write((msg + '\n').encode('utf-8'))
-            #self.ack_received = False
-            #self.wait_for_ack()
+
         except Exception as e:
             self.get_logger().error(f"SerialException occurred: {e}")
-
-    def wait_for_ack(self):
-        ack = None
-        start_time = time.time()
-        timeout = 0.5  # seconds
-
-        while time.time() - start_time < timeout:
-            if self.serial_port.in_waiting > 0:
-                ack = self.serial_port.readline().decode('utf-8').strip()
-                if ack == "ACK":
-                    self.get_logger().info(f"ack: {ack}")
-                    self.ack_received = True  # ACK received, allow next command
-                    return
-                else:
-                    self.get_logger().warn(f"Unexpected ack: {ack}")
-                    return
-        else:
-            # Timeout: ACK not received, allow system to recover
-            self.get_logger().warn("ACK not received. Retrying...")
-            self.ack_received = True
-
 
 
     def timer_callback(self):
@@ -237,24 +206,92 @@ class JoyPwmMotorControl(Node):
 
         return v, omega
 
+    def clamp_val(self, value, min_value, max_value):
+        return max(min_value, min(max_value, value))
+
+    def sign(self, value):
+        if value >= 0:
+            return 1.0
+        elif value < 0:
+            return -1.0
+
     def compute_kinematics_pwm(self, lin_vel, ang_vel):
-        #input: linear velocity and angular velocity
-        #output: pwm values for each wheel
-        #simple open loop kinematics that send the pwm values
+        # lin_vel: Linear velocity command (m/s)
+        # ang_vel: Angular velocity command (rad/s)
+        # self.rover_width: Distance between wheels (m)
 
-        pwm_left  = (lin_vel - self.slip_factor * (self.rover_width * ang_vel/2.0))
-        pwm_right = (lin_vel + self.slip_factor * (self.rover_width * ang_vel/2.0))
+        # Minimum and maximum PWM values for movement
+        min_pwm_lin = 70
+        max_pwm = 255
 
-        #not enough power to turn the rover, so boost the pwm when turning
-        if ang_vel != 0 and abs(lin_vel) < 1.0:
-            pwm_left = pwm_left * 2.0
-            pwm_right = pwm_right * 2.0
+        # Scale the linear velocity to PWM range (max 255)
+        lin_pwm = (-1.0) * lin_vel * (max_pwm / 2.0)
+        lin_pwm = self.sign(lin_pwm) * self.clamp_val(abs(lin_pwm), min_pwm_lin, max_pwm)
 
-        #map 0--> 0 pwm, 2--> 255 pwm
-        pwm_left = 255 * (pwm_left/2)
-        pwm_right = 255 * (pwm_right/2)
-        
-        return [pwm_right, pwm_left, pwm_right, pwm_left]
+        # Scale the angular velocity to influence turning (strongest at ±2.0)
+        ang_pwm_scale = 255 / 2.0  # Scaling factor for angular velocity (spins in place at ang_vel = ±2.0)
+        ang_pwm = ang_vel * ang_pwm_scale
+
+        forwards_right  = False
+        forwards_left   = False
+        backwards_right = False
+        backwards_left  = False
+
+        if lin_vel > 0 and ang_vel < 0:  # Forwards + Right turn
+            pwm_left = lin_pwm - abs(ang_pwm)  # Slow down left wheel
+            pwm_right = lin_pwm + abs(ang_pwm)  # Speed up right wheel
+            forwards_right = True
+
+        elif lin_vel > 0 and ang_vel > 0:  # Forwards + Left turn
+            pwm_left = lin_pwm + abs(ang_pwm)  # Speed up left wheel
+            pwm_right = lin_pwm - abs(ang_pwm)  # Slow down right wheel
+            forwards_left = True
+
+        elif lin_vel < 0 and ang_vel < 0:  # Quadrant 3: Backward + Right turn
+            pwm_left = lin_pwm + abs(ang_pwm)  # Speed up left wheel (backward)
+            pwm_right = lin_pwm - abs(ang_pwm)  # Slow down right wheel (backward)
+            backwards_right = True
+
+        elif lin_vel < 0 and ang_vel > 0:  # Quadrant 4: Backward + Left turn
+            pwm_left = lin_pwm - abs(ang_pwm)  # Slow down left wheel (backward)
+            pwm_right = lin_pwm + abs(ang_pwm)  # Speed up right wheel (backward)
+            backwards_left = True
+
+        elif abs(lin_vel) < 0.2:  # Turning in place
+            pwm_left = ang_vel * (max_pwm / 2.0)
+            pwm_right = -ang_vel * (max_pwm / 2.0)
+        else:
+            pwm_left  = 0.0
+            pwm_right = 0.0
+
+        #min pwm val pour vaincre frottements statiques
+        pwm_left = self.sign(pwm_left) * self.clamp_val(abs(pwm_left), min_pwm_lin, max_pwm)
+        pwm_right = self.sign(pwm_right) * self.clamp_val(abs(pwm_right), min_pwm_lin, max_pwm)
+
+        # Ensure the PWM is within [-255, 255]
+        pwm_left = self.clamp_val(pwm_left, -max_pwm, max_pwm)
+        pwm_right = self.clamp_val(pwm_right, -max_pwm, max_pwm)
+
+        if forwards_right:
+            return [-255, -255, -255, -255]
+        elif forwards_left:
+            return [-255, -255, -255, -255]
+        elif backwards_right:
+            return [-255, -255, -255, -255]
+        elif backwards_left:
+            return [-255, -255, -255, -255]
+        else:
+            return [-255, -255, -255, -255]
+
+
+
+
+
+
+
+
+
+
 
     def publish_odometry(self):
         current_time = self.get_clock().now()
