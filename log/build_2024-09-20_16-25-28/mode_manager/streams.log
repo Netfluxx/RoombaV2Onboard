@@ -1,0 +1,21 @@
+[1.464s] Invoking command in '/home/arno/RoombaV2Onboard/src/mode_manager': PYTHONPATH=/home/arno/RoombaV2Onboard/build/mode_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/mode_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/mode_manager build --build-base /home/arno/RoombaV2Onboard/build/mode_manager/build install --record /home/arno/RoombaV2Onboard/build/mode_manager/install.log --single-version-externally-managed install_data
+[1.821s] running egg_info
+[1.822s] writing ../../build/mode_manager/mode_manager.egg-info/PKG-INFO
+[1.822s] writing dependency_links to ../../build/mode_manager/mode_manager.egg-info/dependency_links.txt
+[1.823s] writing entry points to ../../build/mode_manager/mode_manager.egg-info/entry_points.txt
+[1.823s] writing requirements to ../../build/mode_manager/mode_manager.egg-info/requires.txt
+[1.823s] writing top-level names to ../../build/mode_manager/mode_manager.egg-info/top_level.txt
+[1.828s] reading manifest file '../../build/mode_manager/mode_manager.egg-info/SOURCES.txt'
+[1.829s] writing manifest file '../../build/mode_manager/mode_manager.egg-info/SOURCES.txt'
+[1.829s] running build
+[1.830s] running build_py
+[1.830s] running install
+[1.830s] running install_lib
+[1.832s] running install_data
+[1.833s] running install_egg_info
+[1.835s] removing '/home/arno/RoombaV2Onboard/install/mode_manager/lib/python3.10/site-packages/mode_manager-0.0.0-py3.10.egg-info' (and everything under it)
+[1.836s] Copying ../../build/mode_manager/mode_manager.egg-info to /home/arno/RoombaV2Onboard/install/mode_manager/lib/python3.10/site-packages/mode_manager-0.0.0-py3.10.egg-info
+[1.837s] running install_scripts
+[1.867s] Installing mode_manager script to /home/arno/RoombaV2Onboard/install/mode_manager/lib/mode_manager
+[1.868s] writing list of installed files to '/home/arno/RoombaV2Onboard/build/mode_manager/install.log'
+[1.904s] Invoked command in '/home/arno/RoombaV2Onboard/src/mode_manager' returned '0': PYTHONPATH=/home/arno/RoombaV2Onboard/build/mode_manager/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/mode_manager/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/mode_manager build --build-base /home/arno/RoombaV2Onboard/build/mode_manager/build install --record /home/arno/RoombaV2Onboard/build/mode_manager/install.log --single-version-externally-managed install_data

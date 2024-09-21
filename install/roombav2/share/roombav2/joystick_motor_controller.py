@@ -15,16 +15,12 @@ import serial
 from serial.tools import list_ports
 from serial.serialutil import SerialException
 import time
+import math
 
 from nav_msgs.msg import Odometry
-from geometry_msgs.msg import Twist, Pose
-from sensor_msgs.msg import JointState
-from tf_transformations import quaternion_from_euler
-import math
-from random import randrange
+from geometry_msgs.msg import Twist, Quaternion, TransformStamped
 from tf2_ros import TransformBroadcaster
-from geometry_msgs.msg import TransformStamped
-from geometry_msgs.msg import Quaternion
+from tf_transformations import euler_from_quaternion, quaternion_from_euler
 
 
 class JoystickMotorControl(Node):
@@ -55,7 +51,7 @@ class JoystickMotorControl(Node):
 
         self.odom_pub = self.create_publisher(Odometry, '/odom', 10)
         self.tf_broadcaster = TransformBroadcaster(self)
-        #self.timer = self.create_timer(0.1, self.publish_odometry)  #DEBUG MEEEEE AND TEST ME
+        self.timer = self.create_timer(0.1, self.publish_odometry)  #DEBUG MEEEEE AND TEST ME
 
         self.x = 0.0
         self.y = 0.0
@@ -124,8 +120,8 @@ class JoystickMotorControl(Node):
         #self.serial_port.write((msg + '\n').encode('utf-8'))
         try:
             self.serial_port.write((msg + '\n').encode('utf-8'))
-        except SerialException as e:
-            self.get_logger().error(f"SerialException occurred: {e}")
+        except Exception as e:
+            self.get_logger().error(f"Exception occurred joy callback: {e}")
 
 
     def timer_callback(self):
@@ -136,8 +132,17 @@ class JoystickMotorControl(Node):
             
             if received_from_arduino:
                 curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
-                #self.get_logger().info(f"Rover Master Nano @{curr_time}: {received_from_arduino}")
-
+                self.get_logger().info(f"Rover Nano @{curr_time}: {received_from_arduino}")
+                
+                
+                
+                
+                #try:
+                #    self.serial_port.write("1.40,1.40,1.40,1.40\n".encode('utf-8')) #delete me, this is for testing without joystick
+                #except Exception as e:
+                #    self.get_logger().error(f"Error while writing to serial port: {e}")
+                
+                
                 required_terms = ["FR", "FL", "BR", "BL"]  #parsing the incoming arduino logs 
                 if all(term in received_from_arduino for term in required_terms):
                     parsed_speeds = received_from_arduino.split(',')
@@ -183,8 +188,13 @@ class JoystickMotorControl(Node):
 
                 #self.get_logger().info(f"----------------")
 
-        except SerialException as e:
-            self.get_logger().error(f"SerialException occurred: {e}")
+        except Exception as e:
+            self.get_logger().error(f"Exception occurred timer_callback: {e}")
+
+            #if the excpetion is a SerialException or a Input/Output error, reconnect the serial port
+            if isinstance(e, SerialException) or isinstance(e, IOError):
+                self.reconnect_serial()
+                #self.get_logger().error(f"SerialException occurred: {e}")
             #close current connection and try again
             #self.serial_port.close()
             #self.serial_port = None
@@ -214,13 +224,13 @@ class JoystickMotorControl(Node):
         return v, omega
 
     def publish_odometry(self):
-        
         current_time = self.get_clock().now()
-        dt = (current_time - self.last_time).nanoseconds / 1e9
+        dt = (current_time - self.last_time).nanoseconds / 1e9  # Time delta in seconds
 
+        # Get current velocities based on wheel speeds
         v, omega = self.get_odom_velocities()
 
-        # Update the pose by integration of speed
+        # Update the robot's pose using kinematic equations
         delta_x = v * math.cos(self.theta) * dt
         delta_y = v * math.sin(self.theta) * dt
         delta_theta = omega * dt
@@ -232,28 +242,26 @@ class JoystickMotorControl(Node):
         # Create the odometry message
         odom = Odometry()
         odom.header.stamp = current_time.to_msg()
-        odom.header.frame_id = "odom"
+        odom.header.frame_id = "odom"  # Reference frame
+        odom.child_frame_id = "base_link"  # Robot's reference frame
+
+        # Update the pose in the odometry message
         odom.pose.pose.position.x = self.x
         odom.pose.pose.position.y = self.y
         odom.pose.pose.position.z = 0.0
-        #odom.pose.pose.orientation = quaternion_from_euler(0, 0, self.theta)
-        
-        q = quaternion_from_euler(0, 0, self.theta)
-        quaternion_msg = Quaternion()
-        quaternion_msg.x = q[0]
-        quaternion_msg.y = q[1]
-        quaternion_msg.z = q[2]
-        quaternion_msg.w = q[3]
-    
-        odom.pose.pose.orientation = quaternion_msg
 
-        odom.child_frame_id = "base_link"
+        # Convert theta (yaw angle) to quaternion
+        quaternion = quaternion_from_euler(0, 0, self.theta)
+        odom.pose.pose.orientation = Quaternion(*quaternion)
+
+        # Set the velocity in the odometry message
         odom.twist.twist.linear.x = v
-        odom.twist.twist.linear.y = 0.0
         odom.twist.twist.angular.z = omega
+
+        # Publish the odometry message
         self.odom_pub.publish(odom)
 
-        # Broadcast the transform
+        # Broadcast the transform (from odom to base_link)
         transform = TransformStamped()
         transform.header.stamp = current_time.to_msg()
         transform.header.frame_id = "odom"
@@ -263,7 +271,9 @@ class JoystickMotorControl(Node):
         transform.transform.translation.z = 0.0
         transform.transform.rotation = odom.pose.pose.orientation
 
-        self.tf_broadcaster.sendTransform(transform)    #AMCL needs the transform from odom to base_link
+        self.tf_broadcaster.sendTransform(transform)
+
+        # Update the last time for the next iteration
         self.last_time = current_time
 
 

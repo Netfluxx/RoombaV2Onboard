@@ -10,21 +10,17 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
-from geometry_msgs.msg import Twist, Pose
 import serial
 from serial.tools import list_ports
 from serial.serialutil import SerialException
 import time
+import math
+
 
 from nav_msgs.msg import Odometry
-from geometry_msgs.msg import Twist, Pose
-from sensor_msgs.msg import JointState
-#from tf_transformations import quaternion_from_euler
-import math
-from random import randrange
+from geometry_msgs.msg import Twist, Quaternion, TransformStamped
 from tf2_ros import TransformBroadcaster
-from geometry_msgs.msg import TransformStamped
-from geometry_msgs.msg import Quaternion
+from tf_transformations import euler_from_quaternion, quaternion_from_euler
 
 
 class JoyPwmMotorControl(Node):
@@ -53,6 +49,10 @@ class JoyPwmMotorControl(Node):
         self.battery_publisher = self.create_publisher(String, '/battery', 10)
         self.sent_wheel_speeds_publisher = self.create_publisher(String, '/sent_pwm', 10)
 
+        self.odom_pub = self.create_publisher(Odometry, '/odom', 10)
+        self.tf_broadcaster = TransformBroadcaster(self)
+        self.timer = self.create_timer(0.1, self.publish_odometry)
+
         self.x = 0.0
         self.y = 0.0
         self.theta = 0.0
@@ -61,8 +61,13 @@ class JoyPwmMotorControl(Node):
         self.rover_mass = 4  # kg
 
         #add timer to read the serial port for messages from the arduino
-        timer_period = 0.05  # seconds  MAYBE THIS IS TOO FAST?? we'll have to wait and see the performance with SLAM
+        timer_period = 0.05# seconds  MAYBE THIS IS TOO FAST?? we'll have to wait and see the performance with SLAM
         self.timer = self.create_timer(timer_period, self.timer_callback)
+        self.ack_received = True
+
+        self.prev_lin_vel = 0.0
+        self.prev_ang_vel = 0.0
+        self.vel_threshold = 0.1
 
         self.fr_wheel_speed = 0.0
         self.fl_wheel_speed = 0.0
@@ -97,15 +102,29 @@ class JoyPwmMotorControl(Node):
                 self.get_logger().info("Reconnected to the Arduino.")
             else:
                 self.get_logger().warn("Arduino not found. Retrying in 4 seconds...")
-                time.sleep(4)  # Wait before retrying
+                time.sleep(4)
     
     def joystick_cmd_callback(self, msg):
+
+        #if not self.ack_received:
+        #    self.get_logger().warn("Waiting for ACK...")
+        #    return
+
         if self.serial_port is None:
             self.get_logger().error("No serial connection. Skipping command.")
             return
     
         lin_vel = msg.linear.x
         ang_vel = msg.angular.z
+
+        #check if the new velocities are significantly different from the previous ones
+        #to avoid sending the same cmd and potentially overflowing serial buffer of the master aduino
+
+        if abs(lin_vel - self.prev_lin_vel) < self.vel_threshold and abs(ang_vel - self.prev_ang_vel) < self.vel_threshold:
+            return
+        self.prev_lin_vel = lin_vel
+        self.prev_ang_vel = ang_vel
+        
         pwm_vals = self.compute_kinematics_pwm(lin_vel, ang_vel)
 
         #format speed values to 2 decimal points and send as string : 
@@ -119,8 +138,30 @@ class JoyPwmMotorControl(Node):
         #self.get_logger().info(f"sent: {msg}")
         try:
             self.serial_port.write((msg + '\n').encode('utf-8'))
-        except SerialException as e:
+            #self.ack_received = False
+            #self.wait_for_ack()
+        except Exception as e:
             self.get_logger().error(f"SerialException occurred: {e}")
+
+    def wait_for_ack(self):
+        ack = None
+        start_time = time.time()
+        timeout = 0.5  # seconds
+
+        while time.time() - start_time < timeout:
+            if self.serial_port.in_waiting > 0:
+                ack = self.serial_port.readline().decode('utf-8').strip()
+                if ack == "ACK":
+                    self.get_logger().info(f"ack: {ack}")
+                    self.ack_received = True  # ACK received, allow next command
+                    return
+                else:
+                    self.get_logger().warn(f"Unexpected ack: {ack}")
+                    return
+        else:
+            # Timeout: ACK not received, allow system to recover
+            self.get_logger().warn("ACK not received. Retrying...")
+            self.ack_received = True
 
 
 
@@ -128,8 +169,7 @@ class JoyPwmMotorControl(Node):
         try:
             received_from_arduino = None
             if self.serial_port.in_waiting > 0:
-                received_from_arduino = self.serial_port.readline().decode('utf-8', errors = 'ignore').strip()
-                #received_from_arduino = self.serial_port.read(self.serial_port.in_waiting).decode('utf-8', errors='ignore').strip()
+                received_from_arduino = self.serial_port.readline().decode('utf-8').strip()
             if received_from_arduino:
                 curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
                 self.get_logger().info(f"Master @{curr_time}: {received_from_arduino}")
@@ -138,29 +178,25 @@ class JoyPwmMotorControl(Node):
                 if all(term in received_from_arduino for term in required_terms):
 
                     parsed_speeds = received_from_arduino.split(',')
-
-                    self.get_logger().info(f"parsed_speeds: {parsed_speeds}")#debug
-
                     parsed_speeds = [_.split(':') for _ in parsed_speeds]
 
-                    #self.get_logger().info(f"parsed_speeds split: {parsed_speeds}")
 
-                    if parsed_speeds[0][1] != "NAN":
+                    if parsed_speeds[0][1] != "NAN" and parsed_speeds[0][1] != "nan":
                         self.fr_wheel_speed = float(parsed_speeds[0][1])
                     else:
                         self.fr_wheel_speed = 0.00
 
-                    if parsed_speeds[1][1] != "NAN":
+                    if parsed_speeds[1][1] != "NAN" and parsed_speeds[1][1] != "nan":
                         self.fl_wheel_speed = float(parsed_speeds[1][1])
                     else:
                         self.fl_wheel_speed = 0.00
 
-                    if parsed_speeds[2][1] != "NAN":
+                    if parsed_speeds[2][1] != "NAN" and parsed_speeds[2][1] != "nan":
                         self.br_wheel_speed = float(parsed_speeds[2][1])
                     else:
                         self.br_wheel_speed = 0.00
 
-                    if parsed_speeds[3][1] != "NAN":
+                    if parsed_speeds[3][1] != "NAN" and parsed_speeds[3][1] != "nan":
                         self.bl_wheel_speed = float(parsed_speeds[3][1])
                     else:
                         self.bl_wheel_speed = 0.00
@@ -183,14 +219,27 @@ class JoyPwmMotorControl(Node):
 
                 #self.get_logger().info(f"----------------")
 
-        except SerialException as e:
-            self.get_logger().error(f"SerialException occurred: {e}")
+        except Exception as e:
             #close current connection and try again
-            #self.serial_port.close()
-            #self.serial_port = None
-            #self.reconnect_serial()
+            self.serial_port.close()
+            self.serial_port = None
+            self.reconnect_serial()
+
+
+    def get_odom_velocities(self):
+        #output: linear velocity and angular velocity given the wheel speeds
+
+        right_wheel_velocity = (self.fr_wheel_speed + self.br_wheel_speed)/2.0
+        left_wheel_velocity = (self.fl_wheel_speed + self.bl_wheel_speed)/2.0
+
+        v = (right_wheel_velocity + left_wheel_velocity) / 2.0
+        omega = ( (right_wheel_velocity - left_wheel_velocity) / self.rover_width )
+
+        return v, omega
 
     def compute_kinematics_pwm(self, lin_vel, ang_vel):
+        #input: linear velocity and angular velocity
+        #output: pwm values for each wheel
         #simple open loop kinematics that send the pwm values
 
         pwm_left  = (lin_vel - self.slip_factor * (self.rover_width * ang_vel/2.0))
@@ -198,18 +247,70 @@ class JoyPwmMotorControl(Node):
 
         #not enough power to turn the rover, so boost the pwm when turning
         if ang_vel != 0 and abs(lin_vel) < 1.0:
-            pwm_left = pwm_left * 3.0
-            pwm_right = pwm_right * 3.0
+            pwm_left = pwm_left * 2.0
+            pwm_right = pwm_right * 2.0
 
         #map 0--> 0 pwm, 2--> 255 pwm
         pwm_left = 255 * (pwm_left/2)
         pwm_right = 255 * (pwm_right/2)
-        #constrain between 0 and 255 to be safe
-        pwm_left = max(0, min(255, pwm_left))
-        pwm_right = max(0, min(255, pwm_right))
-
-
+        
         return [pwm_right, pwm_left, pwm_right, pwm_left]
+
+    def publish_odometry(self):
+        current_time = self.get_clock().now()
+        dt = (current_time - self.last_time).nanoseconds / 1e9  # Time delta in seconds
+
+        # Get current velocities based on wheel speeds
+        v, omega = self.get_odom_velocities()
+
+        # Update the robot's pose using kinematic equations
+        delta_x = v * math.cos(self.theta) * dt
+        delta_y = v * math.sin(self.theta) * dt
+        delta_theta = omega * dt
+
+        self.x += delta_x
+        self.y += delta_y
+        self.theta += delta_theta
+
+        # Create the odometry message
+        odom = Odometry()
+        odom.header.stamp = current_time.to_msg()
+        odom.header.frame_id = "odom"  # Reference frame
+        odom.child_frame_id = "base_link"  # Robot's reference frame
+
+        # Update the pose in the odometry message
+        odom.pose.pose.position.x = self.x
+        odom.pose.pose.position.y = self.y
+
+        # Convert theta (yaw angle) to quaternion
+        quaternion = quaternion_from_euler(0, 0, self.theta)
+        odom.pose.pose.orientation = Quaternion()
+        odom.pose.pose.orientation.x = quaternion[0]
+        odom.pose.pose.orientation.y = quaternion[1]
+        odom.pose.pose.orientation.z = quaternion[2]
+        odom.pose.pose.orientation.w = quaternion[3]
+
+        # Set the velocity in the odometry message
+        odom.twist.twist.linear.x = v
+        odom.twist.twist.angular.z = omega
+
+        # Publish the odometry message
+        self.odom_pub.publish(odom)
+
+        # Broadcast the transform (from odom to base_link)
+        transform = TransformStamped()
+        transform.header.stamp = current_time.to_msg()
+        transform.header.frame_id = "odom"
+        transform.child_frame_id = "base_link"
+        transform.transform.translation.x = self.x
+        transform.transform.translation.y = self.y
+        transform.transform.translation.z = 0.0
+        transform.transform.rotation = odom.pose.pose.orientation
+
+        self.tf_broadcaster.sendTransform(transform)
+
+        # Update the last time for the next iteration
+        self.last_time = current_time
 
 
 
