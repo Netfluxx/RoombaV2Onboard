@@ -1,0 +1,27 @@
+[5.651s] Invoking command in '/home/arno/RoombaV2Onboard/src/roombav2': PYTHONPATH=/home/arno/RoombaV2Onboard/build/roombav2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/roombav2 build --build-base /home/arno/RoombaV2Onboard/build/roombav2/build install --record /home/arno/RoombaV2Onboard/build/roombav2/install.log --single-version-externally-managed install_data
+[6.913s] running egg_info
+[6.915s] writing ../../build/roombav2/roombav2.egg-info/PKG-INFO
+[6.917s] writing dependency_links to ../../build/roombav2/roombav2.egg-info/dependency_links.txt
+[6.919s] writing entry points to ../../build/roombav2/roombav2.egg-info/entry_points.txt
+[6.920s] writing requirements to ../../build/roombav2/roombav2.egg-info/requires.txt
+[6.921s] writing top-level names to ../../build/roombav2/roombav2.egg-info/top_level.txt
+[6.931s] reading manifest file '../../build/roombav2/roombav2.egg-info/SOURCES.txt'
+[6.938s] writing manifest file '../../build/roombav2/roombav2.egg-info/SOURCES.txt'
+[6.939s] running build
+[6.939s] running build_py
+[6.944s] running install
+[6.946s] running install_lib
+[6.957s] running install_data
+[6.961s] copying launch/microver.launch.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/launch
+[6.963s] copying config/ekf.yaml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config
+[6.966s] running install_egg_info
+[6.975s] removing '/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages/roombav2-0.0.0-py3.10.egg-info' (and everything under it)
+[6.978s] Copying ../../build/roombav2/roombav2.egg-info to /home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages/roombav2-0.0.0-py3.10.egg-info
+[6.986s] running install_scripts
+[7.095s] Installing encoder_reader script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2
+[7.098s] Installing joystick_motor_controller script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2
+[7.099s] Installing nav2_motor_controller script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2
+[7.101s] Installing pwm_open_loop script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2
+[7.104s] Installing system_info script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2
+[7.107s] writing list of installed files to '/home/arno/RoombaV2Onboard/build/roombav2/install.log'
+[7.342s] Invoked command in '/home/arno/RoombaV2Onboard/src/roombav2' returned '0': PYTHONPATH=/home/arno/RoombaV2Onboard/build/roombav2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/roombav2 build --build-base /home/arno/RoombaV2Onboard/build/roombav2/build install --record /home/arno/RoombaV2Onboard/build/roombav2/install.log --single-version-externally-managed install_data

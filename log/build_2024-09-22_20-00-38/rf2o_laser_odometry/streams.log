@@ -1,0 +1,25 @@
+[2.185s] Invoking command in '/home/arno/RoombaV2Onboard/build/rf2o_laser_odometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/mode_manager:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/rf2o_laser_odometry -- -j4 -l4
+[2.438s] [ 40%] Built target rf2o_laser_odometry
+[2.451s] [100%] Built target rf2o_laser_odometry_node
+[3.333s] Invoked command in '/home/arno/RoombaV2Onboard/build/rf2o_laser_odometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/mode_manager:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --build /home/arno/RoombaV2Onboard/build/rf2o_laser_odometry -- -j4 -l4
+[3.544s] Invoking command in '/home/arno/RoombaV2Onboard/build/rf2o_laser_odometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/mode_manager:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/rf2o_laser_odometry
+[3.590s] -- Install configuration: ""
+[3.592s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/lib/rf2o_laser_odometry/rf2o_laser_odometry_node
+[3.594s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch
+[3.594s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/rf2o_laser_odometry/launch/rf2o_laser_odometry.launch.py
+[3.595s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/ament_index/resource_index/package_run_dependencies/rf2o_laser_odometry
+[3.596s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/ament_index/resource_index/parent_prefix_path/rf2o_laser_odometry
+[3.596s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/ament_prefix_path.sh
+[3.597s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/ament_prefix_path.dsv
+[3.598s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/path.sh
+[3.599s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/rf2o_laser_odometry/environment/path.dsv
+[3.600s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.bash
+[3.600s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.sh
+[3.611s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.zsh
+[3.612s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/rf2o_laser_odometry/local_setup.dsv
+[3.613s] -- Installing: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/rf2o_laser_odometry/package.dsv
+[3.615s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/ament_index/resource_index/packages/rf2o_laser_odometry
+[3.618s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/rf2o_laser_odometry/cmake/rf2o_laser_odometryConfig.cmake
+[3.619s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/rf2o_laser_odometry/cmake/rf2o_laser_odometryConfig-version.cmake
+[3.620s] -- Up-to-date: /home/arno/RoombaV2Onboard/install/rf2o_laser_odometry/share/rf2o_laser_odometry/package.xml
+[3.621s] Invoked command in '/home/arno/RoombaV2Onboard/build/rf2o_laser_odometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/mode_manager:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble /usr/bin/cmake --install /home/arno/RoombaV2Onboard/build/rf2o_laser_odometry

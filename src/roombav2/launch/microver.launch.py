@@ -14,6 +14,7 @@ def generate_launch_description():
     default_model_path = os.path.join(pkg_share, 'models/microver.urdf.xacro')
     slam_config_path = os.path.join(pkg_share, 'config', 'slam_toolbox_params.yaml')
     lidar_launch_file_path = FindPackageShare('sllidar_ros2').find('sllidar_ros2') + '/launch/sllidar_c1_launch.py'
+    rf2o_lidar_odom_launch_file_path = FindPackageShare('rf2o_laser_odometry').find('rf2o_laser_odometry') + '/launch/rf2o_laser_odometry.launch.py'
     robot_localization_config_path = os.path.join(pkg_share, 'config', 'ekf.yaml')
     twist_mux_config_path = os.path.join(pkg_share, 'config', 'twist_mux.yaml')
 
@@ -46,10 +47,10 @@ def generate_launch_description():
     )
 
 
-    joystick_control_node = Node(
+    motor_control_node = Node(
         package='roombav2',
-        executable='joystick_motor_controller',
-        name='joystick_motor_controller',
+        executable='pwm_open_loop',
+        name='pwm_open_loop',
         output='screen'
     )
 
@@ -66,6 +67,11 @@ def generate_launch_description():
         name='slam_toolbox',
         output='screen',
         parameters=[slam_config_path]
+    )
+
+    rf2o_laser_odometry_launch_include = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([rf2o_lidar_odom_launch_file_path]),
+        launch_arguments={'parameter_name': 'parameter_value'}.items()
     )
 
     robot_localization_node = Node(  #does odom -> base_link dynamic tf using ekf with odom and later imu
@@ -102,9 +108,10 @@ def generate_launch_description():
         robot_state_publisher,
         joint_state_publisher_node,
         system_info_node,
-        joystick_control_node,
+        motor_control_node,
         static_tf_base_lidar,
         lidar_launch_include,
+        rf2o_laser_odometry_launch_include,
         slam_toolbox_node,
         robot_localization_node,
     ])
