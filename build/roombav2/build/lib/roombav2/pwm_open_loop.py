@@ -49,9 +49,9 @@ class JoyPwmMotorControl(Node):
         self.battery_publisher = self.create_publisher(String, '/battery', 10)
         self.sent_wheel_speeds_publisher = self.create_publisher(String, '/sent_pwm', 10)
 
-        self.odom_pub = self.create_publisher(Odometry, '/odom', 10)
-        self.tf_broadcaster = TransformBroadcaster(self)
-        self.timer = self.create_timer(0.1, self.publish_odometry)
+        #self.odom_pub = self.create_publisher(Odometry, '/odom', 10)
+        #self.tf_broadcaster = TransformBroadcaster(self)
+        #self.timer = self.create_timer(0.1, self.publish_odometry)
 
         self.x = 0.0
         self.y = 0.0
@@ -66,7 +66,7 @@ class JoyPwmMotorControl(Node):
 
         self.prev_lin_vel = 0.0
         self.prev_ang_vel = 0.0
-        self.vel_threshold = 0.1
+        self.vel_threshold = 0.22
 
         self.fr_wheel_speed = 0.0
         self.fl_wheel_speed = 0.0
@@ -114,9 +114,15 @@ class JoyPwmMotorControl(Node):
 
         #check if the new velocities are significantly different from the previous ones
         #to avoid sending the same cmd and potentially overflowing serial buffer of the master aduino
+        #if abs(lin_vel - self.prev_lin_vel) < self.vel_threshold and abs(ang_vel - self.prev_ang_vel) < self.vel_threshold:
+        #    return
+        
+        lin_vel_change = abs(lin_vel - self.prev_lin_vel) >= self.vel_threshold
+        ang_vel_change = abs(ang_vel - self.prev_ang_vel) >= self.vel_threshold
 
-        if abs(lin_vel - self.prev_lin_vel) < self.vel_threshold and abs(ang_vel - self.prev_ang_vel) < self.vel_threshold:
+        if not lin_vel_change and not ang_vel_change:
             return
+
         self.prev_lin_vel = lin_vel
         self.prev_ang_vel = ang_vel
         
@@ -138,7 +144,7 @@ class JoyPwmMotorControl(Node):
         try:
             received_from_arduino = None
             if self.serial_port.in_waiting > 0:
-                received_from_arduino = self.serial_port.readline().decode('utf-8').strip()
+                received_from_arduino = self.serial_port.read_until().decode('utf-8').strip()
             if received_from_arduino:
                 curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
                 self.get_logger().info(f"Master @{curr_time}: {received_from_arduino}")
@@ -216,6 +222,12 @@ class JoyPwmMotorControl(Node):
             return -1.0
 
     def compute_kinematics_pwm(self, lin_vel, ang_vel):
+        
+        #switch lin vel and ang vel
+        tmp_lin_vel = lin_vel
+        lin_vel = ang_vel
+        ang_vel = tmp_lin_vel
+
         # lin_vel: Linear velocity command (m/s)
         # ang_vel: Angular velocity command (rad/s)
         # self.rover_width: Distance between wheels (m)
@@ -225,129 +237,118 @@ class JoyPwmMotorControl(Node):
         max_pwm = 255
 
         # Scale the linear velocity to PWM range (max 255)
-        lin_pwm = (-1.0) * lin_vel * (max_pwm / 2.0)
-        lin_pwm = self.sign(lin_pwm) * self.clamp_val(abs(lin_pwm), min_pwm_lin, max_pwm)
+        lin_pwm = lin_vel * (max_pwm / 2.0)
+        #lin_pwm = self.sign(lin_pwm) * self.clamp_val(abs(lin_pwm), min_pwm_lin, max_pwm)
 
         # Scale the angular velocity to influence turning (strongest at ±2.0)
         ang_pwm_scale = 255 / 2.0  # Scaling factor for angular velocity (spins in place at ang_vel = ±2.0)
         ang_pwm = ang_vel * ang_pwm_scale
 
-        forwards_right  = False
-        forwards_left   = False
-        backwards_right = False
-        backwards_left  = False
+        if abs(ang_vel) > 0.5:
+            ang_pwm = ang_pwm * 1.5 #make sure it has enough torque to turn
 
-        if lin_vel > 0 and ang_vel < 0:  # Forwards + Right turn
-            pwm_left = lin_pwm - abs(ang_pwm)  # Slow down left wheel
-            pwm_right = lin_pwm + abs(ang_pwm)  # Speed up right wheel
-            forwards_right = True
+        #tank drive kinematics
+        #pwm_left = lin_pwm - ang_pwm
+        #pwm_right = lin_pwm + ang_pwm
 
-        elif lin_vel > 0 and ang_vel > 0:  # Forwards + Left turn
-            pwm_left = lin_pwm + abs(ang_pwm)  # Speed up left wheel
-            pwm_right = lin_pwm - abs(ang_pwm)  # Slow down right wheel
-            forwards_left = True
+        #righ side of joystick => ang_vel < 0 => turn right
+            #if going forwards and turning right, left should be fast, right should be slow
+            #elif going backwards and turning right, left should be fast in reverse, right should be slow in reverse
+        #left side of joystick => ang_vel > 0 => turn left
+            #if going forwards and turning left, right should be fast, left should be slow
+            #elif going backwards and turning left, right should be fast in reverse, left should be slow in reverse
+        if abs(lin_vel) >= self.vel_threshold and abs(ang_vel) < self.vel_threshold: # Forwards or Backwards
+            pwm_left = lin_pwm
+            pwm_right = lin_pwm
 
-        elif lin_vel < 0 and ang_vel < 0:  # Quadrant 3: Backward + Right turn
-            pwm_left = lin_pwm + abs(ang_pwm)  # Speed up left wheel (backward)
-            pwm_right = lin_pwm - abs(ang_pwm)  # Slow down right wheel (backward)
-            backwards_right = True
+        elif lin_vel > 0 and ang_vel < 0: # Forwards + Right turn
+            pwm_left = lin_pwm + abs(ang_pwm)  # fast wheel forwards
+            pwm_right = lin_pwm - abs(ang_pwm)  # slow wheel forwards
+        elif lin_vel < 0 and ang_vel < 0: # Backwards + Right turn
+            pwm_left = lin_pwm - abs(ang_pwm)  # fast wheel backwards
+            pwm_right = lin_pwm + abs(ang_pwm)  # slow wheel backwards
+        elif lin_vel > 0 and ang_vel > 0: # Forwards + Left turn
+            pwm_left = lin_pwm - abs(ang_pwm)  # slow wheel forwards
+            pwm_right = lin_pwm + abs(ang_pwm)  # fast wheel forwards
+        elif lin_vel < 0 and ang_vel > 0: # Backwards + Left turn
+            pwm_left = lin_pwm + abs(ang_pwm)  # slow wheel backwards
+            pwm_right = lin_pwm - abs(ang_pwm)  # fast wheel backwards
 
-        elif lin_vel < 0 and ang_vel > 0:  # Quadrant 4: Backward + Left turn
-            pwm_left = lin_pwm - abs(ang_pwm)  # Slow down left wheel (backward)
-            pwm_right = lin_pwm + abs(ang_pwm)  # Speed up right wheel (backward)
-            backwards_left = True
-
-        elif abs(lin_vel) < 0.2:  # Turning in place
-            pwm_left = ang_vel * (max_pwm / 2.0)
-            pwm_right = -ang_vel * (max_pwm / 2.0)
-        else:
-            pwm_left  = 0.0
-            pwm_right = 0.0
-
-        #min pwm val pour vaincre frottements statiques
-        pwm_left = self.sign(pwm_left) * self.clamp_val(abs(pwm_left), min_pwm_lin, max_pwm)
-        pwm_right = self.sign(pwm_right) * self.clamp_val(abs(pwm_right), min_pwm_lin, max_pwm)
+        elif abs(lin_vel) < self.vel_threshold and ang_vel < 0: # Right turn in place
+            pwm_left = abs(ang_pwm)     # forwards
+            pwm_right = -abs(ang_pwm)   # backwards
+        elif abs(lin_vel) < self.vel_threshold and ang_vel > 0: # Left turn in place
+            pwm_left = -abs(ang_pwm)    # backwards
+            pwm_right = abs(ang_pwm)    # forwards
+        else:# No movement
+            pwm_left = 0
+            pwm_right = 0
+        
 
         # Ensure the PWM is within [-255, 255]
         pwm_left = self.clamp_val(pwm_left, -max_pwm, max_pwm)
         pwm_right = self.clamp_val(pwm_right, -max_pwm, max_pwm)
 
-        if forwards_right:
-            return [-255, -255, -255, -255]
-        elif forwards_left:
-            return [-255, -255, -255, -255]
-        elif backwards_right:
-            return [-255, -255, -255, -255]
-        elif backwards_left:
-            return [-255, -255, -255, -255]
-        else:
-            return [-255, -255, -255, -255]
+        return [pwm_left, pwm_right, pwm_left, pwm_right]
 
 
 
 
+    # def publish_odometry(self):
+    #     current_time = self.get_clock().now()
+    #     dt = (current_time - self.last_time).nanoseconds / 1e9  # Time delta in seconds
 
+    #     # Get current velocities based on wheel speeds
+    #     v, omega = self.get_odom_velocities()
 
+    #     # Update the robot's pose using kinematic equations
+    #     delta_x = v * math.cos(self.theta) * dt
+    #     delta_y = v * math.sin(self.theta) * dt
+    #     delta_theta = omega * dt
 
+    #     self.x += delta_x
+    #     self.y += delta_y
+    #     self.theta += delta_theta
 
+    #     # Create the odometry message
+    #     odom = Odometry()
+    #     odom.header.stamp = current_time.to_msg()
+    #     odom.header.frame_id = "odom"  # Reference frame
+    #     odom.child_frame_id = "base_link"  # Robot's reference frame
 
+    #     # Update the pose in the odometry message
+    #     odom.pose.pose.position.x = self.x
+    #     odom.pose.pose.position.y = self.y
 
+    #     # Convert theta (yaw angle) to quaternion
+    #     quaternion = quaternion_from_euler(0, 0, self.theta)
+    #     odom.pose.pose.orientation = Quaternion()
+    #     odom.pose.pose.orientation.x = quaternion[0]
+    #     odom.pose.pose.orientation.y = quaternion[1]
+    #     odom.pose.pose.orientation.z = quaternion[2]
+    #     odom.pose.pose.orientation.w = quaternion[3]
 
-    def publish_odometry(self):
-        current_time = self.get_clock().now()
-        dt = (current_time - self.last_time).nanoseconds / 1e9  # Time delta in seconds
+    #     # Set the velocity in the odometry message
+    #     odom.twist.twist.linear.x = v
+    #     odom.twist.twist.angular.z = omega
 
-        # Get current velocities based on wheel speeds
-        v, omega = self.get_odom_velocities()
+    #     # Publish the odometry message
+    #     self.odom_pub.publish(odom)
 
-        # Update the robot's pose using kinematic equations
-        delta_x = v * math.cos(self.theta) * dt
-        delta_y = v * math.sin(self.theta) * dt
-        delta_theta = omega * dt
+    #     # Broadcast the transform (from odom to base_link)
+    #     transform = TransformStamped()
+    #     transform.header.stamp = current_time.to_msg()
+    #     transform.header.frame_id = "odom"
+    #     transform.child_frame_id = "base_link"
+    #     transform.transform.translation.x = self.x
+    #     transform.transform.translation.y = self.y
+    #     transform.transform.translation.z = 0.0
+    #     transform.transform.rotation = odom.pose.pose.orientation
 
-        self.x += delta_x
-        self.y += delta_y
-        self.theta += delta_theta
+    #     self.tf_broadcaster.sendTransform(transform)
 
-        # Create the odometry message
-        odom = Odometry()
-        odom.header.stamp = current_time.to_msg()
-        odom.header.frame_id = "odom"  # Reference frame
-        odom.child_frame_id = "base_link"  # Robot's reference frame
-
-        # Update the pose in the odometry message
-        odom.pose.pose.position.x = self.x
-        odom.pose.pose.position.y = self.y
-
-        # Convert theta (yaw angle) to quaternion
-        quaternion = quaternion_from_euler(0, 0, self.theta)
-        odom.pose.pose.orientation = Quaternion()
-        odom.pose.pose.orientation.x = quaternion[0]
-        odom.pose.pose.orientation.y = quaternion[1]
-        odom.pose.pose.orientation.z = quaternion[2]
-        odom.pose.pose.orientation.w = quaternion[3]
-
-        # Set the velocity in the odometry message
-        odom.twist.twist.linear.x = v
-        odom.twist.twist.angular.z = omega
-
-        # Publish the odometry message
-        self.odom_pub.publish(odom)
-
-        # Broadcast the transform (from odom to base_link)
-        transform = TransformStamped()
-        transform.header.stamp = current_time.to_msg()
-        transform.header.frame_id = "odom"
-        transform.child_frame_id = "base_link"
-        transform.transform.translation.x = self.x
-        transform.transform.translation.y = self.y
-        transform.transform.translation.z = 0.0
-        transform.transform.rotation = odom.pose.pose.orientation
-
-        self.tf_broadcaster.sendTransform(transform)
-
-        # Update the last time for the next iteration
-        self.last_time = current_time
+    #     # Update the last time for the next iteration
+    #     self.last_time = current_time
 
 
 
