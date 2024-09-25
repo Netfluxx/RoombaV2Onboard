@@ -147,7 +147,7 @@ class JoyPwmMotorControl(Node):
                 received_from_arduino = self.serial_port.read_until().decode('utf-8').strip()
             if received_from_arduino:
                 curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
-                self.get_logger().info(f"Master @{curr_time}: {received_from_arduino}")
+                #self.get_logger().info(f"Master @{curr_time}: {received_from_arduino}")
 
                 required_terms = ["FR", "FL", "BR", "BL"]  #parsing the incoming arduino logs 
                 if all(term in received_from_arduino for term in required_terms):
@@ -222,11 +222,13 @@ class JoyPwmMotorControl(Node):
             return -1.0
 
     def compute_kinematics_pwm(self, lin_vel, ang_vel):
+
+        self.get_logger().info(f"LIN: {lin_vel}, ANG: {ang_vel}")
         
         #switch lin vel and ang vel
-        tmp_lin_vel = lin_vel
-        lin_vel = ang_vel
-        ang_vel = tmp_lin_vel
+        #tmp_lin_vel = lin_vel
+        #lin_vel = ang_vel
+        #ang_vel = tmp_lin_vel
 
         # lin_vel: Linear velocity command (m/s)
         # ang_vel: Angular velocity command (rad/s)
@@ -237,12 +239,12 @@ class JoyPwmMotorControl(Node):
         max_pwm = 255
 
         # Scale the linear velocity to PWM range (max 255)
-        lin_pwm = lin_vel * (max_pwm / 2.0)
+        lin_pwm = -lin_vel * (max_pwm / 2.0)
         #lin_pwm = self.sign(lin_pwm) * self.clamp_val(abs(lin_pwm), min_pwm_lin, max_pwm)
 
         # Scale the angular velocity to influence turning (strongest at ±2.0)
         ang_pwm_scale = 255 / 2.0  # Scaling factor for angular velocity (spins in place at ang_vel = ±2.0)
-        ang_pwm = ang_vel * ang_pwm_scale
+        ang_pwm = -ang_vel * ang_pwm_scale
 
         if abs(ang_vel) > 0.5:
             ang_pwm = ang_pwm * 1.5 #make sure it has enough torque to turn
@@ -257,30 +259,44 @@ class JoyPwmMotorControl(Node):
         #left side of joystick => ang_vel > 0 => turn left
             #if going forwards and turning left, right should be fast, left should be slow
             #elif going backwards and turning left, right should be fast in reverse, left should be slow in reverse
-        if abs(lin_vel) >= self.vel_threshold and abs(ang_vel) < self.vel_threshold: # Forwards or Backwards
+        if abs(lin_vel) >= self.vel_threshold and abs(ang_vel) < 3*self.vel_threshold: # Forwards or Backwards
             pwm_left = lin_pwm
             pwm_right = lin_pwm
+            #print("FORWARDS OR BACKWARDS")
 
-        elif lin_vel > 0 and ang_vel < 0: # Forwards + Right turn
-            pwm_left = lin_pwm + abs(ang_pwm)  # fast wheel forwards
-            pwm_right = lin_pwm - abs(ang_pwm)  # slow wheel forwards
-        elif lin_vel < 0 and ang_vel < 0: # Backwards + Right turn
+        elif lin_vel > 0 and ang_vel < 0 and abs(ang_vel) > self.vel_threshold: # Forwards + Right turn
+        #left, right
+            #print("FORW+RIGHT")
+            pwm_right = lin_pwm - abs(ang_pwm)  # fast wheel forwards
+            pwm_left = lin_pwm + abs(ang_pwm)  # slow wheel forwards
+        elif lin_vel < 0 and ang_vel < 0 and abs(ang_vel) > self.vel_threshold: # Backwards + Right turn
+            #print("BACKW+RIGHT")
+
             pwm_left = lin_pwm - abs(ang_pwm)  # fast wheel backwards
             pwm_right = lin_pwm + abs(ang_pwm)  # slow wheel backwards
-        elif lin_vel > 0 and ang_vel > 0: # Forwards + Left turn
+        elif lin_vel > 0 and ang_vel > 0 and abs(ang_vel) > self.vel_threshold: # Forwards + Left turn
+            #print("FORW+LEFT")
+
             pwm_left = lin_pwm - abs(ang_pwm)  # slow wheel forwards
             pwm_right = lin_pwm + abs(ang_pwm)  # fast wheel forwards
-        elif lin_vel < 0 and ang_vel > 0: # Backwards + Left turn
+        elif lin_vel < 0 and ang_vel > 0 and abs(ang_vel) > self.vel_threshold: # Backwards + Left turn
+            #print("BACKW+LEFT")
+
             pwm_left = lin_pwm + abs(ang_pwm)  # slow wheel backwards
             pwm_right = lin_pwm - abs(ang_pwm)  # fast wheel backwards
 
-        elif abs(lin_vel) < self.vel_threshold and ang_vel < 0: # Right turn in place
+        elif abs(lin_vel) < 3*self.vel_threshold and ang_vel < 0 and abs(ang_vel) > self.vel_threshold: # Right turn in place
+            #print("RIGHT TURN IN PLACE")
+
             pwm_left = abs(ang_pwm)     # forwards
             pwm_right = -abs(ang_pwm)   # backwards
-        elif abs(lin_vel) < self.vel_threshold and ang_vel > 0: # Left turn in place
+        elif abs(lin_vel) < 3*self.vel_threshold and ang_vel > 0 and abs(ang_vel) > self.vel_threshold: # Left turn in place
+            #print("LEFT TURN IN PLACE")
+
             pwm_left = -abs(ang_pwm)    # backwards
             pwm_right = abs(ang_pwm)    # forwards
         else:# No movement
+            #print("NO MOVEMENT")
             pwm_left = 0
             pwm_right = 0
         
@@ -289,7 +305,7 @@ class JoyPwmMotorControl(Node):
         pwm_left = self.clamp_val(pwm_left, -max_pwm, max_pwm)
         pwm_right = self.clamp_val(pwm_right, -max_pwm, max_pwm)
 
-        return [pwm_left, pwm_right, pwm_left, pwm_right]
+        return [-pwm_left, pwm_right, -pwm_left, pwm_right]
 
 
 
