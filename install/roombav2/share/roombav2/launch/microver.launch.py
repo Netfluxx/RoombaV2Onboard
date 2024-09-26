@@ -20,8 +20,8 @@ def generate_launch_description():
     twist_mux_config_path = os.path.join(pkg_share, 'config', 'twist_mux.yaml')
 
     model = LaunchConfiguration('model', default=default_model_path)
-    use_sim_time = LaunchConfiguration('use_sim_time', default='False')
-    use_slam = LaunchConfiguration('use_slam', default='False')
+    use_sim_time = LaunchConfiguration('use_sim_time', default='false')
+    use_slam = LaunchConfiguration('use_slam', default='false')
 
     robot_state_publisher = Node(
         package='robot_state_publisher',
@@ -114,7 +114,7 @@ def generate_launch_description():
         motor_control_node,
         static_tf_base_lidar,
         lidar_launch_include,
-        rf2o_laser_odometry_launch_include,
+        #rf2o_laser_odometry_launch_include,
         slam_toolbox_node,
         robot_localization_node,
     ])

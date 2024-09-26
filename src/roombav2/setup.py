@@ -24,8 +24,8 @@ setup(
         ]),
         ('share/' + package_name + '/config', [
             'config/amcl_params.yaml', 
-            'config/costmap_params.yaml', 
-            'config/planner_params.yaml', 
+            #'config/costmap_params.yaml', 
+            #'config/planner_params.yaml', 
             'config/slam_toolbox_params.yaml',
             'config/ekf.yaml',
             'config/twist_mux.yaml',

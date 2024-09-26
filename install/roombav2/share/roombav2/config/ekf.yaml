@@ -1,13 +1,13 @@
 ekf_filter_node:
   ros__parameters:
-    frequency: 10.0  # The frequency at which the filter runs
-    sensor_timeout: 0.1  # How long to wait for sensor data before giving up
+    frequency: 6.0  # The frequency at which the filter runs
+    sensor_timeout: 0.25  # How long to wait for sensor data before giving up
     two_d_mode: true  # If you're working with a 2D robot (e.g., a ground robot)
 
     odom_frame: odom
     base_link_frame: base_link
     world_frame: odom  # Can also be 'map' if using absolute localization
-    print_diagnostics: true
+    print_diagnostics: false
     publish_tf: true  # Publish the odom -> base_link transform
 
     # Odometry data (e.g., from wheel encoders)
@@ -27,17 +27,17 @@ ekf_filter_node:
                             0.0, 0.0, 0.0, 0.0, 99999.0, 0.0,
                             0.0, 0.0, 0.0, 0.0, 0.0, 0.1]
 
-    odom1: /odom  # The topic for your wheel odometry
-    odom1_config: [true, true, false,  # x, y, z position
-                   false, false, true,  # roll, pitch, yaw orientation
-                   true, false, false,  # x, y, z velocity
-                   false, false, true,  # roll, pitch, yaw angular velocity
-                   false, false, false] # x, y, z acceleration (if available)
-    odom1_nodelay: true
+    # odom1: /odom  # The topic for your wheel odometry
+    # odom1_config: [true, true, false,  # x, y, z position
+    #                false, false, true,  # roll, pitch, yaw orientation
+    #                true, false, false,  # x, y, z velocity
+    #                false, false, true,  # roll, pitch, yaw angular velocity
+    #                false, false, false] # x, y, z acceleration (if available)
+    # odom1_nodelay: true
 
-    odom1_pose_covariance: [0.2, 0.0, 0.0, 0.0, 0.0, 0.0,
-                            0.0, 0.2, 0.0, 0.0, 0.0, 0.0,
-                            0.0, 0.0, 99999.0, 0.0, 0.0, 0.0,
-                            0.0, 0.0, 0.0, 99999.0, 0.0, 0.0,
-                            0.0, 0.0, 0.0, 0.0, 99999.0, 0.0,
-                            0.0, 0.0, 0.0, 0.0, 0.0, 0.1]
+    # odom1_pose_covariance: [0.2, 0.0, 0.0, 0.0, 0.0, 0.0,
+    #                         0.0, 0.2, 0.0, 0.0, 0.0, 0.0,
+    #                         0.0, 0.0, 99999.0, 0.0, 0.0, 0.0,
+    #                         0.0, 0.0, 0.0, 99999.0, 0.0, 0.0,
+    #                         0.0, 0.0, 0.0, 0.0, 99999.0, 0.0,
+    #                         0.0, 0.0, 0.0, 0.0, 0.0, 0.1]

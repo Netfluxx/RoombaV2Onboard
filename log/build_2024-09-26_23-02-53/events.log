@@ -1,0 +1,102 @@
+[0.000000] (-) TimerEvent: {}
+[0.001700] (-) JobUnselected: {'identifier': 'RoverReceive'}
+[0.002269] (-) JobUnselected: {'identifier': 'mode_manager'}
+[0.002357] (-) JobUnselected: {'identifier': 'rf2o_laser_odometry'}
+[0.002433] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.002518] (roombav2) JobQueued: {'identifier': 'roombav2', 'dependencies': OrderedDict()}
+[0.002602] (roombav2) JobStarted: {'identifier': 'roombav2'}
+[0.099207] (-) TimerEvent: {}
+[0.199928] (-) TimerEvent: {}
+[0.300585] (-) TimerEvent: {}
+[0.401246] (-) TimerEvent: {}
+[0.501819] (-) TimerEvent: {}
+[0.602381] (-) TimerEvent: {}
+[0.702953] (-) TimerEvent: {}
+[0.803592] (-) TimerEvent: {}
+[0.904217] (-) TimerEvent: {}
+[1.004854] (-) TimerEvent: {}
+[1.105572] (-) TimerEvent: {}
+[1.206401] (-) TimerEvent: {}
+[1.307039] (-) TimerEvent: {}
+[1.407687] (-) TimerEvent: {}
+[1.508279] (-) TimerEvent: {}
+[1.608869] (-) TimerEvent: {}
+[1.709461] (-) TimerEvent: {}
+[1.810036] (-) TimerEvent: {}
+[1.910609] (-) TimerEvent: {}
+[2.011229] (-) TimerEvent: {}
+[2.111829] (-) TimerEvent: {}
+[2.212430] (-) TimerEvent: {}
+[2.313078] (-) TimerEvent: {}
+[2.413743] (-) TimerEvent: {}
+[2.514504] (-) TimerEvent: {}
+[2.615203] (-) TimerEvent: {}
+[2.715886] (-) TimerEvent: {}
+[2.816537] (-) TimerEvent: {}
+[2.917252] (-) TimerEvent: {}
+[3.017998] (-) TimerEvent: {}
+[3.118848] (-) TimerEvent: {}
+[3.128387] (roombav2) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/arno/RoombaV2Onboard/build/roombav2/build', '--no-deps', 'symlink_data', '--force'], 'cwd': '/home/arno/RoombaV2Onboard/build/roombav2', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'arno', 'SSH_CLIENT': '192.168.207.158 58198 22', 'LC_TIME': 'de_CH.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/arno', 'OLDPWD': '/home/arno', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'de_CH.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'arno', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '1', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'de_CH.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'de_CH.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install/sllidar_ros2:/home/arno/RoombaV2Onboard/install/roombav2:/home/arno/RoombaV2Onboard/install/rf2o_laser_odometry:/home/arno/RoombaV2Onboard/install/mode_manager:/home/arno/RoombaV2Onboard/install/RoverReceive:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'de_CH.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'de_CH.UTF-8', 'LC_IDENTIFICATION': 'de_CH.UTF-8', 'PWD': '/home/arno/RoombaV2Onboard/build/roombav2', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.207.158 58198 192.168.207.79 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/arno/RoombaV2Onboard/build/roombav2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/mode_manager/lib/python3.10/site-packages:/home/arno/RoombaV2Onboard/install/RoverReceive/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'de_CH.UTF-8', 'LC_PAPER': 'de_CH.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/arno/RoombaV2Onboard/install/sllidar_ros2:/home/arno/RoombaV2Onboard/install/rf2o_laser_odometry'}, 'shell': False}
+[3.219017] (-) TimerEvent: {}
+[3.319625] (-) TimerEvent: {}
+[3.420222] (-) TimerEvent: {}
+[3.520863] (-) TimerEvent: {}
+[3.621548] (-) TimerEvent: {}
+[3.722138] (-) TimerEvent: {}
+[3.822699] (-) TimerEvent: {}
+[3.923302] (-) TimerEvent: {}
+[4.023877] (-) TimerEvent: {}
+[4.124553] (-) TimerEvent: {}
+[4.194227] (roombav2) StdoutLine: {'line': b'running develop\n'}
+[4.198398] (roombav2) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.\n'}
+[4.198991] (roombav2) StderrLine: {'line': b'  warnings.warn(\n'}
+[4.224698] (-) TimerEvent: {}
+[4.325317] (-) TimerEvent: {}
+[4.425926] (-) TimerEvent: {}
+[4.526504] (-) TimerEvent: {}
+[4.627108] (-) TimerEvent: {}
+[4.727700] (-) TimerEvent: {}
+[4.828309] (-) TimerEvent: {}
+[4.832770] (roombav2) StdoutLine: {'line': b'running egg_info\n'}
+[4.833458] (roombav2) StdoutLine: {'line': b'writing roombav2.egg-info/PKG-INFO\n'}
+[4.836191] (roombav2) StdoutLine: {'line': b'writing dependency_links to roombav2.egg-info/dependency_links.txt\n'}
+[4.837477] (roombav2) StdoutLine: {'line': b'writing entry points to roombav2.egg-info/entry_points.txt\n'}
+[4.838297] (roombav2) StdoutLine: {'line': b'writing requirements to roombav2.egg-info/requires.txt\n'}
+[4.838977] (roombav2) StdoutLine: {'line': b'writing top-level names to roombav2.egg-info/top_level.txt\n'}
+[4.847878] (roombav2) StdoutLine: {'line': b"reading manifest file 'roombav2.egg-info/SOURCES.txt'\n"}
+[4.854057] (roombav2) StdoutLine: {'line': b"writing manifest file 'roombav2.egg-info/SOURCES.txt'\n"}
+[4.859563] (roombav2) StdoutLine: {'line': b'running build_ext\n'}
+[4.860381] (roombav2) StdoutLine: {'line': b'Creating /home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages/roombav2.egg-link (link to .)\n'}
+[4.863817] (roombav2) StdoutLine: {'line': b'Installing encoder_reader script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2\n'}
+[4.864632] (roombav2) StdoutLine: {'line': b'Installing joystick_motor_controller script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2\n'}
+[4.865441] (roombav2) StdoutLine: {'line': b'Installing nav2_motor_controller script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2\n'}
+[4.866195] (roombav2) StdoutLine: {'line': b'Installing pwm_open_loop script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2\n'}
+[4.866952] (roombav2) StdoutLine: {'line': b'Installing system_info script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2\n'}
+[4.868190] (roombav2) StdoutLine: {'line': b'\n'}
+[4.868731] (roombav2) StdoutLine: {'line': b'Installed /home/arno/RoombaV2Onboard/build/roombav2\n'}
+[4.869139] (roombav2) StdoutLine: {'line': b'running symlink_data\n'}
+[4.869599] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/resource/roombav2 -> /home/arno/RoombaV2Onboard/install/roombav2/share/ament_index/resource_index/packages\n'}
+[4.870087] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/package.xml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2\n'}
+[4.870607] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/roombav2/encoder_reader.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2\n'}
+[4.871288] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/roombav2/joystick_motor_controller.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2\n'}
+[4.871946] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/roombav2/nav2_motor_controller.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2\n'}
+[4.872598] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/roombav2/system_info.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2\n'}
+[4.873258] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/roombav2/pwm_open_loop.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2\n'}
+[4.874043] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/launch/localization_launch.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/launch\n'}
+[4.874673] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/launch/navigation_launch.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/launch\n'}
+[4.875303] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/launch/microver.launch.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/launch\n'}
+[4.876019] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/config/amcl_params.yaml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config\n'}
+[4.876636] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/config/slam_toolbox_params.yaml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config\n'}
+[4.877373] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/config/ekf.yaml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config\n'}
+[4.877929] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/config/twist_mux.yaml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config\n'}
+[4.878530] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/config/nav2_params.yaml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config\n'}
+[4.879329] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/models/microver.urdf.xacro -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/models\n'}
+[4.879960] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/models/constants.xacro -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/models\n'}
+[4.880616] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/models/inertial_macros.xacro -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/models\n'}
+[4.881407] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/maps/DLL.pgm -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/maps\n'}
+[4.881975] (roombav2) StdoutLine: {'line': b'symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/maps/DLL.yaml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/maps\n'}
+[4.928631] (-) TimerEvent: {}
+[5.009481] (roombav2) CommandEnded: {'returncode': 0}
+[5.028744] (-) TimerEvent: {}
+[5.083588] (roombav2) JobEnded: {'identifier': 'roombav2', 'rc': 0}
+[5.086540] (-) EventReactorShutdown: {}

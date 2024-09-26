@@ -4,6 +4,3 @@ source;share/mode_manager/hook/pythonpath.sh
 source;share/mode_manager/hook/ament_prefix_path.ps1
 source;share/mode_manager/hook/ament_prefix_path.dsv
 source;share/mode_manager/hook/ament_prefix_path.sh
-source;../../build/mode_manager/share/mode_manager/hook/pythonpath_develop.ps1
-source;../../build/mode_manager/share/mode_manager/hook/pythonpath_develop.dsv
-source;../../build/mode_manager/share/mode_manager/hook/pythonpath_develop.sh

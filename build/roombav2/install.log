@@ -23,8 +23,6 @@
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/launch/navigation_launch.py
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/launch/microver.launch.py
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config/amcl_params.yaml
-/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config/costmap_params.yaml
-/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config/planner_params.yaml
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config/slam_toolbox_params.yaml
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config/ekf.yaml
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config/twist_mux.yaml

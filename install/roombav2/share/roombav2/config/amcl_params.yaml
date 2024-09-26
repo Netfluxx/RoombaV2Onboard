@@ -15,7 +15,7 @@ amcl:
     resample_interval: 1
     update_min_d: 0.2
     update_min_a: 0.2
-    laser_min_range: 0.0
+    laser_min_range: 0.005
     laser_max_range: 12.0
     laser_max_beams: 100
     transform_tolerance: 0.5

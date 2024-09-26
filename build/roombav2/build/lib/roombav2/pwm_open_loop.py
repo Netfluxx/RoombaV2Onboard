@@ -223,7 +223,7 @@ class JoyPwmMotorControl(Node):
 
     def compute_kinematics_pwm(self, lin_vel, ang_vel):
 
-        self.get_logger().info(f"LIN: {lin_vel}, ANG: {ang_vel}")
+        #self.get_logger().info(f"LIN: {lin_vel}, ANG: {ang_vel}")
         
         #switch lin vel and ang vel
         #tmp_lin_vel = lin_vel
