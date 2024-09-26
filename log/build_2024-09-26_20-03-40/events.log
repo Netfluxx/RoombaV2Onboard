@@ -1,0 +1,40 @@
+[0.000000] (-) TimerEvent: {}
+[0.001481] (-) JobUnselected: {'identifier': 'RoverReceive'}
+[0.002430] (-) JobUnselected: {'identifier': 'mode_manager'}
+[0.003248] (-) JobUnselected: {'identifier': 'rf2o_laser_odometry'}
+[0.003483] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.003835] (roombav2) JobQueued: {'identifier': 'roombav2', 'dependencies': OrderedDict()}
+[0.004077] (roombav2) JobStarted: {'identifier': 'roombav2'}
+[0.098379] (-) TimerEvent: {}
+[0.199183] (-) TimerEvent: {}
+[0.300307] (-) TimerEvent: {}
+[0.401029] (-) TimerEvent: {}
+[0.501752] (-) TimerEvent: {}
+[0.602449] (-) TimerEvent: {}
+[0.703201] (-) TimerEvent: {}
+[0.803849] (-) TimerEvent: {}
+[0.904524] (-) TimerEvent: {}
+[1.005289] (-) TimerEvent: {}
+[1.106060] (-) TimerEvent: {}
+[1.207354] (-) TimerEvent: {}
+[1.308318] (-) TimerEvent: {}
+[1.409184] (-) TimerEvent: {}
+[1.509852] (-) TimerEvent: {}
+[1.610547] (-) TimerEvent: {}
+[1.711220] (-) TimerEvent: {}
+[1.811865] (-) TimerEvent: {}
+[1.912551] (-) TimerEvent: {}
+[2.013234] (-) TimerEvent: {}
+[2.114216] (-) TimerEvent: {}
+[2.215048] (-) TimerEvent: {}
+[2.315733] (-) TimerEvent: {}
+[2.416455] (-) TimerEvent: {}
+[2.517249] (-) TimerEvent: {}
+[2.618400] (-) TimerEvent: {}
+[2.719382] (-) TimerEvent: {}
+[2.820566] (-) TimerEvent: {}
+[2.921504] (-) TimerEvent: {}
+[3.012395] (roombav2) StderrLine: {'line': b'Traceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/colcon_parallel_executor/executor/parallel.py", line 75, in execute\n    loop.run_until_complete(future)\n  File "/usr/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete\n    self.run_forever()\n  File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever\n    self._run_once()\n  File "/usr/lib/python3.10/asyncio/base_events.py", line 1871, in _run_once\n    event_list = self._selector.select(timeout)\n  File "/usr/lib/python3.10/selectors.py", line 469, in select\n    fd_event_list = self._selector.poll(timeout, max_ev)\nKeyboardInterrupt\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/colcon_core/executor/__init__.py", line 91, in __call__\n    rc = await self.task(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/__init__.py", line 93, in __call__\n    return await task_method(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_ros/task/ament_python/build.py", line 102, in build\n    return await extension.build(additional_hooks=additional_hooks)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/build.py", line 94, in build\n    available_commands = await self._get_available_commands(\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/build.py", line 192, in _get_available_commands\n    output = await check_output(\n  File "/usr/lib/python3/dist-packages/colcon_core/subprocess.py", line 129, in check_output\n    assert not rc, f\'Expected {args} to pass: {stderr_data}\'\nAssertionError: Expected [\'/usr/bin/python3\', \'-W\', \'ignore:setup.py install is deprecated\', \'setup.py\', \'--help-commands\'] to pass: Traceback (most recent call last):\n  File "/home/arno/RoombaV2Onboard/src/roombav2/setup.py", line 5, in <module>\n    setup(\n  File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 153, in setup\n    return distutils.core.setup(**attrs)\n  File "/usr/lib/python3.10/distutils/core.py", line 134, in setup\n    ok = dist.parse_command_line()\n  File "/usr/lib/python3.10/distutils/dist.py", line 480, in parse_command_line\n    if self.handle_display_options(option_order):\n  File "/usr/lib/python3/dist-packages/setuptools/dist.py", line 1126, in handle_display_options\n    return _Distribution.handle_display_options(self, option_order)\n  File "/usr/lib/python3.10/distutils/dist.py", line 683, in handle_display_options\n    self.print_commands()\n  File "/usr/lib/python3/dist-packages/setuptools/dist.py", line 902, in print_commands\n    cmdclass = ep.resolve()\n  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2471, in resolve\n    module = __import__(self.module_name, fromlist=[\'__name__\'], level=0)\n  File "/usr/lib/python3/dist-packages/babel/messages/__init__.py", line 12, in <module>\n    from babel.messages.catalog import *\n  File "/usr/lib/python3/dist-packages/babel/messages/catalog.py", line 24, in <module>\n    from babel.dates import format_datetime\n  File "/usr/lib/python3/dist-packages/babel/dates.py", line 23, in <module>\n    import pytz as _pytz\n  File "/usr/lib/python3/dist-packages/pytz/__init__.py", line 665, in <module>\n    all_timezones_set = zoneinfo.available_timezones() - {"Factory", "localtime"}\n  File "/usr/lib/python3.10/zoneinfo/_tzpath.py", line 114, in available_timezones\n    from importlib import resources\n  File "/usr/lib/python3.10/importlib/resources.py", line 4, in <module>\n    from . import _common\n  File "/usr/lib/python3.10/importlib/_common.py", line 10, in <module>\n    from .abc import ResourceReader, Traversable\n  File "<frozen importlib._bootstrap>", line 1025, in _find_and_load\nKeyboardInterrupt\n\n'}
+[3.014323] (roombav2) JobEnded: {'identifier': 'roombav2', 'rc': 'SIGINT'}
+[3.021652] (-) TimerEvent: {}
+[3.024269] (-) EventReactorShutdown: {}

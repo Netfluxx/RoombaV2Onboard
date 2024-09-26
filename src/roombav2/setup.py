@@ -18,7 +18,8 @@ setup(
             package_name+'/pwm_open_loop.py',
         ]),
         ('share/' + package_name + '/launch', [
-            'launch/nav2_bringup.launch.py',
+            'launch/localization_launch.py',
+            'launch/navigation_launch.py',
             'launch/microver.launch.py',
         ]),
         ('share/' + package_name + '/config', [
@@ -28,15 +29,17 @@ setup(
             'config/slam_toolbox_params.yaml',
             'config/ekf.yaml',
             'config/twist_mux.yaml',
+            'config/nav2_params.yaml',
         ]),
         ('share/' + package_name + '/models', [
             'models/microver.urdf.xacro', 
             'models/constants.xacro', 
             'models/inertial_macros.xacro',
         ]),
-        # ('share/' + package_name + '/maps', [
-        #     'maps/some_map.pgm'
-        # ]),
+        ('share/' + package_name + '/maps', [
+            'maps/DLL.pgm',
+            'maps/DLL.yaml',
+        ]),
     ],
     install_requires=['setuptools'],
     zip_safe=True,

@@ -19,7 +19,8 @@
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/nav2_motor_controller.py
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/system_info.py
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/pwm_open_loop.py
-/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/launch/nav2_bringup.launch.py
+/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/launch/localization_launch.py
+/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/launch/navigation_launch.py
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/launch/microver.launch.py
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config/amcl_params.yaml
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config/costmap_params.yaml
@@ -27,9 +28,12 @@
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config/slam_toolbox_params.yaml
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config/ekf.yaml
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config/twist_mux.yaml
+/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config/nav2_params.yaml
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/models/microver.urdf.xacro
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/models/constants.xacro
 /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/models/inertial_macros.xacro
+/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/maps/DLL.pgm
+/home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/maps/DLL.yaml
 /home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages/roombav2-0.0.0-py3.10.egg-info/SOURCES.txt
 /home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages/roombav2-0.0.0-py3.10.egg-info/dependency_links.txt
 /home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages/roombav2-0.0.0-py3.10.egg-info/PKG-INFO

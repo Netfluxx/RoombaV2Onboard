@@ -11,11 +11,16 @@ setup.py
 config/amcl_params.yaml
 config/costmap_params.yaml
 config/ekf.yaml
+config/nav2_params.yaml
 config/planner_params.yaml
 config/slam_toolbox_params.yaml
 config/twist_mux.yaml
+launch/localization_launch.py
 launch/microver.launch.py
 launch/nav2_bringup.launch.py
+launch/navigation_launch.py
+maps/DLL.pgm
+maps/DLL.yaml
 models/constants.xacro
 models/inertial_macros.xacro
 models/microver.urdf.xacro

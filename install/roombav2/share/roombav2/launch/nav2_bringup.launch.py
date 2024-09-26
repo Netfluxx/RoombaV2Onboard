@@ -17,7 +17,7 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='False')
 
     #need to find a way to load a certain map
-    map_file = LaunchConfiguration('map', default=os.path.join(map_dir, 'map.yaml'))
+    map_file = LaunchConfiguration('dll_couloir', default=os.path.join(map_dir, 'dll_couloir.yaml'))
 
     #yaml config files
     amcl_params_file = os.path.join(config_dir, 'amcl_params.yaml')
@@ -73,7 +73,6 @@ def generate_launch_description():
         output='screen',
         parameters=[slam_toolbox_params_file, {'use_sim_time': use_sim_time}],
     )
-
 
 
     return LaunchDescription([

@@ -147,7 +147,7 @@ class JoyPwmMotorControl(Node):
                 received_from_arduino = self.serial_port.read_until().decode('utf-8').strip()
             if received_from_arduino:
                 curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
-                #self.get_logger().info(f"Master @{curr_time}: {received_from_arduino}")
+                self.get_logger().info(f"Master @{curr_time}: {received_from_arduino}")
 
                 required_terms = ["FR", "FL", "BR", "BL"]  #parsing the incoming arduino logs 
                 if all(term in received_from_arduino for term in required_terms):
@@ -183,7 +183,7 @@ class JoyPwmMotorControl(Node):
                 if "battery voltage:" in received_from_arduino:
                     try:
                         batt_voltage_str = received_from_arduino.split(':')[1].strip()
-                        batt_voltage = float(batt_voltage_str)
+                        batt_voltage = float(batt_voltage_str*10)
                         
                         batt_pub_msg = String()
                         batt_pub_msg.data = f"{batt_voltage}"

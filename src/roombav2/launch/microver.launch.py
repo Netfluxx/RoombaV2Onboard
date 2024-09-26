@@ -8,6 +8,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from launch_ros.descriptions import ParameterValue
+from launch.conditions import IfCondition
 
 def generate_launch_description():
     pkg_share = FindPackageShare(package='roombav2').find('roombav2')
@@ -20,6 +21,7 @@ def generate_launch_description():
 
     model = LaunchConfiguration('model', default=default_model_path)
     use_sim_time = LaunchConfiguration('use_sim_time', default='False')
+    use_slam = LaunchConfiguration('use_slam', default='False')
 
     robot_state_publisher = Node(
         package='robot_state_publisher',
@@ -66,12 +68,13 @@ def generate_launch_description():
         executable='async_slam_toolbox_node',
         name='slam_toolbox',
         output='screen',
-        parameters=[slam_config_path]
+        parameters=[slam_config_path],
+        condition=IfCondition(use_slam)
     )
 
     rf2o_laser_odometry_launch_include = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([rf2o_lidar_odom_launch_file_path]),
-        launch_arguments={'parameter_name': 'parameter_value'}.items()
+        PythonLaunchDescriptionSource([rf2o_lidar_odom_launch_file_path])
+        #launch_arguments={'parameter_name': 'parameter_value'}.items()
     )
 
     robot_localization_node = Node(  #does odom -> base_link dynamic tf using ekf with odom and later imu
@@ -83,8 +86,7 @@ def generate_launch_description():
     )
 
     lidar_launch_include = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([lidar_launch_file_path]),
-        launch_arguments={'parameter_name': 'parameter_value'}.items()
+        PythonLaunchDescriptionSource([lidar_launch_file_path])
     )
 
     static_tf_base_lidar = Node(
@@ -108,6 +110,7 @@ def generate_launch_description():
         robot_state_publisher,
         joint_state_publisher_node,
         system_info_node,
+        #twist_mux_node,
         motor_control_node,
         static_tf_base_lidar,
         lidar_launch_include,

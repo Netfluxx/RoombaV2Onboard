@@ -1,11 +1,13 @@
-mux:
-  topics:
-    - topic: "/joystick_cmd_vel"
-      timeout: 0.5
-      priority: 10
-      short_desc: "Joystick control"
-    - topic: "/cmd_vel"
-      timeout: 0.5
-      priority: 5
-      short_desc: "Nav2 control"
-      message_type: "geometry_msgs/Twist"
+twist_mux:
+  ros__parameters:
+    topics:
+      - topic: "/joystick_cmd_vel"
+        timeout: 0.5
+        priority: 10
+        short_desc: "Joystick control"
+        message_type: "geometry_msgs/Twist"
+      - topic: "/cmd_vel"
+        timeout: 0.5
+        priority: 5
+        short_desc: "Nav2 control"
+        message_type: "geometry_msgs/Twist"
