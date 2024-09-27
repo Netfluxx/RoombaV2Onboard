@@ -39,6 +39,7 @@ setup(
         ('share/' + package_name + '/maps', [
             'maps/DLL.pgm',
             'maps/DLL.yaml',
+            'maps/jordils.yaml',
         ]),
     ],
     install_requires=['setuptools'],

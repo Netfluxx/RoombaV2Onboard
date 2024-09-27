@@ -19,6 +19,7 @@ launch/microver.launch.py
 launch/navigation_launch.py
 maps/DLL.pgm
 maps/DLL.yaml
+maps/jordils.yaml
 models/constants.xacro
 models/inertial_macros.xacro
 models/microver.urdf.xacro
