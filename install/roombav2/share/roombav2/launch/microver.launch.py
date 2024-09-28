@@ -93,7 +93,7 @@ def generate_launch_description():
         package='tf2_ros',
         executable='static_transform_publisher',
         name='static_tf_pub_base_to_lidar_link',
-        arguments=['0', '0', '0.168', '0', '0', '3.141592653589793', 'base_link', 'lidar_link']  # x, y, z, yaw, pitch, roll
+        arguments=['0.15', '0', '0.168', '0', '0', '0', 'base_link', 'lidar_link']  # x, y, z, yaw, pitch, roll
     )
 
     return LaunchDescription([
@@ -105,7 +105,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             'use_sim_time',
             default_value='False',
-            description='Use simulation (Gazebo) clock if true'
+            description='Use slam_toolbox to make map if true'
         ),
         robot_state_publisher,
         joint_state_publisher_node,
@@ -114,7 +114,7 @@ def generate_launch_description():
         motor_control_node,
         static_tf_base_lidar,
         lidar_launch_include,
-        #rf2o_laser_odometry_launch_include,
+        rf2o_laser_odometry_launch_include,
         slam_toolbox_node,
         robot_localization_node,
     ])

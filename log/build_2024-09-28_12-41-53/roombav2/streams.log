@@ -1,0 +1,53 @@
+[5.364s] Invoking command in '/home/arno/RoombaV2Onboard/build/roombav2': PYTHONPATH=/home/arno/RoombaV2Onboard/build/roombav2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/roombav2/build --no-deps symlink_data
+[6.826s] running develop
+[6.864s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[6.865s]   warnings.warn(
+[7.824s] running egg_info
+[7.825s] creating roombav2.egg-info
+[7.829s] writing roombav2.egg-info/PKG-INFO
+[7.837s] writing dependency_links to roombav2.egg-info/dependency_links.txt
+[7.839s] writing entry points to roombav2.egg-info/entry_points.txt
+[7.841s] writing requirements to roombav2.egg-info/requires.txt
+[7.841s] writing top-level names to roombav2.egg-info/top_level.txt
+[7.842s] writing manifest file 'roombav2.egg-info/SOURCES.txt'
+[7.849s] reading manifest file 'roombav2.egg-info/SOURCES.txt'
+[7.854s] writing manifest file 'roombav2.egg-info/SOURCES.txt'
+[7.862s] running build_ext
+[7.874s] Creating /home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages/roombav2.egg-link (link to .)
+[7.904s] Installing encoder_reader script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2
+[7.906s] Installing joystick_motor_controller script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2
+[7.908s] Installing nav2_motor_controller script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2
+[7.910s] Installing pwm_open_loop script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2
+[7.912s] Installing system_info script to /home/arno/RoombaV2Onboard/install/roombav2/lib/roombav2
+[7.914s] 
+[7.916s] Installed /home/arno/RoombaV2Onboard/build/roombav2
+[7.918s] running symlink_data
+[7.919s] creating /home/arno/RoombaV2Onboard/install/roombav2/share/ament_index
+[7.921s] creating /home/arno/RoombaV2Onboard/install/roombav2/share/ament_index/resource_index
+[7.922s] creating /home/arno/RoombaV2Onboard/install/roombav2/share/ament_index/resource_index/packages
+[7.924s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/resource/roombav2 -> /home/arno/RoombaV2Onboard/install/roombav2/share/ament_index/resource_index/packages
+[7.927s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/package.xml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2
+[7.929s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/roombav2/encoder_reader.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2
+[7.931s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/roombav2/joystick_motor_controller.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2
+[7.934s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/roombav2/nav2_motor_controller.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2
+[7.936s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/roombav2/system_info.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2
+[7.938s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/roombav2/pwm_open_loop.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2
+[7.940s] creating /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/launch
+[7.944s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/launch/localization_launch.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/launch
+[7.946s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/launch/navigation_launch.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/launch
+[7.948s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/launch/microver.launch.py -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/launch
+[7.950s] creating /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config
+[7.952s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/config/amcl_params.yaml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config
+[7.955s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/config/slam_toolbox_params.yaml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config
+[7.957s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/config/ekf.yaml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config
+[7.960s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/config/twist_mux.yaml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config
+[7.962s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/config/nav2_params.yaml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/config
+[7.964s] creating /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/models
+[7.967s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/models/microver.urdf.xacro -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/models
+[7.969s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/models/constants.xacro -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/models
+[7.971s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/models/inertial_macros.xacro -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/models
+[7.973s] creating /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/maps
+[7.975s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/maps/DLL.pgm -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/maps
+[7.977s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/maps/DLL.yaml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/maps
+[7.979s] symbolically linking /home/arno/RoombaV2Onboard/build/roombav2/maps/jordils.yaml -> /home/arno/RoombaV2Onboard/install/roombav2/share/roombav2/maps
+[8.239s] Invoked command in '/home/arno/RoombaV2Onboard/build/roombav2' returned '0': PYTHONPATH=/home/arno/RoombaV2Onboard/build/roombav2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arno/RoombaV2Onboard/install/roombav2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/arno/RoombaV2Onboard/build/roombav2/build --no-deps symlink_data

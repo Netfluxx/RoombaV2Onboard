@@ -45,7 +45,7 @@ class JoyPwmMotorControl(Node):
             10
         )
 
-        self.wheel_speeds_publisher = self.create_publisher(String, '/wheel_speeds', 10)
+        #self.wheel_speeds_publisher = self.create_publisher(String, '/wheel_speeds', 10)
         self.battery_publisher = self.create_publisher(String, '/battery', 10)
         self.sent_wheel_speeds_publisher = self.create_publisher(String, '/sent_pwm', 10)
 
@@ -145,40 +145,40 @@ class JoyPwmMotorControl(Node):
             received_from_arduino = None
             if self.serial_port.in_waiting > 0:
                 received_from_arduino = self.serial_port.read_until().decode('utf-8').strip()
-            if received_from_arduino:
-                curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
-                self.get_logger().info(f"Master @{curr_time}: {received_from_arduino}")
+            #if received_from_arduino:
+                #curr_time=time.strftime("%d-%m-%Y %H:%M:%S")
+                #self.get_logger().info(f"Master @{curr_time}: {received_from_arduino}")
 
-                required_terms = ["FR", "FL", "BR", "BL"]  #parsing the incoming arduino logs 
-                if all(term in received_from_arduino for term in required_terms):
+                # required_terms = ["FR", "FL", "BR", "BL"]  #parsing the incoming arduino logs 
+                # if all(term in received_from_arduino for term in required_terms):
 
-                    parsed_speeds = received_from_arduino.split(',')
-                    parsed_speeds = [_.split(':') for _ in parsed_speeds]
+                #     parsed_speeds = received_from_arduino.split(',')
+                #     parsed_speeds = [_.split(':') for _ in parsed_speeds]
 
 
-                    if parsed_speeds[0][1] != "NAN" and parsed_speeds[0][1] != "nan":
-                        self.fr_wheel_speed = float(parsed_speeds[0][1])
-                    else:
-                        self.fr_wheel_speed = 0.00
+                #     if parsed_speeds[0][1] != "NAN" and parsed_speeds[0][1] != "nan":
+                #         self.fr_wheel_speed = float(parsed_speeds[0][1])
+                #     else:
+                #         self.fr_wheel_speed = 0.00
 
-                    if parsed_speeds[1][1] != "NAN" and parsed_speeds[1][1] != "nan":
-                        self.fl_wheel_speed = float(parsed_speeds[1][1])
-                    else:
-                        self.fl_wheel_speed = 0.00
+                #     if parsed_speeds[1][1] != "NAN" and parsed_speeds[1][1] != "nan":
+                #         self.fl_wheel_speed = float(parsed_speeds[1][1])
+                #     else:
+                #         self.fl_wheel_speed = 0.00
 
-                    if parsed_speeds[2][1] != "NAN" and parsed_speeds[2][1] != "nan":
-                        self.br_wheel_speed = float(parsed_speeds[2][1])
-                    else:
-                        self.br_wheel_speed = 0.00
+                #     if parsed_speeds[2][1] != "NAN" and parsed_speeds[2][1] != "nan":
+                #         self.br_wheel_speed = float(parsed_speeds[2][1])
+                #     else:
+                #         self.br_wheel_speed = 0.00
 
-                    if parsed_speeds[3][1] != "NAN" and parsed_speeds[3][1] != "nan":
-                        self.bl_wheel_speed = float(parsed_speeds[3][1])
-                    else:
-                        self.bl_wheel_speed = 0.00
+                #     if parsed_speeds[3][1] != "NAN" and parsed_speeds[3][1] != "nan":
+                #         self.bl_wheel_speed = float(parsed_speeds[3][1])
+                #     else:
+                #         self.bl_wheel_speed = 0.00
 
-                    wheel_speed_msg = String()
-                    wheel_speed_msg.data = f"{self.fr_wheel_speed},{self.fl_wheel_speed},{self.br_wheel_speed},{self.bl_wheel_speed}"
-                    self.wheel_speeds_publisher.publish(wheel_speed_msg)
+                #     wheel_speed_msg = String()
+                #     wheel_speed_msg.data = f"{self.fr_wheel_speed},{self.fl_wheel_speed},{self.br_wheel_speed},{self.bl_wheel_speed}"
+                    #self.wheel_speeds_publisher.publish(wheel_speed_msg)
                 
                 if "battery voltage:" in received_from_arduino:
                     try:

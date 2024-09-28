@@ -40,6 +40,7 @@ setup(
             'maps/DLL.pgm',
             'maps/DLL.yaml',
             'maps/jordils.yaml',
+            'maps/dll_up.yaml',
         ]),
     ],
     install_requires=['setuptools'],

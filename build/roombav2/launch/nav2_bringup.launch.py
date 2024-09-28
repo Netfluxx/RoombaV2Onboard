@@ -1,1 +1,0 @@
-/home/arno/RoombaV2Onboard/src/roombav2/launch/nav2_bringup.launch.py
